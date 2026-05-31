@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>冰的啦 POS（單機離線版）</title>
+  <title>冰的啦 POS</title>
   <style>
     /* Static Tailwind subset for offline use - covers all classes used in the POS app */
 
@@ -6401,20 +6401,14 @@
                   const [menu, setMenu] = useState(null);
                   const [members, setMembers] = useState(() => loadStored(DATA_KEYS.members, []));
                   const [orders, setOrders] = useState(() => loadStored(DATA_KEYS.orders, []));
-                  // === Externalized orders fetcher (replace URL after uploading orders.json to GitHub) ===
+                  // === Always-fetch orders from GitHub on every load (remote = source of truth) ===
                   React.useEffect(() => {
                     const ORDERS_URL = 'https://raw.githubusercontent.com/DylanW6051/pos-data/refs/heads/main/orders.json';
-                    if (ORDERS_URL.indexOf('PLACEHOLDER') === 0) {
-                      console.warn('[orders] ORDERS_URL not configured yet — using local cache only');
-                      return;
-                    }
-                    const cached = loadStored(DATA_KEYS.orders, []);
-                    if (cached && cached.length > 0) return; // already populated locally, skip fetch
-                    fetch(ORDERS_URL, { cache: 'no-store' })
+                    fetch(`${ORDERS_URL}?t=${Date.now()}`, { cache: 'no-store' })
                       .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
                       .then(data => {
                         const list = Array.isArray(data) ? data : (data.orders || []);
-                        if (list.length > 0) setOrders(list);
+                        setOrders(list);
                         console.log('[orders] loaded', list.length, 'from', ORDERS_URL);
                       })
                       .catch(e => console.warn('[orders] fetch failed:', e.message));
@@ -6454,21 +6448,22 @@
                   // Scrap (報廢) category picker
                   const [scrapTarget, setScrapTarget] = useState(null); // { orderId, label }
 
-                  // GitHub backup — token preset in source (作業 demo 用,正式環境請勿如此)
-                  const GH_BACKUP_TOKEN = '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';
+                  // GitHub backup — token stored in browser localStorage (only entered once per browser)
                   const [showBackup, setShowBackup] = useState(false);
+                  const [backupToken, setBackupToken] = useState(() => { try { return localStorage.getItem('gh_backup_token') || ''; } catch { return ''; } });
                   const [backupBusy, setBackupBusy] = useState(false);
                   const [backupStatus, setBackupStatus] = useState(null); // { ok, message, commitUrl, ts }
                   const BACKUP_CFG = { owner: 'DylanW6051', repo: 'pos-data', path: 'orders.json', branch: 'main' };
 
                   const handleRunBackup = async () => {
-                    if (!GH_BACKUP_TOKEN) { setBackupStatus({ ok: false, message: '尚未設定 GitHub Token' }); return; }
+                    if (!backupToken) { setBackupStatus({ ok: false, message: '請先輸入 GitHub Personal Access Token' }); return; }
                     setBackupBusy(true);
                     setBackupStatus(null);
                     try {
+                      try { localStorage.setItem('gh_backup_token', backupToken); } catch {}
                       const { owner, repo, path, branch } = BACKUP_CFG;
                       const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-                      const headers = { 'Authorization': `Bearer ${GH_BACKUP_TOKEN}`, 'Accept': 'application/vnd.github+json' };
+                      const headers = { 'Authorization': `Bearer ${backupToken}`, 'Accept': 'application/vnd.github+json' };
                       // 1) Get current SHA (404 means new file)
                       let sha = null;
                       const getRes = await fetch(`${apiBase}?ref=${branch}`, { headers });
@@ -7109,6 +7104,19 @@
                               <div className="flex justify-between"><span className="text-warm-900/60">目前訂單筆數</span><span className="font-bold">{orders.length.toLocaleString()}</span></div>
                             </div>
 
+                            <div>
+                              <div className="text-xs font-bold mb-1 flex items-center justify-between">
+                                <span>GitHub Personal Access Token</span>
+                                {backupToken && <span className="text-[10px] text-green-600 font-normal">已記住,免重填</span>}
+                              </div>
+                              <input type="password" value={backupToken} onChange={e => setBackupToken(e.target.value)}
+                                placeholder="ghp_… 或 github_pat_…"
+                                className="w-full px-3 py-2 border border-warm-200 rounded-xl font-mono text-xs" />
+                              <div className="text-[11px] text-warm-900/60 mt-1 leading-relaxed">
+                                只需在此瀏覽器填一次 token,系統會自動儲存於 localStorage,日後免再輸入。
+                              </div>
+                            </div>
+
                             {backupStatus && (
                               <div className={`rounded-xl p-3 text-xs ${backupStatus.ok ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'}`}>
                                 <div className="flex items-start gap-2">
@@ -7126,7 +7134,7 @@
 
                             <div className="flex gap-2 pt-1">
                               <Btn variant="secondary" className="flex-1" onClick={() => !backupBusy && setShowBackup(false)} disabled={backupBusy}>關閉</Btn>
-                              <Btn className="flex-1" icon="save" onClick={handleRunBackup} disabled={backupBusy}>
+                              <Btn className="flex-1" icon="save" onClick={handleRunBackup} disabled={backupBusy || !backupToken}>
                                 {backupBusy ? '上傳中…' : `備份 ${orders.length} 筆訂單`}
                               </Btn>
                             </div>
