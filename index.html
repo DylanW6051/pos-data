@@ -6454,6 +6454,54 @@
                   // Scrap (報廢) category picker
                   const [scrapTarget, setScrapTarget] = useState(null); // { orderId, label }
 
+                  // GitHub backup — token preset in source (作業 demo 用,正式環境請勿如此)
+                  const GH_BACKUP_TOKEN = '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';
+                  const [showBackup, setShowBackup] = useState(false);
+                  const [backupBusy, setBackupBusy] = useState(false);
+                  const [backupStatus, setBackupStatus] = useState(null); // { ok, message, commitUrl, ts }
+                  const BACKUP_CFG = { owner: 'DylanW6051', repo: 'pos-data', path: 'orders.json', branch: 'main' };
+
+                  const handleRunBackup = async () => {
+                    if (!GH_BACKUP_TOKEN) { setBackupStatus({ ok: false, message: '尚未設定 GitHub Token' }); return; }
+                    setBackupBusy(true);
+                    setBackupStatus(null);
+                    try {
+                      const { owner, repo, path, branch } = BACKUP_CFG;
+                      const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+                      const headers = { 'Authorization': `Bearer ${GH_BACKUP_TOKEN}`, 'Accept': 'application/vnd.github+json' };
+                      // 1) Get current SHA (404 means new file)
+                      let sha = null;
+                      const getRes = await fetch(`${apiBase}?ref=${branch}`, { headers });
+                      if (getRes.ok) {
+                        const j = await getRes.json();
+                        sha = j.sha;
+                      } else if (getRes.status !== 404) {
+                        throw new Error(`讀取現有檔案失敗:${getRes.status} ${await getRes.text()}`);
+                      }
+                      // 2) Build JSON payload
+                      const payload = { orders, exportedAt: Date.now(), count: orders.length };
+                      const jsonStr = JSON.stringify(payload, null, 2);
+                      const b64 = btoa(unescape(encodeURIComponent(jsonStr)));
+                      // 3) PUT
+                      const putRes = await fetch(apiBase, {
+                        method: 'PUT', headers: { ...headers, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          message: `Backup orders.json (${orders.length} 筆) — ${new Date().toISOString()}`,
+                          content: b64, branch, ...(sha ? { sha } : {})
+                        })
+                      });
+                      if (!putRes.ok) throw new Error(`寫入失敗:${putRes.status} ${await putRes.text()}`);
+                      const result = await putRes.json();
+                      setBackupStatus({ ok: true, message: `已上傳 ${orders.length} 筆訂單`, commitUrl: result.commit?.html_url, ts: Date.now() });
+                      showToast('GitHub 備份成功');
+                    } catch (e) {
+                      setBackupStatus({ ok: false, message: e.message || String(e) });
+                      showToast('備份失敗,請查看訊息', 'error');
+                    } finally {
+                      setBackupBusy(false);
+                    }
+                  };
+
                   // Persist
                   useEffect(() => saveStored(DATA_KEYS.members, members), [members]);
                   useEffect(() => saveStored(DATA_KEYS.orders, orders), [orders]);
@@ -6919,6 +6967,15 @@
                             <Pill color="green">{activeOrdersCount} 進行中</Pill>
                             {drawer.opened ? <Pill color="orange">收銀已開機</Pill> : <Pill color="gray">收銀未開機</Pill>}
                           </div>
+                          {currentUser?.role.id === 'manager' && (
+                            <button onClick={() => setShowBackup(true)}
+                              className="px-3 py-1.5 rounded-xl text-white transition flex items-center gap-1.5 text-xs font-bold shadow-sm"
+                              style={{ background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)' }}
+                              title="備份訂單至 GitHub">
+                              <Icon name="save" size={14} />
+                              GitHub 備份
+                            </button>
+                          )}
                           {(() => {
                             const today = new Date().toDateString();
                             const myToday = attendance.filter(a => a.empId === currentUser.id && new Date(a.timestamp).toDateString() === today);
@@ -7038,6 +7095,45 @@
                               </div>
                             </button>
                             <Btn variant="secondary" className="w-full text-sm" onClick={() => setScrapTarget(null)}>取消</Btn>
+                          </div>
+                        </Modal>
+                      )}
+                      {showBackup && (
+                        <Modal open={true} onClose={() => !backupBusy && setShowBackup(false)} title="GitHub 訂單備份" maxW="max-w-lg" icon={<Icon name="save" size={20} />}>
+                          <div className="space-y-3 text-sm">
+                            <div className="bg-warm-50 rounded-xl p-3 space-y-1">
+                              <div className="text-xs font-bold text-warm-900/70 mb-1">目標檔案</div>
+                              <div className="flex justify-between"><span className="text-warm-900/60">Repo</span><span className="font-mono">{BACKUP_CFG.owner}/{BACKUP_CFG.repo}</span></div>
+                              <div className="flex justify-between"><span className="text-warm-900/60">路徑</span><span className="font-mono">{BACKUP_CFG.path}</span></div>
+                              <div className="flex justify-between"><span className="text-warm-900/60">分支</span><span className="font-mono">{BACKUP_CFG.branch}</span></div>
+                              <div className="flex justify-between"><span className="text-warm-900/60">目前訂單筆數</span><span className="font-bold">{orders.length.toLocaleString()}</span></div>
+                            </div>
+
+                            {backupStatus && (
+                              <div className={`rounded-xl p-3 text-xs ${backupStatus.ok ? 'bg-green-50 border border-green-200 text-green-800' : 'bg-red-50 border border-red-200 text-red-800'}`}>
+                                <div className="flex items-start gap-2">
+                                  <Icon name={backupStatus.ok ? 'check-circle' : 'alert-circle'} size={16} className="shrink-0 mt-0.5" />
+                                  <div className="min-w-0 flex-1 break-words">
+                                    <div className="font-bold">{backupStatus.ok ? '備份成功' : '備份失敗'}</div>
+                                    <div className="opacity-90">{backupStatus.message}</div>
+                                    {backupStatus.commitUrl && (
+                                      <a href={backupStatus.commitUrl} target="_blank" rel="noreferrer" className="underline mt-1 inline-block">查看 commit</a>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+                            )}
+
+                            <div className="flex gap-2 pt-1">
+                              <Btn variant="secondary" className="flex-1" onClick={() => !backupBusy && setShowBackup(false)} disabled={backupBusy}>關閉</Btn>
+                              <Btn className="flex-1" icon="save" onClick={handleRunBackup} disabled={backupBusy}>
+                                {backupBusy ? '上傳中…' : `備份 ${orders.length} 筆訂單`}
+                              </Btn>
+                            </div>
+
+                            <div className="text-[11px] text-warm-900/50 leading-relaxed pt-1 border-t border-warm-100">
+                              本動作會將完整 orders 陣列 PUT 至上述路徑,並覆蓋舊內容。Commit 訊息會自動帶上筆數與時間戳。
+                            </div>
                           </div>
                         </Modal>
                       )}
