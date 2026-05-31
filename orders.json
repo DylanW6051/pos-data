@@ -396103,8 +396103,183 @@
         "type": "paper",
         "label": "紙本發票"
       }
+    },
+    {
+      "id": "SIM-20260531-10081",
+      "timestamp": 1780223590314,
+      "items": [
+        {
+          "id": "d1",
+          "name": "傳統手工豆花",
+          "price": 45,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1780223590314-0"
+        },
+        {
+          "id": "c2",
+          "name": "草莓波士頓派",
+          "price": 75,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1780223590314-1"
+        },
+        {
+          "id": "d1",
+          "name": "傳統手工豆花",
+          "price": 45,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1780223590314-2"
+        }
+      ],
+      "total": 240,
+      "rawTotal": 240,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 240,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "delivery_ubereats",
+      "status": "served",
+      "paid": true,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      }
+    },
+    {
+      "id": "SIM-20260531-10082",
+      "timestamp": 1780223590496,
+      "items": [
+        {
+          "id": "i5",
+          "name": "凍凍檸檬黑糖清冰",
+          "price": 70,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1780223590496-0"
+        },
+        {
+          "id": "s4",
+          "name": "巧克力OREO雪花",
+          "price": 120,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1780223590496-1"
+        }
+      ],
+      "total": 380,
+      "rawTotal": 380,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 380,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "delivery_ubereats",
+      "status": "served",
+      "paid": true,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      }
+    },
+    {
+      "id": "SIM-20260531-10083",
+      "timestamp": 1780223590663,
+      "items": [
+        {
+          "id": "b7",
+          "name": "奶茶",
+          "price": 40,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1780223590663-0"
+        },
+        {
+          "id": "c1",
+          "name": "經典黑森林",
+          "price": 80,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1780223590663-1"
+        },
+        {
+          "id": "i1",
+          "name": "超級花生煉乳冰",
+          "price": 60,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1780223590663-2"
+        }
+      ],
+      "total": 220,
+      "rawTotal": 220,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 220,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "delivery_ubereats",
+      "status": "served",
+      "paid": true,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      }
+    },
+    {
+      "id": "SIM-20260531-10084",
+      "timestamp": 1780223590819,
+      "items": [
+        {
+          "id": "b5",
+          "name": "冬瓜檸檬飲",
+          "price": 45,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1780223590819-0"
+        }
+      ],
+      "total": 45,
+      "rawTotal": 45,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "cash",
+      "cashReceived": 0,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "phone",
+      "status": "cancelled",
+      "paid": false,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      },
+      "voidReason": "cancelled",
+      "voidedAt": 1780223592989,
+      "voidedBy": "E001"
     }
   ],
-  "exportedAt": 1780223511560,
-  "count": 10080
+  "exportedAt": 1780223602436,
+  "count": 10084
 }
