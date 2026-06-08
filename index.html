@@ -3104,7 +3104,7 @@
                   );
                 };
 
-                const OrderingModule = ({ menu, cart, setCart, currentMember, setCurrentMember, members, setMembers, onCheckout, holdOrders, onHoldOrder, onResumeOrder, onDeleteHoldOrder, itemStock, onCreatePreOrder, onCreateDelivery, currentUser, activePromos, setActivePromos, isStaffDiscount, setIsStaffDiscount, festivalName, setFestivalName }) => {
+                const OrderingModule = ({ menu, cart, setCart, currentMember, setCurrentMember, members, setMembers, onCheckout, holdOrders, onHoldOrder, onResumeOrder, onDeleteHoldOrder, itemStock, onCreatePreOrder, onCreateDelivery, currentUser, activePromos, setActivePromos, useMonthlyPerk, setUseMonthlyPerk, isStaffDiscount, setIsStaffDiscount, festivalName, setFestivalName }) => {
                   const [currentCategory, setCurrentCategory] = useState(menu.categories[0].id);
                   const [selectedItem, setSelectedItem] = useState(null);
                   const [editingCart, setEditingCart] = useState(null);
@@ -3139,10 +3139,11 @@
                     if (activePromos.includes('festival')) list.push({ id: 'festival', name: `節日: ${festivalName} (95折)`, amount: Math.round(rawTotal * 0.05) });
                     if (activePromos.includes('birthday')) list.push({ id: 'birthday', name: '壽星優惠 (9折)', amount: Math.round(rawTotal * 0.1) });
                     if (activePromos.includes('checkin')) list.push({ id: 'checkin', name: '社群打卡優惠', amount: 15 });
+                    if (useMonthlyPerk) list.push({ id: 'monthlyPerk', name: '會員月度優惠', amount: 15 });
                     if (list.length === 0) return [];
                     list.sort((a, b) => b.amount - a.amount);
                     return [{ ...list[0] }];
-                  }, [rawTotal, cart, isStaffDiscount, activePromos, festivalName]);
+                  }, [rawTotal, cart, isStaffDiscount, activePromos, festivalName, useMonthlyPerk]);
 
                   const cartTotal = Math.max(0, rawTotal - discountsList.reduce((s, d) => s + d.amount, 0));
 
@@ -3179,7 +3180,7 @@
                     const newCart = cart.filter(i => i.cartId !== cartId);
                     setCart(newCart);
                     if (newCart.length === 0) {
-                      setIsStaffDiscount(false); setActivePromos([]);
+                      setIsStaffDiscount(false); setActivePromos([]); setUseMonthlyPerk(false);
                     }
                   };
 
@@ -3193,7 +3194,7 @@
                     if (!/^09\d{8}$/.test(memberPhone)) { setMemberError('手機需為 09 開頭 10 碼'); return; }
                     if (!memberName) { setMemberError('請輸入姓名'); return; }
                     if (members.find(m => m.phone === memberPhone)) { setMemberError('此手機已註冊'); return; }
-                    const newM = { id: `MEM-${Date.now()}`, phone: memberPhone, name: memberName, points: 0, perks: { month: '1970-01', used: 0 }, vouchers: [], timestamp: Date.now() };
+                    const newM = { id: `MEM-${Date.now()}`, phone: memberPhone, name: memberName, points: 0, perks: { month: '1970-01', used: 0 }, timestamp: Date.now() };
                     const updated = [...members, newM];
                     setMembers(updated);
                     setCurrentMember(newM);
@@ -3317,6 +3318,9 @@
                                 {currentUser?.role.id === 'manager' && (
                                   <button onClick={() => isStaffDiscount ? setIsStaffDiscount(false) : setShowStaffVerify(true)} className={`text-xs px-2 py-1 rounded-lg font-medium ${isStaffDiscount ? 'bg-purple-500 text-white' : 'bg-warm-100 text-warm-900'}`}>員工8折</button>
                                 )}
+                                {currentMember && (currentMember.perks?.used || 0) < 3 && (
+                                  <button onClick={() => setUseMonthlyPerk(!useMonthlyPerk)} className={`text-xs px-2 py-1 rounded-lg font-medium ${useMonthlyPerk ? 'bg-brand-500 text-white' : 'bg-warm-100 text-warm-900'}`}>會員月特權 (-15)</button>
+                                )}
                               </div>
 
                               <div className="flex justify-between text-sm text-warm-900/70">
@@ -3335,9 +3339,9 @@
                           )}
                           <div className="grid grid-cols-2 gap-1.5 pt-1">
                             <Btn variant="secondary" disabled={cart.length === 0} onClick={onHoldOrder} icon="save">暫存</Btn>
-                            <Btn variant="secondary" disabled={cart.length === 0} onClick={() => onCreatePreOrder(cart, cartTotal, rawTotal, discountsList)} icon="phone-call">預訂</Btn>
+                            <Btn variant="secondary" disabled={cart.length === 0} onClick={() => onCreatePreOrder(cart, cartTotal, rawTotal, discountsList, useMonthlyPerk)} icon="phone-call">預訂</Btn>
                           </div>
-                          <Btn disabled={cart.length === 0} onClick={() => onCheckout(cart, cartTotal, rawTotal, discountsList)} icon="credit-card" className="w-full text-lg py-3">
+                          <Btn disabled={cart.length === 0} onClick={() => onCheckout(cart, cartTotal, rawTotal, discountsList, useMonthlyPerk)} icon="credit-card" className="w-full text-lg py-3">
                             結帳 ${cartTotal}
                           </Btn>
                         </div>
@@ -4260,6 +4264,13 @@
                                   </Btn>
                                 </div>
                               )}
+                            </Card>
+                            <Card className="p-4">
+                              <div className="font-bold mb-2 flex items-center gap-1 text-warm-900"><Icon name="ticket" size={16} /> 優惠券</div>
+                              <div className="px-3 py-2 rounded-lg flex justify-between items-center text-sm bg-brand-50">
+                                <span>會員月特權</span>
+                                <Pill color={(selected.perks?.used || 0) > 0 ? 'orange' : 'gray'}>已使用 {selected.perks?.used || 0}/3 次</Pill>
+                              </div>
                             </Card>
                             <Card className="p-4">
                               <div className="flex items-center justify-between mb-2">
@@ -5555,6 +5566,7 @@
                                   {o.dineMode === 'dine-in' && <Pill color="blue">內用 #{o.tableNo}</Pill>}
                                   {o.dineMode === 'takeout' && <Pill color="purple">外帶</Pill>}
                                   {o.member && <Pill color="orange">{o.member.name}</Pill>}
+                                  {o.monthlyPerkUsed && <Pill color="orange">月特權</Pill>}
                                   <Pill color={hasNote ? 'blue' : 'gray'}>{hasNote ? '有備註' : '無備註'}</Pill>
                                 </div>
                                 <div className="text-xs text-warm-900/60">
@@ -6484,6 +6496,7 @@
                   const [cart, setCart] = useState([]);
                   const [currentMember, setCurrentMember] = useState(null);
                   const [activePromos, setActivePromos] = useState([]);
+                  const [useMonthlyPerk, setUseMonthlyPerk] = useState(false);
                   const [isStaffDiscount, setIsStaffDiscount] = useState(false);
                   const [festivalName, setFestivalName] = useState('');
 
@@ -6710,20 +6723,35 @@
                     });
                   };
 
+                  // ---- Apply member monthly perk usage
+                  const applyMemberRewards = (useMonthlyPerk) => {
+                    if (!currentMember || !useMonthlyPerk) return;
+                    const bump = (m) => {
+                      const u = { ...m };
+                      const monthKey = new Date().toISOString().slice(0, 7);
+                      if (u.perks?.month !== monthKey) u.perks = { month: monthKey, used: 0 };
+                      u.perks = { ...u.perks, used: (u.perks.used || 0) + 1 };
+                      return u;
+                    };
+                    setMembers(prev => prev.map(m => m.id === currentMember.id ? bump(m) : m));
+                    setCurrentMember(prev => prev ? bump(prev) : prev);
+                  };
+
                   // ---- Checkout flow
-                  const handleCheckout = (cart, total, rawTotal, discountList) => {
-                    setCheckoutData({ cart, total, rawTotal, discountList, source: 'pos' });
+                  const handleCheckout = (cart, total, rawTotal, discountList, useMonthlyPerk) => {
+                    setCheckoutData({ cart, total, rawTotal, discountList, useMonthlyPerk, source: 'pos' });
                     setCheckoutOpen(true);
                   };
 
                   const handleCompleteCheckout = (paymentInfo) => {
-                    const { cart, total, rawTotal, discountList, source } = checkoutData;
+                    const { cart, total, rawTotal, discountList, useMonthlyPerk, source } = checkoutData;
                     const orderId = genOrderId();
                     const newOrder = {
                       id: orderId,
                       timestamp: Date.now(),
                       items: cart, total, rawTotal,
                       discounts: discountList,
+                      monthlyPerkUsed: useMonthlyPerk,
                       method: paymentInfo.method,
                       cashReceived: paymentInfo.cashReceived,
                       change: paymentInfo.change,
@@ -6738,6 +6766,7 @@
                     };
                     setOrders(prev => [...prev, newOrder]);
                     decrementStock(cart);
+                    applyMemberRewards(useMonthlyPerk);
                     setCheckoutOpen(false);
 
                     finalizeAfterCheckout();
@@ -6747,7 +6776,7 @@
                   const finalizeAfterCheckout = () => {
                     setCart([]);
                     setCurrentMember(null);
-                    setActivePromos([]); setIsStaffDiscount(false);
+                    setActivePromos([]); setUseMonthlyPerk(false); setIsStaffDiscount(false);
                     setCheckoutData(null);
                   };
 
@@ -6832,13 +6861,13 @@
                   };
 
                   // ---- Pre-order / Delivery
-                  const handleCreatePreOrderOrDelivery = (cartArg, total, rawTotal, discountList, kind) => {
-                    setComposeData({ cart: cartArg, total, rawTotal, discountList, kind });
+                  const handleCreatePreOrderOrDelivery = (cartArg, total, rawTotal, discountList, useMonthlyPerk, kind) => {
+                    setComposeData({ cart: cartArg, total, rawTotal, discountList, useMonthlyPerk, kind });
                     setComposeOpen(true);
                   };
 
                   const handleSubmitPreOrder = (info) => {
-                    const { cart: cartArg, total, rawTotal, discountList, kind } = composeData;
+                    const { cart: cartArg, total, rawTotal, discountList, useMonthlyPerk, kind } = composeData;
                     const isDelivery = kind === 'delivery';
                     const src = isDelivery ? info.deliveryType : info.source;
                     const platformPrePaid = src === 'delivery_foodpanda' || src === 'delivery_ubereats';
@@ -6848,6 +6877,7 @@
                       timestamp: Date.now(),
                       items: cartArg, total, rawTotal,
                       discounts: discountList,
+                      monthlyPerkUsed: useMonthlyPerk,
                       method: platformPrePaid ? 'linepay' : 'cash',
                       cashReceived: platformPrePaid ? total : 0,
                       change: 0,
@@ -6869,7 +6899,7 @@
                     };
                     setOrders(prev => [...prev, order]);
                     setComposeOpen(false); setCart([]); setCurrentMember(null);
-                    setActivePromos([]); setIsStaffDiscount(false);
+                    setActivePromos([]); setUseMonthlyPerk(false); setIsStaffDiscount(false);
                     showToast(`${isDelivery ? '外送單' : '預訂單'} ${id} 已送至廚房`);
                   };
 
@@ -6877,6 +6907,7 @@
                   const handleActivatePreOrder = (po) => {
                     setCart(po.items);
                     setCurrentMember(po.member ? members.find(m => m.id === po.member.id) || po.member : null);
+                    setUseMonthlyPerk(po.monthlyPerkUsed || false);
                     setPreOrders(prev => prev.filter(p => p.id !== po.id));
                     setPage('order');
                     showToast('已將預訂單載入購物車');
@@ -7052,9 +7083,10 @@
                               <OrderingModule menu={menu} cart={cart} setCart={setCart} currentMember={currentMember} setCurrentMember={setCurrentMember}
                                 members={members} setMembers={setMembers} onCheckout={handleCheckout} holdOrders={holdOrders}
                                 onHoldOrder={handleHoldOrder} onResumeOrder={handleResumeHold} onDeleteHoldOrder={(id) => setHoldOrders(prev => prev.filter(h => h.id !== id))}
-                                itemStock={itemStock} onCreatePreOrder={(c, t, r, d) => handleCreatePreOrderOrDelivery(c, t, r, d, 'preorder')}
-                                onCreateDelivery={(c, t, r, d) => handleCreatePreOrderOrDelivery(c, t, r, d, 'delivery')}
+                                itemStock={itemStock} onCreatePreOrder={(c, t, r, d, u) => handleCreatePreOrderOrDelivery(c, t, r, d, u, 'preorder')}
+                                onCreateDelivery={(c, t, r, d, u) => handleCreatePreOrderOrDelivery(c, t, r, d, u, 'delivery')}
                                 currentUser={currentUser} activePromos={activePromos} setActivePromos={setActivePromos}
+                                useMonthlyPerk={useMonthlyPerk} setUseMonthlyPerk={setUseMonthlyPerk}
                                 isStaffDiscount={isStaffDiscount} setIsStaffDiscount={setIsStaffDiscount}
                                 festivalName={festivalName} setFestivalName={setFestivalName} />
                             )}
