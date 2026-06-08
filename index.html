@@ -2833,6 +2833,87 @@
                   return item.price + (toppings || []).reduce((s, t) => s + t.price, 0);
                 };
 
+                const validateVoucher = (voucher, cart) => {
+                  if (!voucher || !cart || cart.length === 0) return false;
+                  if (voucher.type === 'fixed') {
+                    if (voucher.text && voucher.text.includes('蛋糕')) return cart.some(i => i.id.startsWith('c'));
+                    return true;
+                  }
+                  if (voucher.type === 'free_toppings') {
+                    return cart.some(item => {
+                      const sorted = [...(item.toppings || [])].sort((a, b) => b.price - a.price);
+                      const charge = item.id === 'i6' ? sorted.slice(5) : sorted;
+                      return charge.length > 0;
+                    });
+                  }
+                  if (voucher.type === 'free_shaved_ice') return cart.some(i => i.id.startsWith('i'));
+                  if (voucher.type === 'free_snow_ice_boba') return cart.some(i => i.id === 's2');
+                  if (voucher.type === 'free_drink') return cart.some(i => i.id.startsWith('b'));
+                  if (voucher.type === 'free_dessert_or_cake') return cart.some(i => i.id.startsWith('d') || i.id.startsWith('c'));
+                  if (voucher.type === 'buy_one_get_one_drink') {
+                    const groups = {};
+                    cart.forEach(i => { if (i.id.startsWith('b')) groups[i.id] = (groups[i.id] || 0) + i.quantity; });
+                    return Object.values(groups).some(q => q >= 2);
+                  }
+                  if (voucher.type === 'half_price_second_dessert') {
+                    const groups = {};
+                    cart.forEach(i => { if (i.id.startsWith('d')) groups[i.id] = (groups[i.id] || 0) + i.quantity; });
+                    return Object.values(groups).some(q => q >= 2);
+                  }
+                  return false;
+                };
+
+                const calculateDynamicDiscount = (voucher, cart) => {
+                  if (!voucher) return 0;
+                  if (voucher.type === 'fixed') return voucher.value || 0;
+                  if (voucher.type === 'free_toppings') {
+                    let charges = [];
+                    cart.forEach(item => {
+                      if (item.toppings && item.toppings.length > 0) {
+                        const sorted = [...item.toppings].sort((a, b) => b.price - a.price);
+                        const charge = item.id === 'i6' ? sorted.slice(5) : sorted;
+                        for (let i = 0; i < item.quantity; i++) charges.push(...charge.map(t => t.price));
+                      }
+                    });
+                    if (charges.length === 0) return 0;
+                    charges.sort((a, b) => a - b);
+                    const cnt = Math.min(voucher.value, charges.length);
+                    return charges.slice(0, cnt).reduce((s, p) => s + p, 0);
+                  }
+                  if (voucher.type === 'free_shaved_ice') {
+                    const elig = cart.filter(i => i.id.startsWith('i'));
+                    if (!elig.length) return 0;
+                    return elig.sort((a, b) => a.price - b.price)[0].price;
+                  }
+                  if (voucher.type === 'free_snow_ice_boba') {
+                    const elig = cart.filter(i => i.id === 's2');
+                    return elig.length ? elig[0].price : 0;
+                  }
+                  if (voucher.type === 'free_drink') {
+                    const elig = cart.filter(i => i.id.startsWith('b'));
+                    return elig.length ? Math.max(...elig.map(i => i.price)) : 0;
+                  }
+                  if (voucher.type === 'free_dessert_or_cake') {
+                    const elig = cart.filter(i => i.id.startsWith('d') || i.id.startsWith('c'));
+                    return elig.length ? Math.max(...elig.map(i => i.price)) : 0;
+                  }
+                  if (voucher.type === 'buy_one_get_one_drink') {
+                    const groups = {};
+                    cart.forEach(i => { if (i.id.startsWith('b')) { if (!groups[i.id]) groups[i.id] = { price: i.price, qty: 0 }; groups[i.id].qty += i.quantity; } });
+                    let max = 0;
+                    for (const id in groups) if (groups[id].qty >= 2 && groups[id].price > max) max = groups[id].price;
+                    return max;
+                  }
+                  if (voucher.type === 'half_price_second_dessert') {
+                    const groups = {};
+                    cart.forEach(i => { if (i.id.startsWith('d')) { if (!groups[i.id]) groups[i.id] = { price: i.price, qty: 0 }; groups[i.id].qty += i.quantity; } });
+                    let max = 0;
+                    for (const id in groups) if (groups[id].qty >= 2 && groups[id].price > max) max = groups[id].price;
+                    return Math.floor(max / 2);
+                  }
+                  return 0;
+                };
+
                 const msToHoursMins = (ms) => {
                   const totalMins = Math.floor(ms / 60000);
                   const h = Math.floor(totalMins / 60);
@@ -2856,6 +2937,8 @@
                 window.fmtTime = fmtTime;
                 window.fmtDateTime = fmtDateTime;
                 window.calculateUnitPrice = calculateUnitPrice;
+                window.validateVoucher = validateVoucher;
+                window.calculateDynamicDiscount = calculateDynamicDiscount;
                 window.msToHoursMins = msToHoursMins;
                 window.sourceLabel = sourceLabel;
 
@@ -3104,7 +3187,7 @@
                   );
                 };
 
-                const OrderingModule = ({ menu, cart, setCart, currentMember, setCurrentMember, members, setMembers, onCheckout, holdOrders, onHoldOrder, onResumeOrder, onDeleteHoldOrder, itemStock, onCreatePreOrder, onCreateDelivery, currentUser, activePromos, setActivePromos, useMonthlyPerk, setUseMonthlyPerk, isStaffDiscount, setIsStaffDiscount, festivalName, setFestivalName }) => {
+                const OrderingModule = ({ menu, cart, setCart, currentMember, setCurrentMember, members, setMembers, onCheckout, holdOrders, onHoldOrder, onResumeOrder, onDeleteHoldOrder, itemStock, onCreatePreOrder, onCreateDelivery, currentUser, activePromos, setActivePromos, useMonthlyPerk, setUseMonthlyPerk, selectedVoucher, setSelectedVoucher, isStaffDiscount, setIsStaffDiscount, festivalName, setFestivalName }) => {
                   const [currentCategory, setCurrentCategory] = useState(menu.categories[0].id);
                   const [selectedItem, setSelectedItem] = useState(null);
                   const [editingCart, setEditingCart] = useState(null);
@@ -3120,6 +3203,7 @@
                   const [showStaffVerify, setShowStaffVerify] = useState(false);
                   const [staffEmpId, setStaffEmpId] = useState('');
                   const [staffErr, setStaffErr] = useState(false);
+                  const [showVoucherList, setShowVoucherList] = useState(false);
 
                   const categoryItems = useMemo(() => {
                     const cat = menu.categories.find(c => c.id === currentCategory);
@@ -3140,10 +3224,14 @@
                     if (activePromos.includes('birthday')) list.push({ id: 'birthday', name: '壽星優惠 (9折)', amount: Math.round(rawTotal * 0.1) });
                     if (activePromos.includes('checkin')) list.push({ id: 'checkin', name: '社群打卡優惠', amount: 15 });
                     if (useMonthlyPerk) list.push({ id: 'monthlyPerk', name: '會員月度優惠', amount: 15 });
+                    if (selectedVoucher) {
+                      const amt = calculateDynamicDiscount(selectedVoucher, cart);
+                      if (amt > 0) list.push({ id: 'voucher', name: `轉盤獎勵: ${selectedVoucher.text}`, amount: amt });
+                    }
                     if (list.length === 0) return [];
                     list.sort((a, b) => b.amount - a.amount);
                     return [{ ...list[0] }];
-                  }, [rawTotal, cart, isStaffDiscount, activePromos, festivalName, useMonthlyPerk]);
+                  }, [rawTotal, cart, isStaffDiscount, activePromos, festivalName, useMonthlyPerk, selectedVoucher]);
 
                   const cartTotal = Math.max(0, rawTotal - discountsList.reduce((s, d) => s + d.amount, 0));
 
@@ -3180,7 +3268,7 @@
                     const newCart = cart.filter(i => i.cartId !== cartId);
                     setCart(newCart);
                     if (newCart.length === 0) {
-                      setIsStaffDiscount(false); setActivePromos([]); setUseMonthlyPerk(false);
+                      setIsStaffDiscount(false); setActivePromos([]); setUseMonthlyPerk(false); setSelectedVoucher(null);
                     }
                   };
 
@@ -3194,7 +3282,7 @@
                     if (!/^09\d{8}$/.test(memberPhone)) { setMemberError('手機需為 09 開頭 10 碼'); return; }
                     if (!memberName) { setMemberError('請輸入姓名'); return; }
                     if (members.find(m => m.phone === memberPhone)) { setMemberError('此手機已註冊'); return; }
-                    const newM = { id: `MEM-${Date.now()}`, phone: memberPhone, name: memberName, points: 0, perks: { month: '1970-01', used: 0 }, timestamp: Date.now() };
+                    const newM = { id: `MEM-${Date.now()}`, phone: memberPhone, name: memberName, points: 0, perks: { month: '1970-01', used: 0 }, vouchers: [], timestamp: Date.now() };
                     const updated = [...members, newM];
                     setMembers(updated);
                     setCurrentMember(newM);
@@ -3318,8 +3406,13 @@
                                 {currentUser?.role.id === 'manager' && (
                                   <button onClick={() => isStaffDiscount ? setIsStaffDiscount(false) : setShowStaffVerify(true)} className={`text-xs px-2 py-1 rounded-lg font-medium ${isStaffDiscount ? 'bg-purple-500 text-white' : 'bg-warm-100 text-warm-900'}`}>員工8折</button>
                                 )}
-                                {currentMember && (currentMember.perks?.month === new Date().toISOString().slice(0, 7) ? (currentMember.perks.used || 0) : 0) < 3 && (
+                                {currentMember && currentMember.perks?.used < 3 && (
                                   <button onClick={() => setUseMonthlyPerk(!useMonthlyPerk)} className={`text-xs px-2 py-1 rounded-lg font-medium ${useMonthlyPerk ? 'bg-brand-500 text-white' : 'bg-warm-100 text-warm-900'}`}>會員月特權 (-15)</button>
+                                )}
+                                {currentMember?.vouchers?.filter(v => !v.used).length > 0 && (
+                                  <button onClick={() => setShowVoucherList(true)} className={`text-xs px-2 py-1 rounded-lg font-medium ${selectedVoucher ? 'bg-brand-500 text-white' : 'bg-warm-100 text-warm-900'}`}>
+                                    <Icon name="ticket" size={12} className="inline" /> 折價券 ({currentMember.vouchers.filter(v => !v.used).length})
+                                  </button>
                                 )}
                               </div>
 
@@ -3339,9 +3432,9 @@
                           )}
                           <div className="grid grid-cols-2 gap-1.5 pt-1">
                             <Btn variant="secondary" disabled={cart.length === 0} onClick={onHoldOrder} icon="save">暫存</Btn>
-                            <Btn variant="secondary" disabled={cart.length === 0} onClick={() => onCreatePreOrder(cart, cartTotal, rawTotal, discountsList, useMonthlyPerk)} icon="phone-call">預訂</Btn>
+                            <Btn variant="secondary" disabled={cart.length === 0} onClick={() => onCreatePreOrder(cart, cartTotal, rawTotal, discountsList, selectedVoucher, useMonthlyPerk)} icon="phone-call">預訂</Btn>
                           </div>
-                          <Btn disabled={cart.length === 0} onClick={() => onCheckout(cart, cartTotal, rawTotal, discountsList, useMonthlyPerk)} icon="credit-card" className="w-full text-lg py-3">
+                          <Btn disabled={cart.length === 0} onClick={() => onCheckout(cart, cartTotal, rawTotal, discountsList, selectedVoucher, useMonthlyPerk)} icon="credit-card" className="w-full text-lg py-3">
                             結帳 ${cartTotal}
                           </Btn>
                         </div>
@@ -3494,6 +3587,22 @@
                         </div>
                       </Modal>
 
+                      <Modal open={showVoucherList} onClose={() => setShowVoucherList(false)} title="選擇折價券" maxW="max-w-md" icon={<Icon name="ticket" size={20} />}>
+                        <div className="space-y-2">
+                          <button onClick={() => { setSelectedVoucher(null); setShowVoucherList(false); }} className="w-full text-left px-3 py-2 rounded-xl bg-warm-100">不使用</button>
+                          {currentMember?.vouchers?.filter(v => !v.used).map(v => {
+                            const valid = validateVoucher(v, cart);
+                            const amt = calculateDynamicDiscount(v, cart);
+                            return (
+                              <button key={v.id} disabled={!valid || amt === 0} onClick={() => { setSelectedVoucher(v); setShowVoucherList(false); }}
+                                className={`w-full text-left px-3 py-2 rounded-xl border-2 ${selectedVoucher?.id === v.id ? 'border-brand-500 bg-brand-50' : 'border-warm-200'} ${(!valid || amt === 0) ? 'opacity-50' : ''}`}>
+                                <div className="text-sm font-bold">{v.text}</div>
+                                <div className="text-xs text-green-600">折抵 ${amt}</div>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </Modal>
                     </div>
                   );
                 };
@@ -3506,7 +3615,7 @@
               (function () {
                 const { useState, useEffect, useMemo, useRef, useCallback, useReducer, useLayoutEffect, Fragment, createContext, useContext } = React;
                 // ============== Checkout / Payment Modal ==============
-                const CheckoutModal = ({ cart, total, rawTotal, discountList, onClose, onComplete, currentMember, currentUser, drawer, source = 'pos', editingOrderId = null }) => {
+                const CheckoutModal = ({ cart, total, rawTotal, discountList, voucher, useMonthlyPerk, onClose, onComplete, currentMember, currentUser, drawer, source = 'pos', editingOrderId = null }) => {
                   // Steps: 1=用餐方式, 2=發票, 3=付款方式, 4=現金輸入(若選現金), 5=確認
                   const [step, setStep] = useState(1);
                   const [dineMode, setDineMode] = useState(null); // 'dine-in' | 'takeout'
@@ -4248,15 +4357,16 @@
                                   <div className="text-warm-900/60 text-sm">{selected.phone}</div>
                                 </div>
                               </div>
-                              <div className="grid grid-cols-2 gap-2 mt-3 text-sm">
+                              <div className="grid grid-cols-3 gap-2 mt-3 text-sm">
                                 <div className="bg-warm-50 rounded-lg p-2"><div className="text-warm-900/60 text-xs">總消費</div><div className="font-bold">{fmtMoney(memberOrders.reduce((s, o) => s + o.total, 0))}</div></div>
                                 <div className="bg-warm-50 rounded-lg p-2"><div className="text-warm-900/60 text-xs">訂單數</div><div className="font-bold">{memberOrders.length}</div></div>
+                                <div className="bg-warm-50 rounded-lg p-2"><div className="text-warm-900/60 text-xs">月特權用</div><div className="font-bold">{selected.perks?.used || 0}/3</div></div>
                               </div>
                               {currentUser?.role.id === 'manager' && (
                                 <div className="mt-3 pt-3 border-t border-warm-100 flex justify-end">
                                   <Btn variant="danger" icon="trash-2" className="text-sm py-1.5 px-3"
                                     onClick={() => {
-                                      if (!confirm(`確定要刪除會員「${selected.name}」(${selected.phone}) ?\n此操作無法復原。`)) return;
+                                      if (!confirm(`確定要刪除會員「${selected.name}」(${selected.phone}) ?\n此操作無法復原,該會員的優惠券皆會一併移除。`)) return;
                                       setMembers(prev => prev.filter(m => m.id !== selected.id));
                                       setSelected(null);
                                     }}>
@@ -4264,18 +4374,6 @@
                                   </Btn>
                                 </div>
                               )}
-                            </Card>
-                            <Card className="p-4">
-                              <div className="font-bold mb-2 flex items-center gap-1 text-warm-900"><Icon name="ticket" size={16} /> 優惠券</div>
-                              {(() => {
-                                const used = selected.perks?.month === new Date().toISOString().slice(0, 7) ? (selected.perks.used || 0) : 0;
-                                return (
-                                  <div className="px-3 py-2 rounded-lg flex justify-between items-center text-sm bg-brand-50">
-                                    <span>會員月特權</span>
-                                    <Pill color={used > 0 ? 'orange' : 'gray'}>本月已使用 {used}/3 次</Pill>
-                                  </div>
-                                );
-                              })()}
                             </Card>
                             <Card className="p-4">
                               <div className="flex items-center justify-between mb-2">
@@ -5571,6 +5669,7 @@
                                   {o.dineMode === 'dine-in' && <Pill color="blue">內用 #{o.tableNo}</Pill>}
                                   {o.dineMode === 'takeout' && <Pill color="purple">外帶</Pill>}
                                   {o.member && <Pill color="orange">{o.member.name}</Pill>}
+                                  {o.voucherUsed && <Pill color="orange">優惠券</Pill>}
                                   {o.monthlyPerkUsed && <Pill color="orange">月特權</Pill>}
                                   <Pill color={hasNote ? 'blue' : 'gray'}>{hasNote ? '有備註' : '無備註'}</Pill>
                                 </div>
@@ -5816,6 +5915,11 @@
                                             <span>{d.name || d.label}</span><span>-${(Number(d.amount) || 0).toLocaleString()}</span>
                                           </div>
                                         ))}
+                                        {o.voucherUsed && (
+                                          <div className="flex justify-between text-warm-900/70 text-xs">
+                                            <span>(已使用優惠券)</span><span>{o.voucherUsed.text}</span>
+                                          </div>
+                                        )}
                                         <div className="flex justify-between font-bold text-base text-brand-600 pt-1.5 border-t border-warm-200">
                                           <span>應付總額</span><span>${(Number(o.total) || 0).toLocaleString()}</span>
                                         </div>
@@ -6502,6 +6606,7 @@
                   const [currentMember, setCurrentMember] = useState(null);
                   const [activePromos, setActivePromos] = useState([]);
                   const [useMonthlyPerk, setUseMonthlyPerk] = useState(false);
+                  const [selectedVoucher, setSelectedVoucher] = useState(null);
                   const [isStaffDiscount, setIsStaffDiscount] = useState(false);
                   const [festivalName, setFestivalName] = useState('');
 
@@ -6728,34 +6833,52 @@
                     });
                   };
 
-                  // ---- Apply member monthly perk usage
-                  const applyMemberRewards = (useMonthlyPerk) => {
-                    if (!currentMember || !useMonthlyPerk) return;
-                    const bump = (m) => {
-                      const u = { ...m };
-                      const monthKey = new Date().toISOString().slice(0, 7);
-                      if (u.perks?.month !== monthKey) u.perks = { month: monthKey, used: 0 };
-                      u.perks = { ...u.perks, used: (u.perks.used || 0) + 1 };
+                  // ---- Award points/perks/voucher use
+                  const applyMemberRewards = (cartTotal, voucher, useMonthlyPerk) => {
+                    if (!currentMember) return;
+                    setMembers(prev => prev.map(m => {
+                      if (m.id !== currentMember.id) return m;
+                      const updated = { ...m };
+                      // monthly perk usage (3/month limit)
+                      if (useMonthlyPerk) {
+                        const monthKey = new Date().toISOString().slice(0, 7);
+                        if (updated.perks?.month !== monthKey) updated.perks = { month: monthKey, used: 0 };
+                        updated.perks.used = (updated.perks.used || 0) + 1;
+                      }
+                      // mark voucher used
+                      if (voucher) {
+                        updated.vouchers = (updated.vouchers || []).map(v => v.id === voucher.id ? { ...v, used: true } : v);
+                      }
+                      return updated;
+                    }));
+                    setCurrentMember(prev => {
+                      if (!prev) return prev;
+                      const u = { ...prev };
+                      if (useMonthlyPerk) {
+                        const mk = new Date().toISOString().slice(0, 7);
+                        if (u.perks?.month !== mk) u.perks = { month: mk, used: 0 };
+                        u.perks.used = (u.perks.used || 0) + 1;
+                      }
+                      if (voucher) u.vouchers = (u.vouchers || []).map(v => v.id === voucher.id ? { ...v, used: true } : v);
                       return u;
-                    };
-                    setMembers(prev => prev.map(m => m.id === currentMember.id ? bump(m) : m));
-                    setCurrentMember(prev => prev ? bump(prev) : prev);
+                    });
                   };
 
                   // ---- Checkout flow
-                  const handleCheckout = (cart, total, rawTotal, discountList, useMonthlyPerk) => {
-                    setCheckoutData({ cart, total, rawTotal, discountList, useMonthlyPerk, source: 'pos' });
+                  const handleCheckout = (cart, total, rawTotal, discountList, voucher, useMonthlyPerk) => {
+                    setCheckoutData({ cart, total, rawTotal, discountList, voucher, useMonthlyPerk, source: 'pos' });
                     setCheckoutOpen(true);
                   };
 
                   const handleCompleteCheckout = (paymentInfo) => {
-                    const { cart, total, rawTotal, discountList, useMonthlyPerk, source } = checkoutData;
+                    const { cart, total, rawTotal, discountList, voucher, useMonthlyPerk, source } = checkoutData;
                     const orderId = genOrderId();
                     const newOrder = {
                       id: orderId,
                       timestamp: Date.now(),
                       items: cart, total, rawTotal,
                       discounts: discountList,
+                      voucherUsed: voucher,
                       monthlyPerkUsed: useMonthlyPerk,
                       method: paymentInfo.method,
                       cashReceived: paymentInfo.cashReceived,
@@ -6771,7 +6894,7 @@
                     };
                     setOrders(prev => [...prev, newOrder]);
                     decrementStock(cart);
-                    applyMemberRewards(useMonthlyPerk);
+                    applyMemberRewards(total, voucher, useMonthlyPerk);
                     setCheckoutOpen(false);
 
                     finalizeAfterCheckout();
@@ -6781,7 +6904,7 @@
                   const finalizeAfterCheckout = () => {
                     setCart([]);
                     setCurrentMember(null);
-                    setActivePromos([]); setUseMonthlyPerk(false); setIsStaffDiscount(false);
+                    setActivePromos([]); setUseMonthlyPerk(false); setSelectedVoucher(null); setIsStaffDiscount(false);
                     setCheckoutData(null);
                   };
 
@@ -6830,7 +6953,7 @@
                       id: orderId,
                       timestamp: Date.now(),
                       items, total, rawTotal: total,
-                      discounts: [],
+                      discounts: [], voucherUsed: null, monthlyPerkUsed: false,
                       method: pick.paid ? 'linepay' : 'cash',
                       cashReceived: pick.paid ? total : 0,
                       change: 0,
@@ -6866,13 +6989,13 @@
                   };
 
                   // ---- Pre-order / Delivery
-                  const handleCreatePreOrderOrDelivery = (cartArg, total, rawTotal, discountList, useMonthlyPerk, kind) => {
-                    setComposeData({ cart: cartArg, total, rawTotal, discountList, useMonthlyPerk, kind });
+                  const handleCreatePreOrderOrDelivery = (cartArg, total, rawTotal, discountList, voucher, useMonthlyPerk, kind) => {
+                    setComposeData({ cart: cartArg, total, rawTotal, discountList, voucher, useMonthlyPerk, kind });
                     setComposeOpen(true);
                   };
 
                   const handleSubmitPreOrder = (info) => {
-                    const { cart: cartArg, total, rawTotal, discountList, useMonthlyPerk, kind } = composeData;
+                    const { cart: cartArg, total, rawTotal, discountList, voucher, useMonthlyPerk, kind } = composeData;
                     const isDelivery = kind === 'delivery';
                     const src = isDelivery ? info.deliveryType : info.source;
                     const platformPrePaid = src === 'delivery_foodpanda' || src === 'delivery_ubereats';
@@ -6882,7 +7005,7 @@
                       timestamp: Date.now(),
                       items: cartArg, total, rawTotal,
                       discounts: discountList,
-                      monthlyPerkUsed: useMonthlyPerk,
+                      voucherUsed: voucher, monthlyPerkUsed: useMonthlyPerk,
                       method: platformPrePaid ? 'linepay' : 'cash',
                       cashReceived: platformPrePaid ? total : 0,
                       change: 0,
@@ -6904,7 +7027,7 @@
                     };
                     setOrders(prev => [...prev, order]);
                     setComposeOpen(false); setCart([]); setCurrentMember(null);
-                    setActivePromos([]); setUseMonthlyPerk(false); setIsStaffDiscount(false);
+                    setActivePromos([]); setUseMonthlyPerk(false); setSelectedVoucher(null); setIsStaffDiscount(false);
                     showToast(`${isDelivery ? '外送單' : '預訂單'} ${id} 已送至廚房`);
                   };
 
@@ -6912,6 +7035,7 @@
                   const handleActivatePreOrder = (po) => {
                     setCart(po.items);
                     setCurrentMember(po.member ? members.find(m => m.id === po.member.id) || po.member : null);
+                    setSelectedVoucher(po.voucherUsed || null);
                     setUseMonthlyPerk(po.monthlyPerkUsed || false);
                     setPreOrders(prev => prev.filter(p => p.id !== po.id));
                     setPage('order');
@@ -7088,10 +7212,11 @@
                               <OrderingModule menu={menu} cart={cart} setCart={setCart} currentMember={currentMember} setCurrentMember={setCurrentMember}
                                 members={members} setMembers={setMembers} onCheckout={handleCheckout} holdOrders={holdOrders}
                                 onHoldOrder={handleHoldOrder} onResumeOrder={handleResumeHold} onDeleteHoldOrder={(id) => setHoldOrders(prev => prev.filter(h => h.id !== id))}
-                                itemStock={itemStock} onCreatePreOrder={(c, t, r, d, u) => handleCreatePreOrderOrDelivery(c, t, r, d, u, 'preorder')}
-                                onCreateDelivery={(c, t, r, d, u) => handleCreatePreOrderOrDelivery(c, t, r, d, u, 'delivery')}
+                                itemStock={itemStock} onCreatePreOrder={(c, t, r, d, v, u) => handleCreatePreOrderOrDelivery(c, t, r, d, v, u, 'preorder')}
+                                onCreateDelivery={(c, t, r, d, v, u) => handleCreatePreOrderOrDelivery(c, t, r, d, v, u, 'delivery')}
                                 currentUser={currentUser} activePromos={activePromos} setActivePromos={setActivePromos}
                                 useMonthlyPerk={useMonthlyPerk} setUseMonthlyPerk={setUseMonthlyPerk}
+                                selectedVoucher={selectedVoucher} setSelectedVoucher={setSelectedVoucher}
                                 isStaffDiscount={isStaffDiscount} setIsStaffDiscount={setIsStaffDiscount}
                                 festivalName={festivalName} setFestivalName={setFestivalName} />
                             )}
