@@ -397191,22 +397191,49 @@
     },
     {
       "id": "ORD-20260610-10094",
-      "timestamp": 1781054513027,
+      "timestamp": 1781055165680,
       "items": [
         {
-          "id": "s5",
-          "name": "花生芝麻雙享",
-          "price": 100,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s5.jpg",
-          "sugar": "半糖",
-          "base": "少冰",
+          "id": "i1",
+          "name": "超級花生煉乳冰",
+          "price": 60,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i1.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
           "toppings": [
             {
-              "name": "鬆花生",
+              "name": "愛玉凍",
               "price": 15
-            },
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 75,
+          "totalPrice": 75,
+          "cartId": "1781054980524-d8xtw"
+        },
+        {
+          "id": "i2",
+          "name": "雙色醬煉乳冰",
+          "price": 85,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i2.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 1,
+          "unitPrice": 85,
+          "totalPrice": 85,
+          "cartId": "1781054981848-30773"
+        },
+        {
+          "id": "i3",
+          "name": "超級芋頭煉乳冰",
+          "price": 40,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i3.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
             {
-              "name": "硬花生",
+              "name": "愛玉凍",
               "price": 15
             },
             {
@@ -397214,10 +397241,133 @@
               "price": 15
             }
           ],
-          "quantity": 1,
-          "unitPrice": 145,
-          "totalPrice": 145,
-          "cartId": "1781054454598-7blm6"
+          "quantity": 3,
+          "unitPrice": 70,
+          "totalPrice": 210,
+          "cartId": "1781054984274-gx49o"
+        },
+        {
+          "id": "i4",
+          "name": "超級地瓜煉乳冰",
+          "price": 65,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "綠豆",
+              "price": 10
+            },
+            {
+              "name": "麵茶粉",
+              "price": 10
+            },
+            {
+              "name": "手工玫瑰凍",
+              "price": 20
+            },
+            {
+              "name": "愛玉凍",
+              "price": 15
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 120,
+          "totalPrice": 240,
+          "cartId": "1781054985390-izsfc"
+        }
+      ],
+      "total": 610,
+      "rawTotal": 610,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 0,
+      "change": 0,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      },
+      "member": {
+        "id": "MEM-1090",
+        "name": "張智瑩",
+        "phone": "0987069605"
+      },
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
+    },
+    {
+      "id": "PRE-1781055243747",
+      "timestamp": 1781055243747,
+      "items": [
+        {
+          "id": "c4",
+          "name": "重乳酪起司",
+          "price": 85,
+          "initialStock": 20,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c4.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 6,
+          "unitPrice": 85,
+          "totalPrice": 510,
+          "cartId": "1781055204827-0gyiu"
+        },
+        {
+          "id": "c7",
+          "name": "鮮奶油蛋糕",
+          "price": 65,
+          "initialStock": 20,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c7.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 6,
+          "unitPrice": 65,
+          "totalPrice": 390,
+          "cartId": "1781055205894-17jx5"
+        },
+        {
+          "id": "c5",
+          "name": "抹茶千層蛋糕",
+          "price": 120,
+          "initialStock": 20,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c5.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 6,
+          "unitPrice": 120,
+          "totalPrice": 720,
+          "cartId": "1781055208280-r2k05"
+        },
+        {
+          "id": "b4",
+          "name": "大甲芋頭鮮奶",
+          "price": 65,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b4.jpg",
+          "sugar": "少糖(8分)",
+          "base": "正常冰",
+          "toppings": [
+            {
+              "name": "香草冰淇淋",
+              "price": 20
+            },
+            {
+              "name": "波霸珍珠",
+              "price": 10
+            }
+          ],
+          "quantity": 6,
+          "unitPrice": 95,
+          "totalPrice": 570,
+          "cartId": "1781055221221-87lmv"
         },
         {
           "id": "b3",
@@ -397228,176 +397378,22 @@
           "base": "少冰",
           "toppings": [
             {
-              "name": "波霸珍珠",
-              "price": 10
-            },
-            {
               "name": "小珍珠",
               "price": 10
+            },
+            {
+              "name": "波霸珍珠",
+              "price": 10
             }
           ],
-          "quantity": 2,
+          "quantity": 6,
           "unitPrice": 70,
-          "totalPrice": 140,
-          "cartId": "1781054483868-grkmi"
-        },
-        {
-          "id": "b9",
-          "name": "可可牛奶",
-          "price": 55,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b9.jpg",
-          "sugar": "半糖(5分)",
-          "base": "熱",
-          "toppings": [],
-          "quantity": 1,
-          "unitPrice": 55,
-          "totalPrice": 55,
-          "cartId": "1781054492121-8pb70"
+          "totalPrice": 420,
+          "cartId": "1781055226804-x3kbj"
         }
       ],
-      "total": 306,
-      "rawTotal": 340,
-      "discounts": [
-        {
-          "id": "birthday",
-          "name": "壽星優惠 (9折)",
-          "amount": 34
-        }
-      ],
-      "voucherUsed": null,
-      "monthlyPerkUsed": false,
-      "method": "ec_extern",
-      "cashReceived": 0,
-      "change": 0,
-      "dineMode": "dine-in",
-      "tableNo": 5,
-      "invoice": {
-        "type": "taxid",
-        "taxId": "12345678",
-        "label": "統編 12345678"
-      },
-      "member": null,
-      "cashier": "E001",
-      "source": "pos",
-      "status": "served",
-      "paid": true
-    },
-    {
-      "id": "ORD-20260610-10095",
-      "timestamp": 1781054565961,
-      "items": [
-        {
-          "id": "i4",
-          "name": "超級地瓜煉乳冰",
-          "price": 65,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
-          "quantity": 1,
-          "unitPrice": 65,
-          "totalPrice": 65,
-          "cartId": "1781054519256-l6084"
-        },
-        {
-          "id": "i7",
-          "name": "超級紅豆煉乳冰",
-          "price": 60,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i7.jpg",
-          "sugar": "正常糖",
-          "base": "少冰",
-          "toppings": [
-            {
-              "name": "紅豆",
-              "price": 10
-            },
-            {
-              "name": "湯圓",
-              "price": 15
-            },
-            {
-              "name": "綠豆",
-              "price": 10
-            },
-            {
-              "name": "煉乳",
-              "price": 10
-            },
-            {
-              "name": "手工芋圓",
-              "price": 15
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 120,
-          "totalPrice": 120,
-          "cartId": "1781054526492-nh9at"
-        }
-      ],
-      "total": 148,
-      "rawTotal": 185,
-      "discounts": [
-        {
-          "id": "staff",
-          "name": "員工福利折扣 (8折)",
-          "amount": 37
-        }
-      ],
-      "voucherUsed": null,
-      "monthlyPerkUsed": false,
-      "method": "linepay",
-      "cashReceived": 0,
-      "change": 0,
-      "dineMode": "dine-in",
-      "tableNo": 10,
-      "invoice": {
-        "type": "carrier",
-        "carrier": "/ABC1234",
-        "label": "雲端載具 /ABC1234"
-      },
-      "member": {
-        "id": "MEM-1057",
-        "name": "黃玲",
-        "phone": "0978792910"
-      },
-      "cashier": "E001",
-      "source": "pos",
-      "status": "served",
-      "paid": true
-    },
-    {
-      "id": "PRE-1781055394795",
-      "timestamp": 1781055394795,
-      "items": [
-        {
-          "id": "i5",
-          "name": "凍凍檸檬黑糖清冰",
-          "price": 70,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "手工桂花凍",
-              "price": 20
-            },
-            {
-              "name": "愛玉凍",
-              "price": 15
-            },
-            {
-              "name": "手工玫瑰凍",
-              "price": 20
-            }
-          ],
-          "quantity": 2,
-          "unitPrice": 125,
-          "totalPrice": 250,
-          "cartId": "1781055326084-1qq16"
-        }
-      ],
-      "total": 250,
-      "rawTotal": 250,
+      "total": 2610,
+      "rawTotal": 2610,
       "discounts": [],
       "voucherUsed": null,
       "monthlyPerkUsed": false,
@@ -397418,149 +397414,31 @@
       "preOrder": {
         "kind": "preorder",
         "customer": {
-          "name": "賴小琳",
-          "phone": "0915271618"
+          "name": "林伶",
+          "phone": "0987654321"
         },
         "address": "",
-        "pickupTime": "09:50",
+        "pickupTime": "11:34",
         "notes": ""
       },
-      "paidAt": 1781055401413
+      "paidAt": 1781055247167
     },
     {
-      "id": "ORD-20260610-10097",
-      "timestamp": 1781055470911,
+      "id": "ORD-20260610-10096",
+      "timestamp": 1781055330615,
       "items": [
         {
-          "id": "c4",
-          "name": "重乳酪起司",
-          "price": 85,
-          "initialStock": 20,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c4.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
-          "quantity": 3,
-          "unitPrice": 85,
-          "totalPrice": 255,
-          "cartId": "1781055420768-vtset"
-        },
-        {
-          "id": "b3",
-          "name": "黑糖珍珠奶茶",
-          "price": 50,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b3.jpg",
-          "sugar": "正常糖",
-          "base": "正常冰",
-          "toppings": [
-            {
-              "name": "白玉珍珠",
-              "price": 10
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 60,
-          "totalPrice": 60,
-          "cartId": "1781055428174-n0aiv"
-        },
-        {
-          "id": "c5",
-          "name": "抹茶千層蛋糕",
-          "price": 120,
-          "initialStock": 20,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c5.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
-          "quantity": 1,
-          "unitPrice": 120,
-          "totalPrice": 120,
-          "cartId": "1781055431027-fuhsz"
-        },
-        {
-          "id": "c7",
-          "name": "鮮奶油蛋糕",
-          "price": 65,
-          "initialStock": 20,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c7.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
-          "quantity": 1,
-          "unitPrice": 65,
-          "totalPrice": 65,
-          "cartId": "1781055432556-0edz4"
-        }
-      ],
-      "total": 450,
-      "rawTotal": 500,
-      "discounts": [
-        {
-          "id": "birthday",
-          "name": "壽星優惠 (9折)",
-          "amount": 50
-        }
-      ],
-      "voucherUsed": null,
-      "monthlyPerkUsed": false,
-      "method": "linepay",
-      "cashReceived": 0,
-      "change": 0,
-      "dineMode": "dine-in",
-      "tableNo": 4,
-      "invoice": {
-        "type": "carrier",
-        "carrier": "/ABC1234",
-        "label": "雲端載具 /ABC1234"
-      },
-      "member": null,
-      "cashier": "E001",
-      "source": "pos",
-      "status": "served",
-      "paid": true
-    },
-    {
-      "id": "ORD-20260610-10098",
-      "timestamp": 1781055525634,
-      "items": [
-        {
-          "id": "i3",
-          "name": "超級芋頭煉乳冰",
-          "price": 40,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i3.jpg",
+          "id": "s1",
+          "name": "鮮芒果雪花冰",
+          "price": 150,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s1.jpg",
           "sugar": "正常糖",
           "base": "正常",
           "toppings": [
             {
-              "name": "硬花生",
+              "name": "仙草凍",
               "price": 15
             },
-            {
-              "name": "麵茶粉",
-              "price": 10
-            },
-            {
-              "name": "手工玫瑰凍",
-              "price": 20
-            },
-            {
-              "name": "珍珠",
-              "price": 10
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 95,
-          "totalPrice": 95,
-          "cartId": "1781055484412-5jfyc"
-        },
-        {
-          "id": "s3",
-          "name": "極上抹茶雪花",
-          "price": 130,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s3.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
             {
               "name": "鬆花生",
               "price": 15
@@ -397570,7 +397448,179 @@
               "price": 20
             },
             {
+              "name": "愛玉凍",
+              "price": 15
+            },
+            {
+              "name": "手工桂花凍",
+              "price": 20
+            },
+            {
+              "name": "硬花生",
+              "price": 15
+            }
+          ],
+          "quantity": 5,
+          "unitPrice": 250,
+          "totalPrice": 1250,
+          "cartId": "1781055262528-rkk95"
+        },
+        {
+          "id": "s4",
+          "name": "巧克力OREO雪花",
+          "price": 120,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s4.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
               "name": "仙草凍",
+              "price": 15
+            },
+            {
+              "name": "鬆花生",
+              "price": 15
+            },
+            {
+              "name": "煉乳",
+              "price": 10
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 160,
+          "totalPrice": 160,
+          "cartId": "1781055267357-9pmr3"
+        }
+      ],
+      "total": 1410,
+      "rawTotal": 1410,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "cash",
+      "cashReceived": 1500,
+      "change": 90,
+      "dineMode": "dine-in",
+      "tableNo": 8,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      },
+      "member": null,
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
+    },
+    {
+      "id": "SIM-20260610-10097",
+      "timestamp": 1781055333699,
+      "items": [
+        {
+          "id": "s6",
+          "name": "草莓煉乳雪花",
+          "price": 140,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1781055333699-0"
+        },
+        {
+          "id": "d1",
+          "name": "傳統手工豆花",
+          "price": 45,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1781055333699-1"
+        }
+      ],
+      "total": 370,
+      "rawTotal": 370,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "cash",
+      "cashReceived": 0,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "phone",
+      "status": "served",
+      "paid": true,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      },
+      "paidAt": 1781055336755
+    },
+    {
+      "id": "SIM-20260610-10098",
+      "timestamp": 1781055333838,
+      "items": [
+        {
+          "id": "d4",
+          "name": "紅豆湯圓(熱)",
+          "price": 60,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055333838-0"
+        },
+        {
+          "id": "i1",
+          "name": "超級花生煉乳冰",
+          "price": 60,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055333838-1"
+        },
+        {
+          "id": "d4",
+          "name": "紅豆湯圓(熱)",
+          "price": 60,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1781055333838-2"
+        }
+      ],
+      "total": 240,
+      "rawTotal": 240,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 240,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "delivery_ubereats",
+      "status": "served",
+      "paid": true,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      }
+    },
+    {
+      "id": "ORD-20260610-10099",
+      "timestamp": 1781055814615,
+      "items": [
+        {
+          "id": "i5",
+          "name": "凍凍檸檬黑糖清冰",
+          "price": 70,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "煉乳",
+              "price": 10
+            },
+            {
+              "name": "鬆花生",
               "price": 15
             },
             {
@@ -397578,162 +397628,81 @@
               "price": 15
             },
             {
+              "name": "紅豆",
+              "price": 10
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 120,
+          "totalPrice": 240,
+          "cartId": "1781055772484-j3lzr"
+        },
+        {
+          "id": "i7",
+          "name": "超級紅豆煉乳冰",
+          "price": 60,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i7.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
               "name": "湯圓",
               "price": 15
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 210,
-          "totalPrice": 210,
-          "cartId": "1781055498800-kq52d"
-        },
-        {
-          "id": "d2",
-          "name": "三色布丁豆花",
-          "price": 55,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d2.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "手工桂花凍",
-              "price": 20
             },
             {
-              "name": "愛玉凍",
-              "price": 15
-            },
-            {
-              "name": "仙草凍",
-              "price": 15
-            },
-            {
-              "name": "手工玫瑰凍",
-              "price": 20
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 125,
-          "totalPrice": 125,
-          "cartId": "1781055506839-h55ds"
-        }
-      ],
-      "total": 415,
-      "rawTotal": 430,
-      "discounts": [
-        {
-          "id": "monthlyPerk",
-          "name": "會員月度優惠",
-          "amount": 15
-        }
-      ],
-      "voucherUsed": null,
-      "monthlyPerkUsed": true,
-      "method": "jkos",
-      "cashReceived": 0,
-      "change": 0,
-      "dineMode": "takeout",
-      "tableNo": null,
-      "invoice": {
-        "type": "carrier",
-        "carrier": "/ABC1234",
-        "label": "雲端載具 /ABC1234"
-      },
-      "member": {
-        "id": "MEM-1094",
-        "name": "張涵睿",
-        "phone": "0936857746"
-      },
-      "cashier": "E001",
-      "source": "pos",
-      "status": "served",
-      "paid": true
-    },
-    {
-      "id": "ORD-20260610-10099",
-      "timestamp": 1781055568368,
-      "items": [
-        {
-          "id": "d7",
-          "name": "檸檬愛玉",
-          "price": 50,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d7.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "手工玫瑰凍",
-              "price": 20
-            },
-            {
-              "name": "手工桂花凍",
-              "price": 20
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 90,
-          "totalPrice": 90,
-          "cartId": "1781055540812-hya13"
-        },
-        {
-          "id": "b6",
-          "name": "冬瓜茶",
-          "price": 30,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b6.jpg",
-          "sugar": "半糖(5分)",
-          "base": "微冰",
-          "toppings": [
-            {
-              "name": "仙草凍",
+              "name": "綠豆",
               "price": 10
             },
             {
-              "name": "白玉珍珠",
-              "price": 10
-            },
-            {
-              "name": "愛玉",
-              "price": 10
-            },
-            {
-              "name": "椰果",
+              "name": "麵茶粉",
               "price": 10
             }
           ],
-          "quantity": 1,
-          "unitPrice": 70,
-          "totalPrice": 70,
-          "cartId": "1781055549937-nbpi3"
-        },
-        {
-          "id": "c2",
-          "name": "草莓波士頓派",
-          "price": 75,
-          "initialStock": 20,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c2.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
           "quantity": 2,
-          "unitPrice": 75,
-          "totalPrice": 150,
-          "cartId": "1781055556685-6tvyx"
+          "unitPrice": 95,
+          "totalPrice": 190,
+          "cartId": "1781055774636-a8yw3"
+        },
+        {
+          "id": "i4",
+          "name": "超級地瓜煉乳冰",
+          "price": 65,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "珍珠",
+              "price": 10
+            },
+            {
+              "name": "紅豆",
+              "price": 10
+            },
+            {
+              "name": "手工桂花凍",
+              "price": 20
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 105,
+          "totalPrice": 210,
+          "cartId": "1781055790722-yruas"
         }
       ],
-      "total": 310,
-      "rawTotal": 310,
+      "total": 640,
+      "rawTotal": 640,
       "discounts": [],
       "voucherUsed": null,
       "monthlyPerkUsed": false,
-      "method": "ec_extern",
-      "cashReceived": 0,
-      "change": 0,
+      "method": "cash",
+      "cashReceived": 1000,
+      "change": 360,
       "dineMode": "dine-in",
-      "tableNo": 9,
+      "tableNo": 7,
       "invoice": {
-        "type": "donate",
-        "code": "919",
-        "label": "捐贈 919"
+        "type": "paper",
+        "label": "紙本發票"
       },
       "member": null,
       "cashier": "E001",
@@ -397743,24 +397712,40 @@
     },
     {
       "id": "SIM-20260610-10100",
-      "timestamp": 1781055583478,
+      "timestamp": 1781055816922,
       "items": [
         {
           "id": "c7",
           "name": "鮮奶油蛋糕",
           "price": 65,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1781055816922-0"
+        },
+        {
+          "id": "s2",
+          "name": "珍珠奶茶雪花",
+          "price": 110,
           "quantity": 1,
           "toppings": [],
-          "cartId": "c1781055583478-0"
+          "cartId": "c1781055816922-1"
+        },
+        {
+          "id": "b3",
+          "name": "黑糖珍珠奶茶",
+          "price": 50,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055816922-2"
         }
       ],
-      "total": 65,
-      "rawTotal": 65,
+      "total": 290,
+      "rawTotal": 290,
       "discounts": [],
       "voucherUsed": null,
       "monthlyPerkUsed": false,
       "method": "linepay",
-      "cashReceived": 65,
+      "cashReceived": 290,
       "change": 0,
       "member": null,
       "cashier": "E001",
@@ -397776,24 +397761,81 @@
     },
     {
       "id": "SIM-20260610-10101",
-      "timestamp": 1781055583926,
+      "timestamp": 1781055817095,
       "items": [
         {
-          "id": "d3",
-          "name": "招牌燒仙草(冬)",
-          "price": 50,
-          "quantity": 2,
+          "id": "b5",
+          "name": "冬瓜檸檬飲",
+          "price": 45,
+          "quantity": 1,
           "toppings": [],
-          "cartId": "c1781055583925-0"
+          "cartId": "c1781055817094-0"
+        },
+        {
+          "id": "s2",
+          "name": "珍珠奶茶雪花",
+          "price": 110,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055817094-1"
         }
       ],
-      "total": 100,
-      "rawTotal": 100,
+      "total": 155,
+      "rawTotal": 155,
       "discounts": [],
       "voucherUsed": null,
       "monthlyPerkUsed": false,
       "method": "linepay",
-      "cashReceived": 100,
+      "cashReceived": 155,
+      "change": 0,
+      "member": null,
+      "cashier": "E001",
+      "source": "delivery_ubereats",
+      "status": "served",
+      "paid": true,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      }
+    },
+    {
+      "id": "SIM-20260610-10102",
+      "timestamp": 1781055819533,
+      "items": [
+        {
+          "id": "b6",
+          "name": "冬瓜茶",
+          "price": 30,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1781055819533-0"
+        },
+        {
+          "id": "c7",
+          "name": "鮮奶油蛋糕",
+          "price": 65,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055819533-1"
+        },
+        {
+          "id": "c1",
+          "name": "經典黑森林",
+          "price": 80,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055819533-2"
+        }
+      ],
+      "total": 205,
+      "rawTotal": 205,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 205,
       "change": 0,
       "member": null,
       "cashier": "E001",
@@ -397808,28 +397850,156 @@
       }
     },
     {
-      "id": "SIM-20260610-10102",
-      "timestamp": 1781055584360,
+      "id": "ORD-20260610-10103",
+      "timestamp": 1781055862149,
       "items": [
         {
-          "id": "c4",
-          "name": "重乳酪起司",
-          "price": 85,
-          "quantity": 2,
-          "toppings": [],
-          "cartId": "c1781055584360-0"
+          "id": "i1",
+          "name": "超級花生煉乳冰",
+          "price": 60,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i1.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "仙草凍",
+              "price": 15
+            },
+            {
+              "name": "鬆花生",
+              "price": 15
+            },
+            {
+              "name": "煉乳",
+              "price": 10
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 100,
+          "totalPrice": 100,
+          "cartId": "1781055830229-hjl2i"
         },
         {
-          "id": "s6",
-          "name": "草莓煉乳雪花",
-          "price": 140,
-          "quantity": 1,
+          "id": "i5",
+          "name": "凍凍檸檬黑糖清冰",
+          "price": 70,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
           "toppings": [],
-          "cartId": "c1781055584360-1"
+          "quantity": 2,
+          "unitPrice": 70,
+          "totalPrice": 140,
+          "cartId": "1781055831471-3eywf"
+        },
+        {
+          "id": "s2",
+          "name": "珍珠奶茶雪花",
+          "price": 110,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s2.jpg",
+          "sugar": "半糖",
+          "base": "小碎冰",
+          "toppings": [
+            {
+              "name": "愛玉凍",
+              "price": 15
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 125,
+          "totalPrice": 250,
+          "cartId": "1781055833082-kspbx"
+        },
+        {
+          "id": "d3",
+          "name": "招牌燒仙草(冬)",
+          "price": 50,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d3.jpg",
+          "hotOnly": true,
+          "sugar": "正常糖",
+          "base": "熱",
+          "toppings": [
+            {
+              "name": "煉乳",
+              "price": 10
+            },
+            {
+              "name": "紅豆",
+              "price": 10
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 70,
+          "totalPrice": 140,
+          "cartId": "1781055834681-vjj2e"
+        },
+        {
+          "id": "c3",
+          "name": "義式提拉米蘇",
+          "price": 90,
+          "initialStock": 20,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c3.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 2,
+          "unitPrice": 90,
+          "totalPrice": 180,
+          "cartId": "1781055836690-dfyu3"
         }
       ],
-      "total": 310,
-      "rawTotal": 310,
+      "total": 810,
+      "rawTotal": 810,
+      "discounts": [],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "ec_extern",
+      "cashReceived": 0,
+      "change": 0,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "taxid",
+        "taxId": "10293847",
+        "label": "統編 10293847"
+      },
+      "member": null,
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
+    },
+    {
+      "id": "SIM-20260610-10104",
+      "timestamp": 1781055866013,
+      "items": [
+        {
+          "id": "s5",
+          "name": "花生芝麻雙享",
+          "price": 100,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055866013-0"
+        },
+        {
+          "id": "c1",
+          "name": "經典黑森林",
+          "price": 80,
+          "quantity": 2,
+          "toppings": [],
+          "cartId": "c1781055866013-1"
+        },
+        {
+          "id": "i1",
+          "name": "超級花生煉乳冰",
+          "price": 60,
+          "quantity": 1,
+          "toppings": [],
+          "cartId": "c1781055866013-2"
+        }
+      ],
+      "total": 320,
+      "rawTotal": 320,
       "discounts": [],
       "voucherUsed": null,
       "monthlyPerkUsed": false,
@@ -397847,243 +398017,9 @@
         "type": "paper",
         "label": "紙本發票"
       },
-      "paidAt": 1781055589225
-    },
-    {
-      "id": "ORD-20260610-10103",
-      "timestamp": 1781055828369,
-      "items": [
-        {
-          "id": "i4",
-          "name": "超級地瓜煉乳冰",
-          "price": 65,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "手工玫瑰凍",
-              "price": 20
-            },
-            {
-              "name": "鬆花生",
-              "price": 15
-            },
-            {
-              "name": "煉乳",
-              "price": 10
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 110,
-          "totalPrice": 110,
-          "cartId": "1781055794857-ym3df"
-        },
-        {
-          "id": "i5",
-          "name": "凍凍檸檬黑糖清冰",
-          "price": 70,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "手工桂花凍",
-              "price": 20
-            },
-            {
-              "name": "仙草凍",
-              "price": 15
-            },
-            {
-              "name": "硬花生",
-              "price": 15
-            },
-            {
-              "name": "煉乳",
-              "price": 10
-            },
-            {
-              "name": "鬆花生",
-              "price": 15
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 145,
-          "totalPrice": 145,
-          "cartId": "1781055801310-ncujd"
-        },
-        {
-          "id": "d5",
-          "name": "綠豆薏仁湯",
-          "price": 40,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d5.jpg",
-          "supportHot": true,
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "硬花生",
-              "price": 15
-            },
-            {
-              "name": "鬆花生",
-              "price": 15
-            },
-            {
-              "name": "煉乳",
-              "price": 10
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 80,
-          "totalPrice": 80,
-          "cartId": "1781055809326-x70yr"
-        }
-      ],
-      "total": 320,
-      "rawTotal": 335,
-      "discounts": [
-        {
-          "id": "monthlyPerk",
-          "name": "會員月度優惠",
-          "amount": 15
-        }
-      ],
-      "voucherUsed": null,
-      "monthlyPerkUsed": true,
-      "method": "jkos",
-      "cashReceived": 0,
-      "change": 0,
-      "dineMode": "takeout",
-      "tableNo": null,
-      "invoice": {
-        "type": "taxid",
-        "taxId": "24846195",
-        "label": "統編 24846195"
-      },
-      "member": {
-        "id": "MEM-1781054621127",
-        "name": "賴小慧",
-        "phone": "0945813731"
-      },
-      "cashier": "E001",
-      "source": "pos",
-      "status": "served",
-      "paid": true
-    },
-    {
-      "id": "ORD-20260610-10104",
-      "timestamp": 1781055862801,
-      "items": [
-        {
-          "id": "i1",
-          "name": "超級花生煉乳冰",
-          "price": 60,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i1.jpg",
-          "sugar": "無糖/代糖",
-          "base": "正常",
-          "toppings": [
-            {
-              "name": "愛玉凍",
-              "price": 15
-            },
-            {
-              "name": "仙草凍",
-              "price": 15
-            },
-            {
-              "name": "鬆花生",
-              "price": 15
-            },
-            {
-              "name": "蜜芋頭",
-              "price": 20
-            }
-          ],
-          "quantity": 1,
-          "unitPrice": 125,
-          "totalPrice": 125,
-          "cartId": "1781055838728-hupg0"
-        },
-        {
-          "id": "b4",
-          "name": "大甲芋頭鮮奶",
-          "price": 65,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b4.jpg",
-          "sugar": "半糖(5分)",
-          "base": "正常冰",
-          "toppings": [
-            {
-              "name": "仙草凍",
-              "price": 10
-            },
-            {
-              "name": "愛玉",
-              "price": 10
-            }
-          ],
-          "quantity": 2,
-          "unitPrice": 85,
-          "totalPrice": 170,
-          "cartId": "1781055846652-uxfqb"
-        },
-        {
-          "id": "c3",
-          "name": "義式提拉米蘇",
-          "price": 90,
-          "initialStock": 20,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c3.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
-          "quantity": 1,
-          "unitPrice": 90,
-          "totalPrice": 90,
-          "cartId": "1781055849151-lq99j"
-        },
-        {
-          "id": "c7",
-          "name": "鮮奶油蛋糕",
-          "price": 65,
-          "initialStock": 20,
-          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c7.jpg",
-          "sugar": "正常糖",
-          "base": "正常",
-          "toppings": [],
-          "quantity": 1,
-          "unitPrice": 65,
-          "totalPrice": 65,
-          "cartId": "1781055850034-mi0gm"
-        }
-      ],
-      "total": 435,
-      "rawTotal": 450,
-      "discounts": [
-        {
-          "id": "checkin",
-          "name": "社群打卡優惠",
-          "amount": 15
-        }
-      ],
-      "voucherUsed": null,
-      "monthlyPerkUsed": false,
-      "method": "ec_extern",
-      "cashReceived": 0,
-      "change": 0,
-      "dineMode": "dine-in",
-      "tableNo": 5,
-      "invoice": {
-        "type": "paper",
-        "label": "紙本發票"
-      },
-      "member": null,
-      "cashier": "E001",
-      "source": "pos",
-      "status": "served",
-      "paid": true
+      "paidAt": 1781055867963
     }
   ],
-  "exportedAt": 1781055876901,
+  "exportedAt": 1781055914877,
   "count": 10104
 }
