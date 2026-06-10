@@ -397848,8 +397848,242 @@
         "label": "紙本發票"
       },
       "paidAt": 1781055589225
+    },
+    {
+      "id": "ORD-20260610-10103",
+      "timestamp": 1781055828369,
+      "items": [
+        {
+          "id": "i4",
+          "name": "超級地瓜煉乳冰",
+          "price": 65,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "手工玫瑰凍",
+              "price": 20
+            },
+            {
+              "name": "鬆花生",
+              "price": 15
+            },
+            {
+              "name": "煉乳",
+              "price": 10
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 110,
+          "totalPrice": 110,
+          "cartId": "1781055794857-ym3df"
+        },
+        {
+          "id": "i5",
+          "name": "凍凍檸檬黑糖清冰",
+          "price": 70,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "手工桂花凍",
+              "price": 20
+            },
+            {
+              "name": "仙草凍",
+              "price": 15
+            },
+            {
+              "name": "硬花生",
+              "price": 15
+            },
+            {
+              "name": "煉乳",
+              "price": 10
+            },
+            {
+              "name": "鬆花生",
+              "price": 15
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 145,
+          "totalPrice": 145,
+          "cartId": "1781055801310-ncujd"
+        },
+        {
+          "id": "d5",
+          "name": "綠豆薏仁湯",
+          "price": 40,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d5.jpg",
+          "supportHot": true,
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "硬花生",
+              "price": 15
+            },
+            {
+              "name": "鬆花生",
+              "price": 15
+            },
+            {
+              "name": "煉乳",
+              "price": 10
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 80,
+          "totalPrice": 80,
+          "cartId": "1781055809326-x70yr"
+        }
+      ],
+      "total": 320,
+      "rawTotal": 335,
+      "discounts": [
+        {
+          "id": "monthlyPerk",
+          "name": "會員月度優惠",
+          "amount": 15
+        }
+      ],
+      "voucherUsed": null,
+      "monthlyPerkUsed": true,
+      "method": "jkos",
+      "cashReceived": 0,
+      "change": 0,
+      "dineMode": "takeout",
+      "tableNo": null,
+      "invoice": {
+        "type": "taxid",
+        "taxId": "24846195",
+        "label": "統編 24846195"
+      },
+      "member": {
+        "id": "MEM-1781054621127",
+        "name": "賴小慧",
+        "phone": "0945813731"
+      },
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
+    },
+    {
+      "id": "ORD-20260610-10104",
+      "timestamp": 1781055862801,
+      "items": [
+        {
+          "id": "i1",
+          "name": "超級花生煉乳冰",
+          "price": 60,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i1.jpg",
+          "sugar": "無糖/代糖",
+          "base": "正常",
+          "toppings": [
+            {
+              "name": "愛玉凍",
+              "price": 15
+            },
+            {
+              "name": "仙草凍",
+              "price": 15
+            },
+            {
+              "name": "鬆花生",
+              "price": 15
+            },
+            {
+              "name": "蜜芋頭",
+              "price": 20
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 125,
+          "totalPrice": 125,
+          "cartId": "1781055838728-hupg0"
+        },
+        {
+          "id": "b4",
+          "name": "大甲芋頭鮮奶",
+          "price": 65,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b4.jpg",
+          "sugar": "半糖(5分)",
+          "base": "正常冰",
+          "toppings": [
+            {
+              "name": "仙草凍",
+              "price": 10
+            },
+            {
+              "name": "愛玉",
+              "price": 10
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 85,
+          "totalPrice": 170,
+          "cartId": "1781055846652-uxfqb"
+        },
+        {
+          "id": "c3",
+          "name": "義式提拉米蘇",
+          "price": 90,
+          "initialStock": 20,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c3.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 1,
+          "unitPrice": 90,
+          "totalPrice": 90,
+          "cartId": "1781055849151-lq99j"
+        },
+        {
+          "id": "c7",
+          "name": "鮮奶油蛋糕",
+          "price": 65,
+          "initialStock": 20,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c7.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 1,
+          "unitPrice": 65,
+          "totalPrice": 65,
+          "cartId": "1781055850034-mi0gm"
+        }
+      ],
+      "total": 435,
+      "rawTotal": 450,
+      "discounts": [
+        {
+          "id": "checkin",
+          "name": "社群打卡優惠",
+          "amount": 15
+        }
+      ],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "ec_extern",
+      "cashReceived": 0,
+      "change": 0,
+      "dineMode": "dine-in",
+      "tableNo": 5,
+      "invoice": {
+        "type": "paper",
+        "label": "紙本發票"
+      },
+      "member": null,
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
     }
   ],
-  "exportedAt": 1781055773889,
-  "count": 10102
+  "exportedAt": 1781055876901,
+  "count": 10104
 }
