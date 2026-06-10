@@ -397188,8 +397188,184 @@
       "source": "pos",
       "status": "served",
       "paid": true
+    },
+    {
+      "id": "ORD-20260610-10094",
+      "timestamp": 1781054513027,
+      "items": [
+        {
+          "id": "s5",
+          "name": "花生芝麻雙享",
+          "price": 100,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s5.jpg",
+          "sugar": "半糖",
+          "base": "少冰",
+          "toppings": [
+            {
+              "name": "鬆花生",
+              "price": 15
+            },
+            {
+              "name": "硬花生",
+              "price": 15
+            },
+            {
+              "name": "仙草凍",
+              "price": 15
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 145,
+          "totalPrice": 145,
+          "cartId": "1781054454598-7blm6"
+        },
+        {
+          "id": "b3",
+          "name": "黑糖珍珠奶茶",
+          "price": 50,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b3.jpg",
+          "sugar": "少糖(8分)",
+          "base": "少冰",
+          "toppings": [
+            {
+              "name": "波霸珍珠",
+              "price": 10
+            },
+            {
+              "name": "小珍珠",
+              "price": 10
+            }
+          ],
+          "quantity": 2,
+          "unitPrice": 70,
+          "totalPrice": 140,
+          "cartId": "1781054483868-grkmi"
+        },
+        {
+          "id": "b9",
+          "name": "可可牛奶",
+          "price": 55,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b9.jpg",
+          "sugar": "半糖(5分)",
+          "base": "熱",
+          "toppings": [],
+          "quantity": 1,
+          "unitPrice": 55,
+          "totalPrice": 55,
+          "cartId": "1781054492121-8pb70"
+        }
+      ],
+      "total": 306,
+      "rawTotal": 340,
+      "discounts": [
+        {
+          "id": "birthday",
+          "name": "壽星優惠 (9折)",
+          "amount": 34
+        }
+      ],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "ec_extern",
+      "cashReceived": 0,
+      "change": 0,
+      "dineMode": "dine-in",
+      "tableNo": 5,
+      "invoice": {
+        "type": "taxid",
+        "taxId": "12345678",
+        "label": "統編 12345678"
+      },
+      "member": null,
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
+    },
+    {
+      "id": "ORD-20260610-10095",
+      "timestamp": 1781054565961,
+      "items": [
+        {
+          "id": "i4",
+          "name": "超級地瓜煉乳冰",
+          "price": 65,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg",
+          "sugar": "正常糖",
+          "base": "正常",
+          "toppings": [],
+          "quantity": 1,
+          "unitPrice": 65,
+          "totalPrice": 65,
+          "cartId": "1781054519256-l6084"
+        },
+        {
+          "id": "i7",
+          "name": "超級紅豆煉乳冰",
+          "price": 60,
+          "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i7.jpg",
+          "sugar": "正常糖",
+          "base": "少冰",
+          "toppings": [
+            {
+              "name": "紅豆",
+              "price": 10
+            },
+            {
+              "name": "湯圓",
+              "price": 15
+            },
+            {
+              "name": "綠豆",
+              "price": 10
+            },
+            {
+              "name": "煉乳",
+              "price": 10
+            },
+            {
+              "name": "手工芋圓",
+              "price": 15
+            }
+          ],
+          "quantity": 1,
+          "unitPrice": 120,
+          "totalPrice": 120,
+          "cartId": "1781054526492-nh9at"
+        }
+      ],
+      "total": 148,
+      "rawTotal": 185,
+      "discounts": [
+        {
+          "id": "staff",
+          "name": "員工福利折扣 (8折)",
+          "amount": 37
+        }
+      ],
+      "voucherUsed": null,
+      "monthlyPerkUsed": false,
+      "method": "linepay",
+      "cashReceived": 0,
+      "change": 0,
+      "dineMode": "dine-in",
+      "tableNo": 10,
+      "invoice": {
+        "type": "carrier",
+        "carrier": "/ABC1234",
+        "label": "雲端載具 /ABC1234"
+      },
+      "member": {
+        "id": "MEM-1057",
+        "name": "黃玲",
+        "phone": "0978792910"
+      },
+      "cashier": "E001",
+      "source": "pos",
+      "status": "served",
+      "paid": true
     }
   ],
-  "exportedAt": 1781054421477,
-  "count": 10093
+  "exportedAt": 1781054575015,
+  "count": 10095
 }
