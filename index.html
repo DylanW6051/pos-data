@@ -897,6 +897,16 @@
       background-color: #ef4444
     }
 
+    .bg-red-50 { background-color: #fef2f2 }
+    .bg-red-100 { background-color: #fee2e2 }
+    .bg-red-200 { background-color: #fecaca }
+    .border-red-200 { border-color: #fecaca }
+    .border-red-300 { border-color: #fca5a5 }
+    .border-red-400 { border-color: #f87171 }
+    .border-red-500 { border-color: #ef4444 }
+    .text-red-600 { color: #dc2626 }
+    .text-red-700 { color: #b91c1c }
+
     .bg-blue-500 {
       background-color: #3b82f6
     }
@@ -931,6 +941,10 @@
 
     .bg-warm-100 {
       background-color: var(--warm-100)
+    }
+
+    .bg-warm-700 {
+      background-color: var(--warm-700)
     }
 
     .bg-warm-900 {
@@ -1370,7 +1384,7 @@
 
 <body>
   <div id="root"></div>
-  <script>window.__POS_DATA = { "data/employees.json": { "roles": { "MANAGER": { "id": "manager", "name": "店長", "access": ["order", "kds", "preorder", "history", "members", "drawer", "attendance", "stats", "loss"] }, "FULL_TIME": { "id": "full-time", "name": "正職人員", "access": ["order", "kds", "preorder", "history", "members"] }, "PART_TIME": { "id": "part-time", "name": "工讀生", "access": ["order", "kds", "preorder", "members"] } }, "employees": [{ "id": "E001", "name": "店長 - 阿嬤", "roleKey": "MANAGER", "pin": "0000" }, { "id": "E002", "name": "正職 - 小張", "roleKey": "FULL_TIME", "pin": "0000" }, { "id": "E003", "name": "正職 - 小陳", "roleKey": "FULL_TIME", "pin": "0000" }, { "id": "E004", "name": "工讀 - 阿傑", "roleKey": "PART_TIME", "pin": "0000" }, { "id": "E005", "name": "工讀 - 小美", "roleKey": "PART_TIME", "pin": "0000" }] }, "data/menu.json": { "categories": [{ "id": "shaved-ice", "name": "傳統剉冰", "items": [{ "id": "i1", "name": "超級花生煉乳冰", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i1.jpg" }, { "id": "i2", "name": "雙色醬煉乳冰", "price": 85, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i2.jpg" }, { "id": "i3", "name": "超級芋頭煉乳冰", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i3.jpg" }, { "id": "i4", "name": "超級地瓜煉乳冰", "price": 65, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg" }, { "id": "i5", "name": "凍凍檸檬黑糖清冰", "price": 70, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg" }, { "id": "i6", "name": "招牌黑糖清冰", "price": 75, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i6.jpg", "description": "任選五種配料免費，超過第五種才計價" }, { "id": "i7", "name": "超級紅豆煉乳冰", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i7.jpg" }] }, { "id": "snow-ice", "name": "雪花冰系列", "items": [{ "id": "s1", "name": "鮮芒果雪花冰", "price": 150, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s1.jpg" }, { "id": "s2", "name": "珍珠奶茶雪花", "price": 110, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s2.jpg" }, { "id": "s3", "name": "極上抹茶雪花", "price": 130, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s3.jpg" }, { "id": "s4", "name": "巧克力OREO雪花", "price": 120, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s4.jpg" }, { "id": "s5", "name": "花生芝麻雙享", "price": 100, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s5.jpg" }, { "id": "s6", "name": "草莓煉乳雪花", "price": 140, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s6.jpg" }] }, { "id": "dessert-soup", "name": "手作豆花/甜湯", "items": [{ "id": "d1", "name": "傳統手工豆花", "price": 45, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d1.jpg" }, { "id": "d2", "name": "三色布丁豆花", "price": 55, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d2.jpg" }, { "id": "d3", "name": "招牌燒仙草(冬)", "price": 50, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d3.jpg", "hotOnly": true }, { "id": "d4", "name": "紅豆湯圓(熱)", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d4.jpg", "hotOnly": true }, { "id": "d5", "name": "綠豆薏仁湯", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d5.jpg", "supportHot": true }, { "id": "d6", "name": "銀耳蓮子湯", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d6.jpg", "supportHot": true }, { "id": "d7", "name": "檸檬愛玉", "price": 50, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d7.jpg" }] }, { "id": "drinks", "name": "特調飲品", "items": [{ "id": "b1", "name": "古早味紅茶", "price": 30, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b1.jpg" }, { "id": "b2", "name": "茉香翠綠茶", "price": 30, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b2.jpg" }, { "id": "b3", "name": "黑糖珍珠奶茶", "price": 50, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b3.jpg" }, { "id": "b4", "name": "大甲芋頭鮮奶", "price": 65, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b4.jpg" }, { "id": "b5", "name": "冬瓜檸檬飲", "price": 45, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b5.jpg" }, { "id": "b6", "name": "冬瓜茶", "price": 30, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b6.jpg" }, { "id": "b7", "name": "奶茶", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b7.jpg" }, { "id": "b8", "name": "檸檬紅茶", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b8.jpg" }, { "id": "b9", "name": "可可牛奶", "price": 55, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b9.jpg" }] }, { "id": "cakes", "name": "手作蛋糕", "items": [{ "id": "c1", "name": "經典黑森林", "price": 80, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c1.jpg" }, { "id": "c2", "name": "草莓波士頓派", "price": 75, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c2.jpg" }, { "id": "c3", "name": "義式提拉米蘇", "price": 90, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c3.jpg" }, { "id": "c4", "name": "重乳酪起司", "price": 85, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c4.jpg" }, { "id": "c5", "name": "抹茶千層蛋糕", "price": 120, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c5.jpg" }, { "id": "c6", "name": "海綿蛋糕", "price": 50, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c6.jpg" }, { "id": "c7", "name": "鮮奶油蛋糕", "price": 65, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c7.jpg" }] }], "sugarLevels": ["正常糖", "半糖", "微糖", "無糖/代糖"], "baseLevels": ["正常", "少冰", "小碎冰"], "drinkSugarLevels": ["正常糖", "少糖(8分)", "半糖(5分)", "微糖(3分)", "一分糖", "無糖"], "drinkIceLevels": ["正常冰", "少冰", "微冰", "去冰", "完全去冰", "常溫", "熱"], "toppings": [{ "name": "愛玉凍", "price": 15 }, { "name": "仙草凍", "price": 15 }, { "name": "手工桂花凍", "price": 20 }, { "name": "手工玫瑰凍", "price": 20 }, { "name": "鬆花生", "price": 15 }, { "name": "硬花生", "price": 15 }, { "name": "麵茶粉", "price": 10 }, { "name": "煉乳", "price": 10 }, { "name": "紅豆", "price": 10 }, { "name": "綠豆", "price": 10 }, { "name": "湯圓", "price": 15 }, { "name": "珍珠", "price": 10 }, { "name": "手工芋圓", "price": 15 }, { "name": "手工地瓜圓", "price": 15 }, { "name": "蜜鳳梨", "price": 20 }, { "name": "蜜芋頭", "price": 20 }, { "name": "蜜地瓜", "price": 15 }, { "name": "大紅豆", "price": 10 }], "drinkToppings": [{ "name": "波霸珍珠", "price": 10 }, { "name": "白玉珍珠", "price": 10 }, { "name": "小珍珠", "price": 10 }, { "name": "椰果", "price": 10 }, { "name": "仙草凍", "price": 10 }, { "name": "愛玉", "price": 10 }, { "name": "蒟蒻", "price": 15 }, { "name": "寒天QQ", "price": 15 }, { "name": "統一布丁", "price": 15 }, { "name": "香草冰淇淋", "price": 20 }], "tables": ["T1", "T2", "T3", "T5", "T6", "T7", "T8", "T9", "T10"] }, "data/members.json": { "members": [{ "id": "MEM-DEMO-1", "phone": "0912345678", "name": "陳家豪", "points": 35, "perks": { "month": "1970-01", "used": 0 }, "vouchers": [], "timestamp": 1735660800000 }, { "id": "MEM-DEMO-2", "phone": "0922333444", "name": "林雅婷", "points": 120, "perks": { "month": "1970-01", "used": 0 }, "vouchers": [{ "id": "VCH-DEMO-1", "text": "全單結帳現折 10 元", "type": "fixed", "value": 10, "used": false, "timestamp": 1735660800000 }], "timestamp": 1735660800000 }, { "id": "MEM-DEMO-3", "phone": "0933555666", "name": "黃冠宇", "points": 58, "perks": { "month": "1970-01", "used": 0 }, "vouchers": [], "timestamp": 1735660800000 }] }, "data/orders.json": { "orders": [] }, "data/preOrders.json": {"preOrders":[{"id":"PRE-20260508-001","source":"phone","items":[{"id":"i6","name":"招牌黑糖清冰","price":75,"sugar":"正常糖","base":"正常","toppings":[{"name":"紅豆","price":10},{"name":"珍珠","price":10}],"quantity":2,"unitPrice":95,"totalPrice":190,"cartId":"pre1-0"},{"id":"b1","name":"古早味紅茶","price":30,"sugar":"半糖(5分)","base":"少冰","toppings":[],"quantity":1,"unitPrice":30,"totalPrice":30,"cartId":"pre1-1"}],"total":220,"rawTotal":220,"discounts":[],"customer":{"name":"王小明","phone":"0938123456"},"address":"","pickupTime":"11:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778202900000,"notes":"麻煩幫忙打包，要外帶袋"},{"id":"PRE-20260508-002","source":"phone","items":[{"id":"s1","name":"鮮芒果雪花冰","price":150,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":150,"totalPrice":150,"cartId":"pre2-0"},{"id":"c3","name":"義式提拉米蘇","price":90,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":90,"totalPrice":90,"cartId":"pre2-1"}],"total":240,"rawTotal":240,"discounts":[],"customer":{"name":"陳家豪","phone":"0912345678"},"address":"","pickupTime":"13:00","member":{"id":"MEM-DEMO-1","name":"陳家豪","phone":"0912345678"},"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778205900000,"notes":"會員自取"},{"id":"PRE-20260508-003","source":"phone","items":[{"id":"d2","name":"三色布丁豆花","price":55,"sugar":"正常糖","base":"正常","toppings":[],"quantity":3,"unitPrice":55,"totalPrice":165,"cartId":"pre3-0"},{"id":"d6","name":"銀耳蓮子湯","price":60,"sugar":"正常糖","base":"熱","toppings":[],"quantity":2,"unitPrice":60,"totalPrice":120,"cartId":"pre3-1"}],"total":285,"rawTotal":285,"discounts":[],"customer":{"name":"李太太","phone":"0918556677"},"address":"","pickupTime":"14:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778206800000,"notes":"一份甜湯一份豆花，外帶請分開裝"},{"id":"PRE-20260508-004","source":"phone","items":[{"id":"c5","name":"抹茶千層蛋糕","price":120,"sugar":"正常糖","base":"正常","toppings":[],"quantity":2,"unitPrice":120,"totalPrice":240,"cartId":"pre4-0"},{"id":"b3","name":"黑糖珍珠奶茶","price":50,"sugar":"半糖(5分)","base":"少冰","toppings":[{"name":"波霸珍珠","price":10}],"quantity":4,"unitPrice":60,"totalPrice":240,"cartId":"pre4-1"}],"total":480,"rawTotal":480,"discounts":[],"customer":{"name":"周經理","phone":"0987001234"},"address":"","pickupTime":"15:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778201100000,"notes":"公司聚會，請開立統編 12345678 (鈞躍實業)"},{"id":"PRE-20260508-005","source":"phone","items":[{"id":"s6","name":"草莓煉乳雪花","price":140,"sugar":"微糖","base":"少冰","toppings":[],"quantity":2,"unitPrice":140,"totalPrice":280,"cartId":"pre5-0"},{"id":"b4","name":"大甲芋頭鮮奶","price":65,"sugar":"半糖(5分)","base":"正常冰","toppings":[],"quantity":2,"unitPrice":65,"totalPrice":130,"cartId":"pre5-1"}],"total":410,"rawTotal":410,"discounts":[],"customer":{"name":"黃冠宇","phone":"0933555666"},"address":"","pickupTime":"17:30","member":{"id":"MEM-DEMO-3","name":"黃冠宇","phone":"0933555666"},"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778209800000,"notes":"老顧客，固定時間取餐"},{"id":"PRE-20260508-006","source":"online","items":[{"id":"i2","name":"雙色醬煉乳冰","price":85,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":85,"totalPrice":85,"cartId":"pre6-0"},{"id":"b5","name":"冬瓜檸檬飲","price":45,"sugar":"微糖(3分)","base":"少冰","toppings":[],"quantity":1,"unitPrice":45,"totalPrice":45,"cartId":"pre6-1"}],"total":130,"rawTotal":130,"discounts":[],"customer":{"name":"蔡小姐","phone":"0926334455"},"address":"","pickupTime":"12:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778199600000,"notes":"線上 LINE 訂購"},{"id":"PRE-20260508-007","source":"online","items":[{"id":"c1","name":"經典黑森林","price":80,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":80,"totalPrice":80,"cartId":"pre7-0"},{"id":"i5","name":"凍凍檸檬黑糖清冰","price":70,"sugar":"微糖","base":"少冰","toppings":[],"quantity":1,"unitPrice":70,"totalPrice":70,"cartId":"pre7-1"}],"total":140,"rawTotal":150,"discounts":[{"label":"全單結帳現折 10 元","amount":10}],"customer":{"name":"林雅婷","phone":"0922333444"},"address":"","pickupTime":"13:30","member":{"id":"MEM-DEMO-2","name":"林雅婷","phone":"0922333444"},"voucherUsed":{"id":"VCH-DEMO-1","text":"全單結帳現折 10 元","type":"fixed","value":10,"used":true},"monthlyPerkUsed":false,"timestamp":1778204400000,"notes":"使用優惠券折抵 10 元"},{"id":"PRE-20260508-008","source":"online","items":[{"id":"s4","name":"巧克力OREO雪花","price":120,"sugar":"正常糖","base":"少冰","toppings":[],"quantity":2,"unitPrice":120,"totalPrice":240,"cartId":"pre8-0"},{"id":"c6","name":"海綿蛋糕","price":50,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":50,"totalPrice":50,"cartId":"pre8-1"}],"total":290,"rawTotal":290,"discounts":[],"customer":{"name":"張先生","phone":"0958221199"},"address":"","pickupTime":"16:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778208600000,"notes":"官網訂購"},{"id":"PRE-20260508-009","source":"online","items":[{"id":"i1","name":"超級花生煉乳冰","price":60,"sugar":"正常糖","base":"正常","toppings":[],"quantity":3,"unitPrice":60,"totalPrice":180,"cartId":"pre9-0"},{"id":"b3","name":"黑糖珍珠奶茶","price":50,"sugar":"半糖(5分)","base":"少冰","toppings":[{"name":"波霸珍珠","price":10}],"quantity":3,"unitPrice":60,"totalPrice":180,"cartId":"pre9-1"},{"id":"d1","name":"傳統手工豆花","price":45,"sugar":"正常糖","base":"正常","toppings":[{"name":"紅豆","price":10}],"quantity":2,"unitPrice":55,"totalPrice":110,"cartId":"pre9-2"}],"total":470,"rawTotal":470,"discounts":[],"customer":{"name":"吳同學","phone":"0916778899"},"address":"","pickupTime":"19:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778211300000,"notes":"社團聚會 8 人份，請務必準時"},{"id":"PRE-20260508-010","source":"delivery_store","items":[{"id":"d3","name":"招牌燒仙草(冬)","price":50,"sugar":"正常糖","base":"熱","toppings":[],"quantity":2,"unitPrice":50,"totalPrice":100,"cartId":"pre10-0"},{"id":"d4","name":"紅豆湯圓(熱)","price":60,"sugar":"正常糖","base":"熱","toppings":[],"quantity":2,"unitPrice":60,"totalPrice":120,"cartId":"pre10-1"}],"total":220,"rawTotal":220,"discounts":[],"customer":{"name":"陳先生","phone":"0921778899"},"address":"台中市西屯區文心路三段 123 號 8 樓","pickupTime":"18:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778205600000,"notes":"請加冰塊袋，叫門鈴"},{"id":"PRE-20260508-011","source":"delivery_store","items":[{"id":"c3","name":"義式提拉米蘇","price":90,"sugar":"正常糖","base":"正常","toppings":[],"quantity":3,"unitPrice":90,"totalPrice":270,"cartId":"pre11-0"},{"id":"c4","name":"重乳酪起司","price":85,"sugar":"正常糖","base":"正常","toppings":[],"quantity":2,"unitPrice":85,"totalPrice":170,"cartId":"pre11-1"},{"id":"b1","name":"古早味紅茶","price":30,"sugar":"半糖(5分)","base":"少冰","toppings":[],"quantity":3,"unitPrice":30,"totalPrice":90,"cartId":"pre11-2"}],"total":530,"rawTotal":530,"discounts":[],"customer":{"name":"林媽媽","phone":"0978112233"},"address":"台中市北區三民路二段 88 號 5 樓之 2","pickupTime":"19:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778210700000,"notes":"蛋糕請冷藏，3 個盒子分裝"},{"id":"PRE-20260508-012","source":"delivery_foodpanda","items":[{"id":"s1","name":"鮮芒果雪花冰","price":150,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":150,"totalPrice":150,"cartId":"pre12-0"},{"id":"c2","name":"草莓波士頓派","price":75,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":75,"totalPrice":75,"cartId":"pre12-1"}],"total":225,"rawTotal":225,"discounts":[],"customer":{"name":"foodpanda 訂單 #FP-A8731","phone":"0985000000"},"address":"透過 foodpanda 平台外送","pickupTime":"12:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778212200000,"notes":"foodpanda 平台訂單，請於 12:25 前備妥"},{"id":"PRE-20260508-013","source":"delivery_foodpanda","items":[{"id":"i3","name":"超級芋頭煉乳冰","price":40,"sugar":"正常糖","base":"正常","toppings":[],"quantity":2,"unitPrice":40,"totalPrice":80,"cartId":"pre13-0"},{"id":"b3","name":"黑糖珍珠奶茶","price":50,"sugar":"半糖(5分)","base":"少冰","toppings":[],"quantity":2,"unitPrice":50,"totalPrice":100,"cartId":"pre13-1"}],"total":180,"rawTotal":180,"discounts":[],"customer":{"name":"foodpanda 訂單 #FP-B2055","phone":"0939000000"},"address":"透過 foodpanda 平台外送","pickupTime":"14:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778214900000,"notes":"foodpanda 平台訂單"},{"id":"PRE-20260508-014","source":"delivery_ubereats","items":[{"id":"c5","name":"抹茶千層蛋糕","price":120,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":120,"totalPrice":120,"cartId":"pre14-0"},{"id":"b4","name":"大甲芋頭鮮奶","price":65,"sugar":"半糖(5分)","base":"正常冰","toppings":[],"quantity":2,"unitPrice":65,"totalPrice":130,"cartId":"pre14-1"}],"total":250,"rawTotal":250,"discounts":[],"customer":{"name":"UberEats 訂單 #UE-77231","phone":"0928000000"},"address":"透過 UberEats 平台外送","pickupTime":"15:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778219400000,"notes":"UberEats 平台訂單"},{"id":"PRE-20260508-015","source":"delivery_ubereats","items":[{"id":"s4","name":"巧克力OREO雪花","price":120,"sugar":"正常糖","base":"少冰","toppings":[],"quantity":1,"unitPrice":120,"totalPrice":120,"cartId":"pre15-0"},{"id":"b9","name":"可可牛奶","price":55,"sugar":"正常糖","base":"少冰","toppings":[{"name":"香草冰淇淋","price":20}],"quantity":1,"unitPrice":75,"totalPrice":75,"cartId":"pre15-1"}],"total":195,"rawTotal":195,"discounts":[],"customer":{"name":"UberEats 訂單 #UE-90118","phone":"0955000000"},"address":"透過 UberEats 平台外送","pickupTime":"17:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778224200000,"notes":"UberEats 平台訂單，加購香草冰淇淋"}]}, "data/attendance.json": { "attendanceRecords": [] }, "data/drawer.json": { "drawerRecords": [] }, "data/holdOrders.json": { "holdOrders": [] } };</script>
+  <script>window.__POS_DATA = { "data/employees.json": { "roles": { "MANAGER": { "id": "manager", "name": "店長", "access": ["order", "kds", "preorder", "history", "members", "drawer", "attendance", "stats", "inventory", "loss"] }, "FULL_TIME": { "id": "full-time", "name": "正職人員", "access": ["order", "kds", "preorder", "history", "members"] }, "PART_TIME": { "id": "part-time", "name": "工讀生", "access": ["order", "kds", "preorder", "members"] } }, "employees": [{ "id": "E001", "name": "店長 - 阿嬤", "roleKey": "MANAGER", "pin": "0000" }, { "id": "E002", "name": "正職 - 小張", "roleKey": "FULL_TIME", "pin": "0000" }, { "id": "E003", "name": "正職 - 小陳", "roleKey": "FULL_TIME", "pin": "0000" }, { "id": "E004", "name": "工讀 - 阿傑", "roleKey": "PART_TIME", "pin": "0000" }, { "id": "E005", "name": "工讀 - 小美", "roleKey": "PART_TIME", "pin": "0000" }] }, "data/menu.json": { "categories": [{ "id": "shaved-ice", "name": "傳統剉冰", "items": [{ "id": "i1", "name": "超級花生煉乳冰", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i1.jpg" }, { "id": "i2", "name": "雙色醬煉乳冰", "price": 85, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i2.jpg" }, { "id": "i3", "name": "超級芋頭煉乳冰", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i3.jpg" }, { "id": "i4", "name": "超級地瓜煉乳冰", "price": 65, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i4.jpg" }, { "id": "i5", "name": "凍凍檸檬黑糖清冰", "price": 70, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i5.jpg" }, { "id": "i6", "name": "招牌黑糖清冰", "price": 75, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i6.jpg", "description": "任選五種配料免費，超過第五種才計價" }, { "id": "i7", "name": "超級紅豆煉乳冰", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/i7.jpg" }] }, { "id": "snow-ice", "name": "雪花冰系列", "items": [{ "id": "s1", "name": "鮮芒果雪花冰", "price": 150, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s1.jpg" }, { "id": "s2", "name": "珍珠奶茶雪花", "price": 110, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s2.jpg" }, { "id": "s3", "name": "極上抹茶雪花", "price": 130, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s3.jpg" }, { "id": "s4", "name": "巧克力OREO雪花", "price": 120, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s4.jpg" }, { "id": "s5", "name": "花生芝麻雙享", "price": 100, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s5.jpg" }, { "id": "s6", "name": "草莓煉乳雪花", "price": 140, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/s6.jpg" }] }, { "id": "dessert-soup", "name": "手作豆花/甜湯", "items": [{ "id": "d1", "name": "傳統手工豆花", "price": 45, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d1.jpg" }, { "id": "d2", "name": "三色布丁豆花", "price": 55, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d2.jpg" }, { "id": "d3", "name": "招牌燒仙草(冬)", "price": 50, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d3.jpg", "hotOnly": true }, { "id": "d4", "name": "紅豆湯圓(熱)", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d4.jpg", "hotOnly": true }, { "id": "d5", "name": "綠豆薏仁湯", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d5.jpg", "supportHot": true }, { "id": "d6", "name": "銀耳蓮子湯", "price": 60, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d6.jpg", "supportHot": true }, { "id": "d7", "name": "檸檬愛玉", "price": 50, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/d7.jpg" }] }, { "id": "drinks", "name": "特調飲品", "items": [{ "id": "b1", "name": "古早味紅茶", "price": 30, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b1.jpg" }, { "id": "b2", "name": "茉香翠綠茶", "price": 30, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b2.jpg" }, { "id": "b3", "name": "黑糖珍珠奶茶", "price": 50, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b3.jpg" }, { "id": "b4", "name": "大甲芋頭鮮奶", "price": 65, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b4.jpg" }, { "id": "b5", "name": "冬瓜檸檬飲", "price": 45, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b5.jpg" }, { "id": "b6", "name": "冬瓜茶", "price": 30, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b6.jpg" }, { "id": "b7", "name": "奶茶", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b7.jpg" }, { "id": "b8", "name": "檸檬紅茶", "price": 40, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b8.jpg" }, { "id": "b9", "name": "可可牛奶", "price": 55, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/b9.jpg" }] }, { "id": "cakes", "name": "手作蛋糕", "items": [{ "id": "c1", "name": "經典黑森林", "price": 80, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c1.jpg" }, { "id": "c2", "name": "草莓波士頓派", "price": 75, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c2.jpg" }, { "id": "c3", "name": "義式提拉米蘇", "price": 90, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c3.jpg" }, { "id": "c4", "name": "重乳酪起司", "price": 85, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c4.jpg" }, { "id": "c5", "name": "抹茶千層蛋糕", "price": 120, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c5.jpg" }, { "id": "c6", "name": "海綿蛋糕", "price": 50, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c6.jpg" }, { "id": "c7", "name": "鮮奶油蛋糕", "price": 65, "initialStock": 20, "image": "https://raw.githubusercontent.com/DylanW6051/pos-data/main/images/c7.jpg" }] }], "sugarLevels": ["正常糖", "半糖", "微糖", "無糖/代糖"], "baseLevels": ["正常", "少冰", "小碎冰"], "drinkSugarLevels": ["正常糖", "少糖(8分)", "半糖(5分)", "微糖(3分)", "一分糖", "無糖"], "drinkIceLevels": ["正常冰", "少冰", "微冰", "去冰", "完全去冰", "常溫", "熱"], "toppings": [{ "name": "愛玉凍", "price": 15 }, { "name": "仙草凍", "price": 15 }, { "name": "手工桂花凍", "price": 20 }, { "name": "手工玫瑰凍", "price": 20 }, { "name": "鬆花生", "price": 15 }, { "name": "硬花生", "price": 15 }, { "name": "麵茶粉", "price": 10 }, { "name": "煉乳", "price": 10 }, { "name": "紅豆", "price": 10 }, { "name": "綠豆", "price": 10 }, { "name": "湯圓", "price": 15 }, { "name": "珍珠", "price": 10 }, { "name": "手工芋圓", "price": 15 }, { "name": "手工地瓜圓", "price": 15 }, { "name": "蜜鳳梨", "price": 20 }, { "name": "蜜芋頭", "price": 20 }, { "name": "蜜地瓜", "price": 15 }, { "name": "大紅豆", "price": 10 }], "drinkToppings": [{ "name": "波霸珍珠", "price": 10 }, { "name": "白玉珍珠", "price": 10 }, { "name": "小珍珠", "price": 10 }, { "name": "椰果", "price": 10 }, { "name": "仙草凍", "price": 10 }, { "name": "愛玉", "price": 10 }, { "name": "蒟蒻", "price": 15 }, { "name": "寒天QQ", "price": 15 }, { "name": "統一布丁", "price": 15 }, { "name": "香草冰淇淋", "price": 20 }], "tables": ["T1", "T2", "T3", "T5", "T6", "T7", "T8", "T9", "T10"] }, "data/members.json": { "members": [{ "id": "MEM-DEMO-1", "phone": "0912345678", "name": "陳家豪", "points": 35, "perks": { "month": "1970-01", "used": 0 }, "vouchers": [], "timestamp": 1735660800000 }, { "id": "MEM-DEMO-2", "phone": "0922333444", "name": "林雅婷", "points": 120, "perks": { "month": "1970-01", "used": 0 }, "vouchers": [{ "id": "VCH-DEMO-1", "text": "全單結帳現折 10 元", "type": "fixed", "value": 10, "used": false, "timestamp": 1735660800000 }], "timestamp": 1735660800000 }, { "id": "MEM-DEMO-3", "phone": "0933555666", "name": "黃冠宇", "points": 58, "perks": { "month": "1970-01", "used": 0 }, "vouchers": [], "timestamp": 1735660800000 }] }, "data/orders.json": { "orders": [] }, "data/preOrders.json": {"preOrders":[{"id":"PRE-20260508-001","source":"phone","items":[{"id":"i6","name":"招牌黑糖清冰","price":75,"sugar":"正常糖","base":"正常","toppings":[{"name":"紅豆","price":10},{"name":"珍珠","price":10}],"quantity":2,"unitPrice":95,"totalPrice":190,"cartId":"pre1-0"},{"id":"b1","name":"古早味紅茶","price":30,"sugar":"半糖(5分)","base":"少冰","toppings":[],"quantity":1,"unitPrice":30,"totalPrice":30,"cartId":"pre1-1"}],"total":220,"rawTotal":220,"discounts":[],"customer":{"name":"王小明","phone":"0938123456"},"address":"","pickupTime":"11:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778202900000,"notes":"麻煩幫忙打包，要外帶袋"},{"id":"PRE-20260508-002","source":"phone","items":[{"id":"s1","name":"鮮芒果雪花冰","price":150,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":150,"totalPrice":150,"cartId":"pre2-0"},{"id":"c3","name":"義式提拉米蘇","price":90,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":90,"totalPrice":90,"cartId":"pre2-1"}],"total":240,"rawTotal":240,"discounts":[],"customer":{"name":"陳家豪","phone":"0912345678"},"address":"","pickupTime":"13:00","member":{"id":"MEM-DEMO-1","name":"陳家豪","phone":"0912345678"},"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778205900000,"notes":"會員自取"},{"id":"PRE-20260508-003","source":"phone","items":[{"id":"d2","name":"三色布丁豆花","price":55,"sugar":"正常糖","base":"正常","toppings":[],"quantity":3,"unitPrice":55,"totalPrice":165,"cartId":"pre3-0"},{"id":"d6","name":"銀耳蓮子湯","price":60,"sugar":"正常糖","base":"熱","toppings":[],"quantity":2,"unitPrice":60,"totalPrice":120,"cartId":"pre3-1"}],"total":285,"rawTotal":285,"discounts":[],"customer":{"name":"李太太","phone":"0918556677"},"address":"","pickupTime":"14:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778206800000,"notes":"一份甜湯一份豆花，外帶請分開裝"},{"id":"PRE-20260508-004","source":"phone","items":[{"id":"c5","name":"抹茶千層蛋糕","price":120,"sugar":"正常糖","base":"正常","toppings":[],"quantity":2,"unitPrice":120,"totalPrice":240,"cartId":"pre4-0"},{"id":"b3","name":"黑糖珍珠奶茶","price":50,"sugar":"半糖(5分)","base":"少冰","toppings":[{"name":"波霸珍珠","price":10}],"quantity":4,"unitPrice":60,"totalPrice":240,"cartId":"pre4-1"}],"total":480,"rawTotal":480,"discounts":[],"customer":{"name":"周經理","phone":"0987001234"},"address":"","pickupTime":"15:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778201100000,"notes":"公司聚會，請開立統編 12345678 (鈞躍實業)"},{"id":"PRE-20260508-005","source":"phone","items":[{"id":"s6","name":"草莓煉乳雪花","price":140,"sugar":"微糖","base":"少冰","toppings":[],"quantity":2,"unitPrice":140,"totalPrice":280,"cartId":"pre5-0"},{"id":"b4","name":"大甲芋頭鮮奶","price":65,"sugar":"半糖(5分)","base":"正常冰","toppings":[],"quantity":2,"unitPrice":65,"totalPrice":130,"cartId":"pre5-1"}],"total":410,"rawTotal":410,"discounts":[],"customer":{"name":"黃冠宇","phone":"0933555666"},"address":"","pickupTime":"17:30","member":{"id":"MEM-DEMO-3","name":"黃冠宇","phone":"0933555666"},"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778209800000,"notes":"老顧客，固定時間取餐"},{"id":"PRE-20260508-006","source":"online","items":[{"id":"i2","name":"雙色醬煉乳冰","price":85,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":85,"totalPrice":85,"cartId":"pre6-0"},{"id":"b5","name":"冬瓜檸檬飲","price":45,"sugar":"微糖(3分)","base":"少冰","toppings":[],"quantity":1,"unitPrice":45,"totalPrice":45,"cartId":"pre6-1"}],"total":130,"rawTotal":130,"discounts":[],"customer":{"name":"蔡小姐","phone":"0926334455"},"address":"","pickupTime":"12:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778199600000,"notes":"線上 LINE 訂購"},{"id":"PRE-20260508-007","source":"online","items":[{"id":"c1","name":"經典黑森林","price":80,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":80,"totalPrice":80,"cartId":"pre7-0"},{"id":"i5","name":"凍凍檸檬黑糖清冰","price":70,"sugar":"微糖","base":"少冰","toppings":[],"quantity":1,"unitPrice":70,"totalPrice":70,"cartId":"pre7-1"}],"total":140,"rawTotal":150,"discounts":[{"label":"全單結帳現折 10 元","amount":10}],"customer":{"name":"林雅婷","phone":"0922333444"},"address":"","pickupTime":"13:30","member":{"id":"MEM-DEMO-2","name":"林雅婷","phone":"0922333444"},"voucherUsed":{"id":"VCH-DEMO-1","text":"全單結帳現折 10 元","type":"fixed","value":10,"used":true},"monthlyPerkUsed":false,"timestamp":1778204400000,"notes":"使用優惠券折抵 10 元"},{"id":"PRE-20260508-008","source":"online","items":[{"id":"s4","name":"巧克力OREO雪花","price":120,"sugar":"正常糖","base":"少冰","toppings":[],"quantity":2,"unitPrice":120,"totalPrice":240,"cartId":"pre8-0"},{"id":"c6","name":"海綿蛋糕","price":50,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":50,"totalPrice":50,"cartId":"pre8-1"}],"total":290,"rawTotal":290,"discounts":[],"customer":{"name":"張先生","phone":"0958221199"},"address":"","pickupTime":"16:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778208600000,"notes":"官網訂購"},{"id":"PRE-20260508-009","source":"online","items":[{"id":"i1","name":"超級花生煉乳冰","price":60,"sugar":"正常糖","base":"正常","toppings":[],"quantity":3,"unitPrice":60,"totalPrice":180,"cartId":"pre9-0"},{"id":"b3","name":"黑糖珍珠奶茶","price":50,"sugar":"半糖(5分)","base":"少冰","toppings":[{"name":"波霸珍珠","price":10}],"quantity":3,"unitPrice":60,"totalPrice":180,"cartId":"pre9-1"},{"id":"d1","name":"傳統手工豆花","price":45,"sugar":"正常糖","base":"正常","toppings":[{"name":"紅豆","price":10}],"quantity":2,"unitPrice":55,"totalPrice":110,"cartId":"pre9-2"}],"total":470,"rawTotal":470,"discounts":[],"customer":{"name":"吳同學","phone":"0916778899"},"address":"","pickupTime":"19:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778211300000,"notes":"社團聚會 8 人份，請務必準時"},{"id":"PRE-20260508-010","source":"delivery_store","items":[{"id":"d3","name":"招牌燒仙草(冬)","price":50,"sugar":"正常糖","base":"熱","toppings":[],"quantity":2,"unitPrice":50,"totalPrice":100,"cartId":"pre10-0"},{"id":"d4","name":"紅豆湯圓(熱)","price":60,"sugar":"正常糖","base":"熱","toppings":[],"quantity":2,"unitPrice":60,"totalPrice":120,"cartId":"pre10-1"}],"total":220,"rawTotal":220,"discounts":[],"customer":{"name":"陳先生","phone":"0921778899"},"address":"台中市西屯區文心路三段 123 號 8 樓","pickupTime":"18:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778205600000,"notes":"請加冰塊袋，叫門鈴"},{"id":"PRE-20260508-011","source":"delivery_store","items":[{"id":"c3","name":"義式提拉米蘇","price":90,"sugar":"正常糖","base":"正常","toppings":[],"quantity":3,"unitPrice":90,"totalPrice":270,"cartId":"pre11-0"},{"id":"c4","name":"重乳酪起司","price":85,"sugar":"正常糖","base":"正常","toppings":[],"quantity":2,"unitPrice":85,"totalPrice":170,"cartId":"pre11-1"},{"id":"b1","name":"古早味紅茶","price":30,"sugar":"半糖(5分)","base":"少冰","toppings":[],"quantity":3,"unitPrice":30,"totalPrice":90,"cartId":"pre11-2"}],"total":530,"rawTotal":530,"discounts":[],"customer":{"name":"林媽媽","phone":"0978112233"},"address":"台中市北區三民路二段 88 號 5 樓之 2","pickupTime":"19:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778210700000,"notes":"蛋糕請冷藏，3 個盒子分裝"},{"id":"PRE-20260508-012","source":"delivery_foodpanda","items":[{"id":"s1","name":"鮮芒果雪花冰","price":150,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":150,"totalPrice":150,"cartId":"pre12-0"},{"id":"c2","name":"草莓波士頓派","price":75,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":75,"totalPrice":75,"cartId":"pre12-1"}],"total":225,"rawTotal":225,"discounts":[],"customer":{"name":"foodpanda 訂單 #FP-A8731","phone":"0985000000"},"address":"透過 foodpanda 平台外送","pickupTime":"12:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778212200000,"notes":"foodpanda 平台訂單，請於 12:25 前備妥"},{"id":"PRE-20260508-013","source":"delivery_foodpanda","items":[{"id":"i3","name":"超級芋頭煉乳冰","price":40,"sugar":"正常糖","base":"正常","toppings":[],"quantity":2,"unitPrice":40,"totalPrice":80,"cartId":"pre13-0"},{"id":"b3","name":"黑糖珍珠奶茶","price":50,"sugar":"半糖(5分)","base":"少冰","toppings":[],"quantity":2,"unitPrice":50,"totalPrice":100,"cartId":"pre13-1"}],"total":180,"rawTotal":180,"discounts":[],"customer":{"name":"foodpanda 訂單 #FP-B2055","phone":"0939000000"},"address":"透過 foodpanda 平台外送","pickupTime":"14:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778214900000,"notes":"foodpanda 平台訂單"},{"id":"PRE-20260508-014","source":"delivery_ubereats","items":[{"id":"c5","name":"抹茶千層蛋糕","price":120,"sugar":"正常糖","base":"正常","toppings":[],"quantity":1,"unitPrice":120,"totalPrice":120,"cartId":"pre14-0"},{"id":"b4","name":"大甲芋頭鮮奶","price":65,"sugar":"半糖(5分)","base":"正常冰","toppings":[],"quantity":2,"unitPrice":65,"totalPrice":130,"cartId":"pre14-1"}],"total":250,"rawTotal":250,"discounts":[],"customer":{"name":"UberEats 訂單 #UE-77231","phone":"0928000000"},"address":"透過 UberEats 平台外送","pickupTime":"15:30","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778219400000,"notes":"UberEats 平台訂單"},{"id":"PRE-20260508-015","source":"delivery_ubereats","items":[{"id":"s4","name":"巧克力OREO雪花","price":120,"sugar":"正常糖","base":"少冰","toppings":[],"quantity":1,"unitPrice":120,"totalPrice":120,"cartId":"pre15-0"},{"id":"b9","name":"可可牛奶","price":55,"sugar":"正常糖","base":"少冰","toppings":[{"name":"香草冰淇淋","price":20}],"quantity":1,"unitPrice":75,"totalPrice":75,"cartId":"pre15-1"}],"total":195,"rawTotal":195,"discounts":[],"customer":{"name":"UberEats 訂單 #UE-90118","phone":"0955000000"},"address":"透過 UberEats 平台外送","pickupTime":"17:00","member":null,"voucherUsed":null,"monthlyPerkUsed":false,"timestamp":1778224200000,"notes":"UberEats 平台訂單，加購香草冰淇淋"}]}, "data/attendance.json": { "attendanceRecords": [] }, "data/drawer.json": { "drawerRecords": [] }, "data/holdOrders.json": { "holdOrders": [] } };</script>
   <script>/**
 * @license React
 * react.production.min.js
@@ -2780,7 +2794,9 @@
                   members: 'pos_members',
                   attendance: 'pos_attendance',
                   drawer: 'pos_drawer',
-                  hold: 'pos_holdOrders'
+                  hold: 'pos_holdOrders',
+                  toppingStock: 'pos_toppingStock',
+                  stockMovements: 'pos_stockMovements'
                 };
 
                 // load json file fallback
@@ -4727,8 +4743,26 @@
                 // ---- Stats ----
                 const StatsModule = ({ orders, members, attendance, menu }) => {
                   const today = new Date().toDateString();
-                  const todayOrders = orders.filter(o => o.status !== 'cancelled' && o.paid !== false && new Date(o.paidAt || o.timestamp).toDateString() === today);
+                  // ---- 報表期間篩選（以「今日」為基準往回推算實際日期區間）
+                  const PERIOD_OPTIONS = [
+                    { id: 'today', label: '今日' },
+                    { id: '7d', label: '近7日' },
+                    { id: '3m', label: '近3個月' },
+                    { id: '1y', label: '近1年' },
+                  ];
+                  const [period, setPeriod] = useState('today');
+                  const periodLabel = (PERIOD_OPTIONS.find(p => p.id === period) || PERIOD_OPTIONS[0]).label;
                   const validOrders = orders.filter(o => o.status !== 'cancelled');
+                  const periodStart = useMemo(() => {
+                    const d = new Date();
+                    if (period === 'today') d.setHours(0, 0, 0, 0);
+                    else if (period === '7d') d.setDate(d.getDate() - 7);
+                    else if (period === '3m') d.setMonth(d.getMonth() - 3);
+                    else if (period === '1y') d.setFullYear(d.getFullYear() - 1);
+                    return d.getTime();
+                  }, [period]);
+                  // todayOrders：此處代表「所選報表期間」內的有效已結帳訂單
+                  const todayOrders = orders.filter(o => o.status !== 'cancelled' && o.paid !== false && (o.paidAt || o.timestamp) >= periodStart);
                   const todayRevenue = todayOrders.reduce((s, o) => s + o.total, 0);
                   const avgOrder = todayOrders.length ? Math.round(todayRevenue / todayOrders.length) : 0;
                   const totalMembers = members.length;
@@ -4785,8 +4819,12 @@
                     const totals = {};
                     validOrders.forEach(o => o.items.forEach(it => {
                       if (!totals[it.id]) totals[it.id] = { id: it.id, name: it.name, qty: 0, revenue: 0 };
-                      totals[it.id].qty += it.quantity;
-                      totals[it.id].revenue += (priceMap[it.id] || 0) * it.quantity;
+                      const q = it.quantity || 0;
+                      const lineRev = it.totalPrice != null ? it.totalPrice
+                        : (it.unitPrice != null ? it.unitPrice * q
+                        : (priceMap[it.id] ?? it.price ?? 0) * q);
+                      totals[it.id].qty += q;
+                      totals[it.id].revenue += lineRev;
                     }));
                     const sorted = Object.values(totals).sort((a, b) => b.revenue - a.revenue);
                     const totalRev = sorted.reduce((s, x) => s + x.revenue, 0) || 1;
@@ -4808,50 +4846,62 @@
                          tabActive: 'bg-brand-500 text-white shadow-md', tabIdle: 'bg-white text-brand-700 border-brand-200',
                          panelBg: 'bg-brand-50 border-brand-200',
                          note: '占累積營收前 80%，建議聚焦庫存、定價穩定、優先曝光',
-                         supply: [
-                           '雙來源備援:主原料至少建立 2 家供應商,避免單一斷貨風險。',
-                           '主動鎖定議價:與供應商談月度/季度合約價,並設定保底採購量換取折讓。',
-                           '安全庫存上限:依日均銷量 × 1.5 倍備庫存,避免尖峰時段缺料。',
-                           '品控優先:原料進貨即抽檢,從源頭把關以維持成品一致性。',
-                         ],
-                         marketing: [
-                           '主視覺曝光:菜單首頁、結帳頁與外送平台封面持續推送。',
-                           '加價購入口:結合 B 類配料或飲品做加價購提升客單。',
-                           '會員專屬:設計 A 類限定優惠券或集點獎勵綁定回購。',
-                           'SOP 一致性:嚴格訓練,確保任何員工出餐口味與份量一致。',
-                         ] },
+                         marketing: {
+                           goal: ['鞏固核心營收,提升回購率與客單價,強化品牌招牌印象。'],
+                           strategy: [
+                             '以主力商品建立品牌記憶點,搭配會員經營鎖定回流客。',
+                             '透過加價購與套餐設計,提高每筆訂單金額。',
+                           ],
+                           execution: [
+                             '主視覺曝光:菜單首頁、結帳頁與外送平台封面持續推送。',
+                             '加價購入口:結合 B 類配料或飲品做加價購提升客單。',
+                             '會員專屬:推出 A 類限定優惠券或集點獎勵綁定回購。',
+                           ],
+                           resource: [
+                             '投入最高行銷預算與最佳版位,優先排程曝光。',
+                             '確保穩定供貨與出餐 SOP 一致,維持口味與份量品質。',
+                           ],
+                         } },
                     B: { label: 'B 類', tag: '潛力', longTag: '潛力商品', color: 'blue', barClass: 'bg-blue-500', text: 'text-blue-600',
                          tabActive: 'bg-blue-500 text-white shadow-md', tabIdle: 'bg-white text-blue-700 border-blue-200',
                          panelBg: 'bg-blue-50 border-blue-200',
                          note: '占營收 80-95%，可定期評估促銷活動或捆綁銷售',
-                         supply: [
-                           '彈性庫存:依週銷量動態調整,避免囤積占用倉位。',
-                           '共用原料:盡量與 A 類共用原料以提高採購規模優勢。',
-                           '小批量試新:可作為新口味/新規格的試水溫品項,評估升級 A 類潛力。',
-                           '保鮮週期:嚴控 FIFO,避免短效期原料變成損耗。',
-                         ],
-                         marketing: [
-                           '組合銷售:與 A 類配成套餐(如冰 + 飲),拉升整體營收占比。',
-                           '限時促銷:節氣/週末檔期推 9 折或第二件半價測試需求彈性。',
-                           '社群推播:在 IG / FB 限動主打,作為「本週嚴選」吸引關注。',
-                           '會員試吃:對高活躍會員寄送試吃券,刺激嘗鮮並收集回饋。',
-                         ] },
+                         marketing: {
+                           goal: ['拉升營收占比,培養潛力商品晉升為核心 A 類。'],
+                           strategy: [
+                             '以組合與限時促銷測試需求彈性,放大曝光找出明星品項。',
+                             '透過會員回饋優化產品,鎖定成長機會。',
+                           ],
+                           execution: [
+                             '組合銷售:與 A 類配成套餐(如冰 + 飲)拉升占比。',
+                             '限時促銷:節氣/週末檔期推 9 折或第二件半價。',
+                             '社群推播:在 IG / FB 限動以「本週嚴選」主打。',
+                           ],
+                           resource: [
+                             '投入中度促銷預算與社群資源測試需求彈性。',
+                             '對高活躍會員寄送試吃券,刺激嘗鮮並收集回饋。',
+                           ],
+                         } },
                     C: { label: 'C 類', tag: '長尾', longTag: '長尾商品', color: 'gray', barClass: 'bg-warm-100', text: 'text-warm-900/60',
                          tabActive: 'bg-warm-700 text-white shadow-md', tabIdle: 'bg-white text-warm-900/70 border-warm-200',
                          panelBg: 'bg-warm-50 border-warm-200',
                          note: '占營收最後 5%，建議檢視是否優化或下架',
-                         supply: [
-                           '按需採購:採用最小起訂量,避免大量囤積導致損耗。',
-                           '共用設備:確認製作不需獨家原料或設備,降低固定成本攤提。',
-                           '損耗監控:每週盤點報廢量,若損耗 > 銷量則應立即停產。',
-                           '退場機制:連續 3 個月低於門檻可考慮下架或換季限定。',
-                         ],
-                         marketing: [
-                           '差異化形象:作為「廣度商品」吸引特定客群、維持菜單豐富感。',
-                           '套餐附加:綁進高 CP 套餐讓 C 類做為「驚喜」附贈品項。',
-                           '限定再造:重新包裝為節慶/季節限定,製造稀有感拉抬討論度。',
-                           '清庫優惠:庫存壓力大時推出買 A 送 C 等清庫策略,加速周轉。',
-                         ] },
+                         marketing: {
+                           goal: ['維持菜單豐富度與差異化形象,同時控制成本並評估去留。'],
+                           strategy: [
+                             '以低成本方式維持曝光,作為套餐附加與話題行銷素材。',
+                             '定期檢視銷量,決定優化、限定再造或下架。',
+                           ],
+                           execution: [
+                             '差異化形象:作為「廣度商品」吸引特定客群、維持菜單豐富感。',
+                             '套餐附加:綁進高 CP 套餐做為「驚喜」附贈品項。',
+                             '限定再造:重新包裝為節慶/季節限定,製造稀有感。',
+                           ],
+                           resource: [
+                             '僅投入最低限度行銷資源,避免過度耗用預算。',
+                             '庫存壓力大時以買 A 送 C 等清庫優惠加速周轉。',
+                           ],
+                         } },
                   };
 
                   const [selectedTier, setSelectedTier] = useState('A');
@@ -4877,9 +4927,9 @@
                         catMap[it.id] = cat.id;
                       }));
                     }
-                    const now = (validOrders[0]?.timestamp || Date.now()); // anchor to latest order to handle demo data
-                    const latest = validOrders.reduce((m, o) => Math.max(m, o.paidAt || o.timestamp), Date.now());
-                    const anchor = Math.max(latest, Date.now());
+                    // 以「最新一筆訂單」為基準計算近 7 日／前 7 日，避免示範資料偏舊導致成長率恆為 0
+                    const latest = validOrders.reduce((m, o) => Math.max(m, o.paidAt || o.timestamp || 0), 0);
+                    const anchor = latest || Date.now();
                     const D7 = 7 * 24 * 60 * 60 * 1000;
 
                     const data = {};
@@ -4890,9 +4940,11 @@
                           data[it.id] = { id: it.id, name: it.name, categoryId: catMap[it.id] || null,
                             qty: 0, revenue: 0, last7Revenue: 0, prev7Revenue: 0 };
                         }
-                        const unit = priceMap[it.id] ?? it.unitPrice ?? it.price ?? 0;
-                        const lineRev = unit * (it.quantity || 0);
-                        data[it.id].qty += it.quantity || 0;
+                        const q = it.quantity || 0;
+                        const lineRev = it.totalPrice != null ? it.totalPrice
+                          : (it.unitPrice != null ? it.unitPrice * q
+                          : (priceMap[it.id] ?? it.price ?? 0) * q);
+                        data[it.id].qty += q;
                         data[it.id].revenue += lineRev;
                         if (ts >= anchor - D7) data[it.id].last7Revenue += lineRev;
                         else if (ts >= anchor - 2 * D7) data[it.id].prev7Revenue += lineRev;
@@ -4924,19 +4976,19 @@
                         : growth >= 0
                           ? '維持安全庫存日均 × 1.5 倍,確保高峰時段不缺料,並保持雙來源備援。'
                           : '主力商品出現衰退,維持現有庫存即可,需檢視口味/品質/競品因素並啟動補救。';
-                      recs.marketing = '主視覺持續曝光,搭配會員專屬點數加倍與限定優惠,鞏固高頻消費族群。';
+                      recs.marketing = '核心商品:菜單首頁與外送平台主視覺持續曝光,搭配會員專屬優惠/點數加倍鞏固回購,並以加價購或套餐提升客單價。';
                       recs.bundle = '可與 B 類飲品或配料組成「主餐 + 加價購」套餐,提升每筆訂單客單價。';
                       if (growth < -20) {
                         recs.delist = '雖屬核心商品,但近期衰退超過 20%,建議檢視原因(原料、SOP、競品),必要時調整定價或汰換配方。';
                       }
                     } else if (tier === 'B') {
-                      recs.reason = `占累積營收 80%-95% 的中等貢獻商品,本品累積營收 ${fmtMoney(item.revenue)}、銷售 ${item.qty} 件,目前趨勢${trendLabel} (${growth.toFixed(1)}%)。`;
+                      recs.reason = `占累積營收中段 15% 的中等貢獻商品,本品累積營收 ${fmtMoney(item.revenue)}、銷售 ${item.qty} 件,目前趨勢${trendLabel} (${growth.toFixed(1)}%)。`;
                       recs.inventory = growth >= 15
                         ? '具升級 A 類潛力,建議擴大採購量並評估改為主力上架。'
                         : '維持彈性庫存,依週銷量動態調整,避免過量囤積。';
                       recs.marketing = growth >= 0
-                        ? '可推「本週嚴選」、限時 9 折或第二件半價,測試需求彈性並加速成長。'
-                        : '在社群與會員推播試吃券/限定優惠,刺激回購並收集回饋。';
+                        ? '潛力商品:推「本週嚴選」、限時 9 折或第二件半價測試需求彈性,並與 A 類組成套餐放大曝光,爭取晉升核心。'
+                        : '潛力商品:於社群與會員推播試吃券/限定優惠刺激回購,蒐集回饋優化產品後再放大曝光。';
                       recs.bundle = '與 A 類核心商品組成套餐(如冰 + 飲),拉抬整體營收占比與曝光。';
                       if (growth < -15) {
                         recs.delist = '若連續 3 個月衰退,需評估是否轉為季節限定或重新包裝,避免成為長期 C 類。';
@@ -4944,7 +4996,7 @@
                     } else {
                       recs.reason = `占累積營收最後 5% 的長尾商品,本品累積營收 ${fmtMoney(item.revenue)}、銷售 ${item.qty} 件,目前趨勢${trendLabel} (${growth.toFixed(1)}%)。`;
                       recs.inventory = '採最小起訂量按需採購,避免囤積導致原料損耗;盤點頻率提升為每週一次。';
-                      recs.marketing = '作為「廣度商品」維持菜單豐富感,或重新包裝為節慶/季節限定製造稀有感。';
+                      recs.marketing = '長尾商品:以低成本維持曝光,綁進高 CP 套餐作為附加贈品,或重新包裝為節慶/季節限定製造話題,避免過度投入行銷資源。';
                       recs.bundle = '綁進高 CP 套餐做為附加贈品,讓客人有「驚喜感」並消化長尾庫存。';
                       const shouldDelist = (item.qty < 3 && item.revenue < 500) || growth < -30;
                       recs.delist = shouldDelist
@@ -4978,7 +5030,7 @@
                   const insights = useMemo(() => {
                     const list = [];
                     if (todayOrders.length === 0) {
-                      list.push({ icon: 'info', tone: 'gray', title: '今日尚無已結帳訂單', text: '完成第一筆結帳後即可獲得個人化建議。' });
+                      list.push({ icon: 'info', tone: 'gray', title: periodLabel + '尚無已結帳訂單', text: '完成第一筆結帳後即可獲得個人化建議。' });
                       return list;
                     }
 
@@ -5004,24 +5056,28 @@
                       list.push({
                         icon: 'award', tone: 'green',
                         title: `銷售冠軍:${name}`,
-                        text: `今日已售出 ${qty} 杯,務必備料充足並可加入推薦組合提升曝光。`
+                        text: `${periodLabel}已售出 ${qty} 份,務必備料充足並可加入推薦組合提升曝光。`
                       });
                     }
 
                     if (abc.totalItems > 0 && abc.A.length > 0) {
                       const aShare = (abc.A.length / abc.totalItems * 100).toFixed(0);
+                      const aRev = abc.A.reduce((s, x) => s + x.revenue, 0);
+                      const aRevShare = abc.totalRev > 0 ? Math.round(aRev / abc.totalRev * 100) : 0;
                       list.push({
                         icon: 'target', tone: 'brand',
                         title: `A 類核心商品 ${abc.A.length} 項 (占品項 ${aShare}%)`,
-                        text: '這些品項貢獻 80% 營收,優先確保 SOP 一致、原料庫存、優先曝光位置。'
+                        text: `這 ${abc.A.length} 項合計貢獻約 ${aRevShare}% 營收,優先確保 SOP 一致、原料庫存、優先曝光位置。`
                       });
                     }
 
                     if (abc.totalItems > 0 && abc.C.length >= 5) {
+                      const cRev = abc.C.reduce((s, x) => s + x.revenue, 0);
+                      const cRevShare = abc.totalRev > 0 ? (cRev / abc.totalRev * 100).toFixed(1) : '0';
                       list.push({
                         icon: 'alert-triangle', tone: 'red',
                         title: `C 類長尾商品 ${abc.C.length} 項`,
-                        text: '這些品項僅貢獻 5% 營收,建議評估保留必要性、重新包裝或下架以降低 SKU 管理成本。'
+                        text: `這 ${abc.C.length} 項合計僅貢獻約 ${cRevShare}% 營收,建議評估保留必要性、重新包裝或下架以降低 SKU 管理成本。`
                       });
                     }
 
@@ -5079,16 +5135,26 @@
 
                   return (
                     <div className="space-y-4 overflow-y-auto scroll-thin pr-1 pb-4">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <div className="font-bold text-lg text-warm-900">營運報表</div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-warm-900/60">報表期間</span>
+                          <select value={period} onChange={e => setPeriod(e.target.value)}
+                            className="px-3 py-1.5 rounded-xl text-sm font-bold bg-white text-warm-900 border border-warm-200 cursor-pointer">
+                            {PERIOD_OPTIONS.map(p => <option key={p.id} value={p.id}>{p.label}</option>)}
+                          </select>
+                        </div>
+                      </div>
                       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                        <StatCard icon="dollar-sign" label="今日營收" value={fmtMoney(todayRevenue)} sub={`${todayOrders.length} 筆訂單`} color="brand" />
+                        <StatCard icon="dollar-sign" label={`${periodLabel}營收`} value={fmtMoney(todayRevenue)} sub={`${todayOrders.length} 筆訂單`} color="brand" />
                         <StatCard icon="receipt" label="平均客單價" value={fmtMoney(avgOrder)} color="blue" />
-                        <StatCard icon="users" label="會員數" value={totalMembers.toLocaleString()} sub={`今日 ${memberRate}% 會員消費`} color="purple" />
-                        <StatCard icon="clock" label="出勤" value={attendance.filter(a => new Date(a.timestamp).toDateString() === today).length} sub="今日打卡記錄" color="green" />
+                        <StatCard icon="users" label="會員數" value={totalMembers.toLocaleString()} sub={`${periodLabel} ${memberRate}% 會員消費`} color="purple" />
+                        <StatCard icon="clock" label="出勤" value={attendance.filter(a => new Date(a.timestamp).getTime() >= periodStart).length} sub={`${periodLabel}打卡記錄`} color="green" />
                       </div>
 
                       <Card className="p-5">
                         <div className="font-bold text-lg mb-3 text-warm-900">熱賣商品 Top 5</div>
-                        {topItems.length === 0 ? <div className="text-sm text-warm-900/50">今日尚無銷售</div> : (
+                        {topItems.length === 0 ? <div className="text-sm text-warm-900/50">{periodLabel}尚無銷售</div> : (
                           <div className="space-y-2">
                             {topItems.map(([name, qty], i) => (
                               <div key={name} className="flex items-center gap-2">
@@ -5107,13 +5173,13 @@
                         )}
                       </Card>
 
-                      {/* 營收趨勢分析表【當日】 */}
+                      {/* 營收趨勢分析表（依所選期間，按時段彙總） */}
                       <Card className="p-5">
                         <div className="flex items-center justify-between mb-3 flex-wrap gap-2">
-                          <div className="font-bold text-lg text-warm-900">營收趨勢分析表【當日】</div>
+                          <div className="font-bold text-lg text-warm-900">營收趨勢分析表【{periodLabel}】</div>
                           {peakHour.hour >= 0 && <Pill color="orange">尖峰 {peakHour.hour}:00 · {fmtMoney(peakHour.revenue)}</Pill>}
                         </div>
-                        {todayOrders.length === 0 ? <div className="text-sm text-warm-900/50">今日尚無資料</div> : (
+                        {todayOrders.length === 0 ? <div className="text-sm text-warm-900/50">{periodLabel}尚無資料</div> : (
                           <div className="overflow-x-auto">
                             <table className="w-full text-sm">
                               <thead>
@@ -5156,8 +5222,8 @@
 
                       {/* 支付方式佔比 */}
                       <Card className="p-5">
-                        <div className="font-bold text-lg mb-3 text-warm-900">支付方式佔比【當日】</div>
-                        {paymentDist.length === 0 ? <div className="text-sm text-warm-900/50">今日尚無資料</div> : (
+                        <div className="font-bold text-lg mb-3 text-warm-900">支付方式佔比【{periodLabel}】</div>
+                        {paymentDist.length === 0 ? <div className="text-sm text-warm-900/50">{periodLabel}尚無資料</div> : (
                           <div className="space-y-2">
                             {paymentDist.map(p => (
                               <div key={p.method} className="flex items-center gap-3">
@@ -5289,38 +5355,32 @@
                                   </div>
 
                                   <div className="p-4 space-y-3 bg-white/40">
-                                    <div className="grid md:grid-cols-2 gap-3">
-                                      <div className="bg-white rounded-xl p-3 border border-warm-100 shadow-sm">
-                                        <div className="text-sm font-extrabold text-warm-900 mb-2.5 flex items-center gap-2 pb-2 border-b border-warm-100">
-                                          <div className={`w-7 h-7 rounded-lg ${sel.barClass} flex items-center justify-center shrink-0 ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'}`}>
-                                            <Icon name="package" size={15} />
-                                          </div>
-                                          <span>供應鏈策略</span>
+                                    <div className="bg-white rounded-xl p-3 border border-warm-100 shadow-sm">
+                                      <div className="text-sm font-extrabold text-warm-900 mb-2.5 flex items-center gap-2 pb-2 border-b border-warm-100">
+                                        <div className={`w-7 h-7 rounded-lg ${sel.barClass} flex items-center justify-center shrink-0 ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'}`}>
+                                          <Icon name="megaphone" size={15} />
                                         </div>
-                                        <ul className="space-y-2 text-xs text-warm-900/85">
-                                          {sel.supply.map((s, i) => (
-                                            <li key={i} className="flex gap-2 leading-relaxed">
-                                              <span className={`shrink-0 w-4 h-4 rounded-md ${sel.barClass} ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'} flex items-center justify-center text-[10px] font-extrabold mt-0.5`}>{i + 1}</span>
-                                              <span>{s}</span>
-                                            </li>
-                                          ))}
-                                        </ul>
+                                        <span>行銷策略</span>
                                       </div>
-                                      <div className="bg-white rounded-xl p-3 border border-warm-100 shadow-sm">
-                                        <div className="text-sm font-extrabold text-warm-900 mb-2.5 flex items-center gap-2 pb-2 border-b border-warm-100">
-                                          <div className={`w-7 h-7 rounded-lg ${sel.barClass} flex items-center justify-center shrink-0 ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'}`}>
-                                            <Icon name="megaphone" size={15} />
+                                      <div className="space-y-3">
+                                        {[
+                                          { key: 'goal', label: '目標' },
+                                          { key: 'strategy', label: '策略' },
+                                          { key: 'execution', label: '執行方式' },
+                                          { key: 'resource', label: '資源配置' },
+                                        ].map(sec => (
+                                          <div key={sec.key}>
+                                            <div className={`inline-block px-2 py-0.5 rounded-md text-[11px] font-extrabold mb-1.5 ${sel.barClass} ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'}`}>{sec.label}</div>
+                                            <ul className="space-y-1.5 text-xs text-warm-900/85">
+                                              {(sel.marketing[sec.key] || []).map((s, i) => (
+                                                <li key={i} className="flex gap-2 leading-relaxed">
+                                                  <span className={`shrink-0 w-4 h-4 rounded-md ${sel.barClass} ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'} flex items-center justify-center text-[10px] font-extrabold mt-0.5`}>{i + 1}</span>
+                                                  <span>{s}</span>
+                                                </li>
+                                              ))}
+                                            </ul>
                                           </div>
-                                          <span>行銷戰術</span>
-                                        </div>
-                                        <ul className="space-y-2 text-xs text-warm-900/85">
-                                          {sel.marketing.map((s, i) => (
-                                            <li key={i} className="flex gap-2 leading-relaxed">
-                                              <span className={`shrink-0 w-4 h-4 rounded-md ${sel.barClass} ${selectedTier === 'C' ? 'text-warm-900/70' : 'text-white'} flex items-center justify-center text-[10px] font-extrabold mt-0.5`}>{i + 1}</span>
-                                              <span>{s}</span>
-                                            </li>
-                                          ))}
-                                        </ul>
+                                        ))}
                                       </div>
                                     </div>
 
@@ -5526,7 +5586,7 @@
                                           </div>
                                           <div className="bg-white rounded-xl p-3 border border-warm-100">
                                             <div className="text-sm font-extrabold text-warm-900 mb-1.5 flex items-center gap-1.5">
-                                              <Icon name="megaphone" size={15} className={cfg.text} /> 行銷活動建議
+                                              <Icon name="megaphone" size={15} className={cfg.text} /> 行銷建議
                                             </div>
                                             <div className="text-xs text-warm-900/80 leading-relaxed">{recs.marketing}</div>
                                           </div>
@@ -5561,7 +5621,7 @@
                           <div className="text-xs text-warm-900/60">
                             {todayOrders.length === 0
                               ? '尚無營業資料 · 顯示預設 08:00 - 21:00'
-                              : `${String(activeHourly.first).padStart(2, '0')}:00 - ${String(activeHourly.last).padStart(2, '0')}:00 · 依今日營收趨勢自動調整`}
+                              : `${String(activeHourly.first).padStart(2, '0')}:00 - ${String(activeHourly.last).padStart(2, '0')}:00 · 依${periodLabel}營收趨勢自動調整`}
                           </div>
                         </div>
                         <div className="flex items-end gap-1 h-32">
@@ -5584,9 +5644,10 @@
                 };
 
                 // ---- Order History ----
-                const HistoryModule = ({ orders, onVoid, onReprint, currentUser, menu }) => {
+                const HistoryModule = ({ orders, onVoid, onDelete, onReprint, currentUser, menu }) => {
                   const [search, setSearch] = useState('');
-                  const [filter, setFilter] = useState('all');
+                  const [timeFilter, setTimeFilter] = useState('all');
+                  const [cancelledOnly, setCancelledOnly] = useState(false);
                   const [page, setPage] = useState(1);
                   const [pageSize, setPageSize] = useState(50);
                   const [detailOrder, setDetailOrder] = useState(null);
@@ -5602,18 +5663,26 @@
                   }, [menu]);
                   const filtered = useMemo(() => {
                     let list = orders.slice().reverse();
-                    if (filter === 'cancelled') list = list.filter(o => o.status === 'cancelled');
-                    if (filter === 'today') list = list.filter(o => new Date(o.timestamp).toDateString() === new Date().toDateString());
+                    if (cancelledOnly) list = list.filter(o => o.status === 'cancelled');
+                    if (timeFilter !== 'all') {
+                      const cutoff = new Date();
+                      if (timeFilter === 'today') cutoff.setHours(0, 0, 0, 0);
+                      else if (timeFilter === '7d') cutoff.setDate(cutoff.getDate() - 7);
+                      else if (timeFilter === '3m') cutoff.setMonth(cutoff.getMonth() - 3);
+                      else if (timeFilter === '1y') cutoff.setFullYear(cutoff.getFullYear() - 1);
+                      const cutoffMs = cutoff.getTime();
+                      list = list.filter(o => new Date(o.timestamp).getTime() >= cutoffMs);
+                    }
                     if (search) list = list.filter(o => o.id.includes(search) || o.member?.name.includes(search) || o.member?.phone.includes(search));
                     return list;
-                  }, [orders, search, filter]);
+                  }, [orders, search, timeFilter, cancelledOnly]);
                   const summary = useMemo(() => {
                     const valid = filtered.filter(o => o.status !== 'cancelled');
                     const revenue = valid.reduce((s, o) => s + (o.total || 0), 0);
                     const cancelled = filtered.length - valid.length;
                     return { count: filtered.length, validCount: valid.length, cancelled, revenue, avg: valid.length ? Math.round(revenue / valid.length) : 0 };
                   }, [filtered]);
-                  useEffect(() => { setPage(1); }, [filter, search, pageSize]);
+                  useEffect(() => { setPage(1); }, [timeFilter, cancelledOnly, search, pageSize]);
                   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
                   const safePage = Math.min(page, totalPages);
                   const pageStart = (safePage - 1) * pageSize;
@@ -5627,9 +5696,13 @@
                           <input value={search} onChange={e => setSearch(e.target.value)} placeholder="訂單編號、會員姓名或電話"
                             className="w-full pl-10 pr-3 py-2 bg-white rounded-xl border border-warm-200 text-sm" />
                         </div>
-                        {[['all', '全部'], ['today', '今日'], ['cancelled', '已取消']].map(([id, lbl]) => (
-                          <button key={id} onClick={() => setFilter(id)} className={`px-3 py-1.5 rounded-xl text-sm font-bold ${filter === id ? 'bg-brand-500 text-white' : 'bg-white text-warm-900'}`}>{lbl}</button>
-                        ))}
+                        <select value={timeFilter} onChange={e => setTimeFilter(e.target.value)}
+                          className="px-3 py-1.5 rounded-xl text-sm font-bold bg-white text-warm-900 border border-warm-200 cursor-pointer">
+                          {[['today', '今日'], ['7d', '近7日'], ['3m', '近3個月'], ['1y', '近一年'], ['all', '全部']].map(([id, lbl]) => (
+                            <option key={id} value={id}>{lbl}</option>
+                          ))}
+                        </select>
+                        <button onClick={() => setCancelledOnly(v => !v)} className={`px-3 py-1.5 rounded-xl text-sm font-bold ${cancelledOnly ? 'bg-brand-500 text-white' : 'bg-white text-warm-900'}`}>已取消</button>
                       </div>
                       <Card className="p-3 mb-3 bg-warm-50/60">
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
@@ -5701,6 +5774,9 @@
                               <Btn variant="secondary" className="text-xs py-1.5 px-3" icon="printer" onClick={() => onReprint(o)}>重印</Btn>
                               {o.status !== 'cancelled' && currentUser?.role.id === 'manager' && (
                                 <Btn variant="danger" className="text-xs py-1.5 px-3" icon="x-circle" onClick={() => onVoid(o)}>作廢</Btn>
+                              )}
+                              {o.status === 'cancelled' && currentUser?.role.id === 'manager' && (
+                                <Btn variant="danger" className="text-xs py-1.5 px-3" icon="trash-2" onClick={() => onDelete(o)}>刪除</Btn>
                               )}
                             </div>
                           </Card>
@@ -5982,6 +6058,9 @@
                                 <Btn variant="secondary" className="flex-1" icon="printer" onClick={() => { onReprint(o); setDetailOrder(null); }}>重印</Btn>
                                 {o.status !== 'cancelled' && currentUser?.role.id === 'manager' && (
                                   <Btn variant="danger" className="flex-1" icon="x-circle" onClick={() => { onVoid(o); setDetailOrder(null); }}>作廢</Btn>
+                                )}
+                                {o.status === 'cancelled' && currentUser?.role.id === 'manager' && (
+                                  <Btn variant="danger" className="flex-1" icon="trash-2" onClick={() => { onDelete(o); setDetailOrder(null); }}>刪除</Btn>
                                 )}
                               </div>
                             </div>
@@ -6555,7 +6634,216 @@
                   );
                 };
 
+                // ---- 庫存管理（配料即時庫存含低庫存紅標 / 進貨出貨紀錄）----
+                const InventoryModule = ({ toppingStock, stockMovements, onRestock, onAutoRestock, onDeleteMovement, fullStockOf = (() => 100), consumables = [], lowThreshold = 50, itemStock = {}, cakeItems = [], cakeCfg = { cap: 20, low: 5, out: 0 }, menu }) => {
+                  const LOW_THRESHOLD = lowThreshold;
+                  const OUT_THRESHOLD = 10; // 配料/包材缺貨門檻
+                  const [restockName, setRestockName] = useState('');
+                  const [restockQty, setRestockQty] = useState('');
+                  const [logFilter, setLogFilter] = useState('all');
+                  const [logTime, setLogTime] = useState('all');
+                  const [logPage, setLogPage] = useState(1);
+                  const LOG_PAGE_SIZE = 20;
+
+                  const groups = useMemo(() => {
+                    const g = [];
+                    if (menu?.toppings?.length) g.push({ label: '剉冰 / 甜品配料', items: menu.toppings.map(t => ({ key: t.name, label: t.name, kind: 'topping' })) });
+                    if (menu?.drinkToppings?.length) g.push({ label: '飲品配料', items: menu.drinkToppings.map(t => ({ key: t.name, label: t.name, kind: 'topping' })) });
+                    if (consumables.length) g.push({ label: '包材 / 耗材', items: consumables.map(n => ({ key: n, label: n, kind: 'topping' })) });
+                    if (cakeItems.length) g.push({ label: '手作蛋糕', items: cakeItems.map(c => ({ key: c.id, label: c.name, kind: 'cake' })) });
+                    return g;
+                  }, [menu, consumables, cakeItems]);
+                  const allItems = useMemo(() => groups.flatMap(g => g.items), [groups]);
+
+                  const UNIT_MAP = { '外帶盒': '個', '一次性餐具': '支', '塑料袋': '個', '吸管': '支' };
+                  const unitOf = (e) => e.kind === 'cake' ? '個' : (UNIT_MAP[e.key] || '份');
+                  const qtyOf = (e) => (e.kind === 'cake' ? itemStock[e.key] : toppingStock[e.key]) ?? 0;
+                  const capOf = (e) => e.kind === 'cake' ? cakeCfg.cap : fullStockOf(e.key);
+                  const lowAtOf = (e) => e.kind === 'cake' ? cakeCfg.low : LOW_THRESHOLD;
+                  const outAtOf = (e) => e.kind === 'cake' ? cakeCfg.out : OUT_THRESHOLD;
+                  const statusOf = (e) => { const q = qtyOf(e); return q <= outAtOf(e) ? { label: '缺貨', color: 'red' } : q <= lowAtOf(e) ? { label: '低庫存', color: 'red' } : { label: '正常', color: 'green' }; };
+                  const lowItems = allItems.filter(e => qtyOf(e) <= lowAtOf(e));
+                  const outCount = allItems.filter(e => qtyOf(e) <= outAtOf(e)).length;
+                  const lowCount = lowItems.length - outCount;
+                  const logTimeCutoff = useMemo(() => {
+                    const d = new Date();
+                    if (logTime === '7d') d.setDate(d.getDate() - 7);
+                    else if (logTime === '3m') d.setMonth(d.getMonth() - 3);
+                    else if (logTime === '6m') d.setMonth(d.getMonth() - 6);
+                    else return 0; // 全部
+                    return d.getTime();
+                  }, [logTime]);
+                  const filteredLog = stockMovements.filter(m => (logFilter === 'all' || m.type === logFilter) && m.timestamp >= logTimeCutoff);
+                  useEffect(() => { setLogPage(1); }, [logFilter, logTime]);
+                  const logTotalPages = Math.max(1, Math.ceil(filteredLog.length / LOG_PAGE_SIZE));
+                  const logSafePage = Math.min(logPage, logTotalPages);
+                  const pagedLog = filteredLog.slice((logSafePage - 1) * LOG_PAGE_SIZE, logSafePage * LOG_PAGE_SIZE);
+
+                  const submitRestock = () => { const e = allItems.find(x => x.key === restockName); onRestock(restockName, restockQty, e?.kind, e?.label); setRestockQty(''); };
+
+                  return (
+                    <div className="space-y-4 overflow-y-auto scroll-thin pr-1 pb-4">
+                      <div className="font-bold text-lg text-warm-900">庫存管理</div>
+
+                      <div className="grid sm:grid-cols-3 gap-3">
+                        <StatCard icon="package-open" label="庫存品項" value={allItems.length} sub="追蹤中" color="brand" />
+                        <StatCard icon="x-circle" label="低庫存" value={lowCount} sub="需補貨" color="purple" />
+                        <StatCard icon="x-circle" label="缺貨" value={outCount} sub="需立即補貨" color="red" />
+                      </div>
+
+                      {/* 低庫存提醒 */}
+                      <Card className="p-5">
+                        <div className="font-bold text-lg mb-3 text-warm-900 flex items-center gap-2">
+                          <Icon name="x-circle" size={18} className="text-red-500" /> 低庫存提醒
+                        </div>
+                        {lowItems.length === 0 ? <div className="text-sm text-warm-900/50">目前所有品項庫存充足 👍</div> : (
+                          <ul className="space-y-2">
+                            {lowItems.slice().sort((a, b) => qtyOf(a) - qtyOf(b)).map(e => {
+                              const qty = qtyOf(e); const st = statusOf(e);
+                              return (
+                                <li key={e.key} className="flex items-center gap-2 text-sm leading-relaxed">
+                                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                  <span className="font-bold text-warm-900">{e.label}</span>
+                                  <Pill color={st.color}>{st.label} · 剩 {qty}</Pill>
+                                  <button onClick={() => setRestockName(e.key)} className="text-xs font-bold text-brand-600 hover:underline">補貨</button>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        )}
+                      </Card>
+
+                      {/* 進貨登記 */}
+                      <Card className="p-5">
+                        <div className="font-bold text-lg mb-3 text-warm-900 flex items-center gap-2">
+                          <Icon name="truck" size={18} className="text-brand-500" /> 進貨登記
+                        </div>
+                        <div className="flex flex-wrap items-end gap-2">
+                          <div className="flex-1 min-w-[180px]">
+                            <label className="text-xs text-warm-900/60 block mb-1">品項</label>
+                            <select value={restockName} onChange={e => setRestockName(e.target.value)}
+                              className="w-full px-3 py-2 rounded-xl border border-warm-200 bg-white text-sm">
+                              <option value="">請選擇品項</option>
+                              {groups.map(grp => (
+                                <optgroup key={grp.label} label={grp.label}>
+                                  {grp.items.map(e => <option key={e.key} value={e.key}>{e.label}（剩 {qtyOf(e)}）</option>)}
+                                </optgroup>
+                              ))}
+                            </select>
+                          </div>
+                          <div className="w-28">
+                            <label className="text-xs text-warm-900/60 block mb-1">進貨數量</label>
+                            <input type="number" min="1" value={restockQty} onChange={e => setRestockQty(e.target.value)} placeholder="數量"
+                              className="w-full px-3 py-2 rounded-xl border border-warm-200 bg-white text-sm" />
+                          </div>
+                          <Btn variant="primary" icon="plus" onClick={submitRestock} disabled={!restockName || !(parseInt(restockQty, 10) > 0)}>確認進貨</Btn>
+                        </div>
+                      </Card>
+
+                      {/* 即時庫存 */}
+                      <Card className="p-5">
+                        <div className="font-bold text-lg mb-3 text-warm-900 flex items-center gap-2">
+                          <Icon name="package-open" size={18} className="text-brand-500" /> 即時庫存
+                        </div>
+                        {groups.map(grp => (
+                          <div key={grp.label} className="mb-4 last:mb-0">
+                            <div className="text-xs font-bold text-warm-900/50 mb-2">{grp.label}</div>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                              {grp.items.map(e => {
+                                const qty = qtyOf(e); const st = statusOf(e); const cap = capOf(e);
+                                const isLow = st.color === 'red';
+                                return (
+                                  <div key={e.key} className={`flex items-center justify-between gap-2 rounded-xl border-2 px-3 py-2 ${isLow ? 'border-red-400 bg-red-100' : 'border-warm-100 bg-warm-50/50'}`}>
+                                    <span className={`text-sm font-medium truncate ${isLow ? 'text-red-600' : 'text-warm-900'}`}>{e.label}</span>
+                                    <div className="flex items-center gap-2 shrink-0">
+                                      <span className={`text-sm font-extrabold ${isLow ? 'text-red-600' : 'text-warm-900'}`}>{qty}<span className={`font-normal text-xs ${isLow ? 'text-red-400' : 'text-warm-900/40'}`}> / {cap} {unitOf(e)}</span></span>
+                                      <Pill color={st.color}>{st.label}</Pill>
+                                      <button onClick={() => onAutoRestock(e.key, e.kind, e.label)} disabled={qty >= cap}
+                                        className="text-xs font-bold px-2 py-1 rounded-lg bg-brand-500 text-white disabled:opacity-40 disabled:cursor-not-allowed inline-flex items-center gap-1 whitespace-nowrap">
+                                        <Icon name="rotate-ccw" size={12} /> 模擬自動補貨
+                                      </button>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        ))}
+                      </Card>
+
+                      {/* 進貨/出貨紀錄 */}
+                      <Card className="p-5">
+                        <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
+                          <div className="font-bold text-lg text-warm-900 flex items-center gap-2">
+                            <Icon name="list-ordered" size={18} className="text-brand-500" /> 進貨 / 出貨紀錄
+                          </div>
+                          <div className="flex gap-1.5">
+                            {[['all', '全部'], ['in', '進貨'], ['out', '出貨']].map(([id, lbl]) => (
+                              <button key={id} onClick={() => setLogFilter(id)} className={`px-3 py-1.5 rounded-xl text-sm font-bold ${logFilter === id ? 'bg-brand-500 text-white' : 'bg-white text-warm-900 border border-warm-200'}`}>{lbl}</button>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1.5 flex-wrap mb-3">
+                          <span className="text-xs text-warm-900/50 mr-1">期間</span>
+                          {[['all', '全部'], ['7d', '近7日'], ['3m', '近3月'], ['6m', '近半年']].map(([id, lbl]) => (
+                            <button key={id} onClick={() => setLogTime(id)} className={`px-3 py-1.5 rounded-xl text-sm font-bold ${logTime === id ? 'bg-brand-500 text-white' : 'bg-white text-warm-900 border border-warm-200'}`}>{lbl}</button>
+                          ))}
+                        </div>
+                        {filteredLog.length === 0 ? <div className="text-sm text-warm-900/50 py-6 text-center">尚無紀錄</div> : (
+                          <div className="overflow-x-auto">
+                            <table className="w-full text-sm">
+                              <thead>
+                                <tr className="text-warm-900/60 text-xs border-b border-warm-200">
+                                  <th className="text-left py-2 px-2 font-medium whitespace-nowrap">時間</th>
+                                  <th className="text-left py-2 px-2 font-medium">類型</th>
+                                  <th className="text-left py-2 px-2 font-medium">配料</th>
+                                  <th className="text-right py-2 px-2 font-medium">數量</th>
+                                  <th className="text-right py-2 px-2 font-medium">異動後</th>
+                                  <th className="text-left py-2 px-2 font-medium">操作人</th>
+                                  <th className="text-left py-2 px-2 font-medium">備註</th>
+                                  <th className="text-right py-2 px-2 font-medium">刪除</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {pagedLog.map(m => (
+                                  <tr key={m.id} className="border-b border-warm-100">
+                                    <td className="py-1.5 px-2 text-warm-900/70 whitespace-nowrap">{fmtDateTime(m.timestamp)}</td>
+                                    <td className="py-1.5 px-2"><Pill color={m.type === 'in' ? 'green' : 'blue'}>{m.type === 'in' ? '進貨' : '出貨'}</Pill></td>
+                                    <td className="py-1.5 px-2 font-medium">{m.name}</td>
+                                    <td className={`py-1.5 px-2 text-right font-bold ${m.type === 'in' ? 'text-green-600' : 'text-blue-600'}`}>{m.type === 'in' ? '+' : '−'}{m.qty}</td>
+                                    <td className="py-1.5 px-2 text-right text-warm-900/70">{m.after}</td>
+                                    <td className="py-1.5 px-2 text-warm-900/70">{m.operator || '-'}</td>
+                                    <td className="py-1.5 px-2 text-warm-900/60">{m.note || '-'}</td>
+                                    <td className="py-1.5 px-2 text-right">
+                                      <button onClick={() => onDeleteMovement(m.id)} title="刪除此筆紀錄"
+                                        className="text-red-500 hover:text-red-600 p-1 rounded-lg hover:bg-red-50">
+                                        <Icon name="trash-2" size={14} />
+                                      </button>
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                            <div className="flex items-center justify-center gap-3 mt-3">
+                              <button onClick={() => setLogPage(p => Math.max(1, p - 1))} disabled={logSafePage <= 1}
+                                className="p-1.5 rounded-lg border border-warm-200 bg-white text-warm-900 disabled:opacity-40 disabled:cursor-not-allowed">
+                                <Icon name="chevron-left" size={16} />
+                              </button>
+                              <span className="text-sm text-warm-900/70">第 {logSafePage} / {logTotalPages} 頁 · 共 {filteredLog.length} 筆</span>
+                              <button onClick={() => setLogPage(p => Math.min(logTotalPages, p + 1))} disabled={logSafePage >= logTotalPages}
+                                className="p-1.5 rounded-lg border border-warm-200 bg-white text-warm-900 disabled:opacity-40 disabled:cursor-not-allowed">
+                                <Icon name="chevron-right" size={16} />
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </Card>
+                    </div>
+                  );
+                };
+
                 window.MembersModule = MembersModule;
+                window.InventoryModule = InventoryModule;
                 window.DrawerModule = DrawerModule;
                 window.AttendanceModule = AttendanceModule;
                 window.PreOrdersModule = PreOrdersModule;
@@ -6568,6 +6856,16 @@
               // ===== app.jsx =====
               (function () {
                 const { useState, useEffect, useMemo, useRef, useCallback, useReducer, useLayoutEffect, Fragment, createContext, useContext } = React;
+                // 即時時鐘（獨立元件，僅自身每秒重繪，不影響整個 App 效能）
+                const LiveClock = () => {
+                  const [now, setNow] = useState(Date.now());
+                  useEffect(() => {
+                    const t = setInterval(() => setNow(Date.now()), 1000);
+                    return () => clearInterval(t);
+                  }, []);
+                  return <>{fmtDate(now)} {fmtTime(now)}</>;
+                };
+
                 // ============== Main App ==============
                 const App = () => {
                   // ---- Data state
@@ -6592,6 +6890,17 @@
                   const [drawer, setDrawer] = useState(() => loadStored(DATA_KEYS.drawer, { opened: false, openingFloat: 0, adjustments: [] }));
                   const [holdOrders, setHoldOrders] = useState(() => loadStored(DATA_KEYS.hold, []));
                   const [itemStock, setItemStock] = useState({});
+                  // 配料庫存（珍珠、湯圓等）與進貨/出貨台帳；每項配料庫存上限（滿庫存）為 100
+                  const FULL_STOCK = 100; // 配料庫存上限
+                  const CONSUMABLES = ['外帶盒', '一次性餐具', '塑料袋', '吸管']; // 包材／耗材
+                  const CONSUMABLE_FULL = 500; // 包材庫存上限
+                  const fullStockOf = (name) => CONSUMABLES.includes(name) ? CONSUMABLE_FULL : FULL_STOCK;
+                  const LOW_STOCK_THRESHOLD = 50; // 低庫存門檻（≤ 此值視為低庫存）
+                  const OUT_STOCK_THRESHOLD = 10; // 缺貨門檻（≤ 此值視為缺貨）
+                  const CAKE_CFG = { cap: 20, low: 5, out: 0 }; // 手作蛋糕庫存上限/低庫存/缺貨門檻
+                  const cakeItems = useMemo(() => (menu?.categories?.find(c => c.id === 'cakes')?.items || []).map(it => ({ id: it.id, name: it.name })), [menu]);
+                  const [toppingStock, setToppingStock] = useState(() => loadStored(DATA_KEYS.toppingStock, {}));
+                  const [stockMovements, setStockMovements] = useState(() => loadStored(DATA_KEYS.stockMovements, []));
 
                   // ---- UI state
                   const [currentUser, setCurrentUser] = useState(null);
@@ -6600,6 +6909,10 @@
                   const [loginErr, setLoginErr] = useState('');
                   const [page, setPage] = useState('order');
                   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+                  const [aiPredictOpen, setAiPredictOpen] = useState(false); // 庫存管理 AI 預測小窗
+                  const [lowAlertDismissed, setLowAlertDismissed] = useState(false); // 點餐頁低/缺庫存提醒是否已關閉
+                  const [pickupAlertDismissed, setPickupAlertDismissed] = useState(false); // 點餐頁取餐提醒是否已關閉
+                  const [expandedPopup, setExpandedPopup] = useState(null); // 'ai' | 'low' | null：放大檢視的小窗
 
                   // Order builder state
                   const [cart, setCart] = useState([]);
@@ -6678,6 +6991,8 @@
                   useEffect(() => saveStored(DATA_KEYS.attendance, attendance), [attendance]);
                   useEffect(() => saveStored(DATA_KEYS.drawer, drawer), [drawer]);
                   useEffect(() => saveStored(DATA_KEYS.hold, holdOrders), [holdOrders]);
+                  useEffect(() => saveStored(DATA_KEYS.toppingStock, toppingStock), [toppingStock]);
+                  useEffect(() => saveStored(DATA_KEYS.stockMovements, stockMovements), [stockMovements]);
 
                   // Load static data
                   useEffect(() => {
@@ -6694,6 +7009,20 @@
                           if (item.initialStock !== undefined) initial[item.id] = item.initialStock;
                         }));
                         setItemStock(initial);
+                        // 配料庫存：依菜單配料清單初始化（庫存上限 100；新品項給滿庫存，既有超過上限者一律收斂為 100）
+                        const allToppings = [...(mn.toppings || []), ...(mn.drinkToppings || [])];
+                        setToppingStock(prev => {
+                          const next = { ...prev };
+                          allToppings.forEach(t => {
+                            if (next[t.name] === undefined) next[t.name] = FULL_STOCK;
+                            else if (next[t.name] > FULL_STOCK) next[t.name] = FULL_STOCK;
+                          });
+                          CONSUMABLES.forEach(n => {
+                            if (next[n] === undefined) next[n] = CONSUMABLE_FULL;
+                            else if (next[n] > CONSUMABLE_FULL) next[n] = CONSUMABLE_FULL;
+                          });
+                          return next;
+                        });
                       }
                       // seed members on first run — try GitHub first, fallback to bundled __POS_DATA
                       const stored = loadStored(DATA_KEYS.members, null);
@@ -6752,6 +7081,28 @@
                     setToast({ msg, type });
                     setTimeout(() => setToast(null), 2500);
                   };
+
+                  // ---- 庫存管理 AI 預測（依歷史訂單推估明日來客、備料量與最佳促銷時段）
+                  const aiPredict = useMemo(() => {
+                    const valid = orders.filter(o => o.status !== 'cancelled' && o.paid !== false);
+                    const byDay = {};
+                    valid.forEach(o => {
+                      const d = new Date(o.paidAt || o.timestamp).toDateString();
+                      byDay[d] = (byDay[d] || 0) + 1;
+                    });
+                    const dayCount = Object.keys(byDay).length;
+                    const avgPerDay = dayCount ? Math.round(valid.length / dayCount) : 0;
+                    const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 1);
+                    const isWeekend = tomorrow.getDay() === 0 || tomorrow.getDay() === 6;
+                    const predictedCustomers = Math.max(0, Math.round(avgPerDay * (isWeekend ? 1.15 : 1)));
+                    const iceKg = Math.round(predictedCustomers * 0.3); // 約每客 0.3kg 冰
+                    const lowToppings = Object.keys(toppingStock)
+                      .filter(n => toppingStock[n] <= 50)
+                      .sort((a, b) => toppingStock[a] - toppingStock[b]);
+                    // 最佳促銷時段（固定推薦上午離峰檔）
+                    const promoSlot = '10:00 - 12:00';
+                    return { predictedCustomers, isWeekend, iceKg, lowToppings, promoSlot };
+                  }, [orders, toppingStock]);
 
                   // ---- Login flow
                   if (!currentUser) {
@@ -6833,6 +7184,91 @@
                     });
                   };
 
+                  // ---- 配料出貨：結帳時依訂單客製配料自動扣庫存並寫入台帳
+                  const consumeToppings = (items) => {
+                    const used = {};
+                    (items || []).forEach(it => (it.toppings || []).forEach(tp => {
+                      used[tp.name] = (used[tp.name] || 0) + (it.quantity || 1);
+                    }));
+                    const names = Object.keys(used).filter(n => toppingStock[n] !== undefined);
+                    if (names.length === 0) return;
+                    const ts = Date.now();
+                    const entries = names.map((n, i) => {
+                      const before = toppingStock[n] || 0;
+                      return { id: 'MOV-' + ts + '-o' + i, type: 'out', name: n, qty: used[n], before, after: Math.max(0, before - used[n]), timestamp: ts, operator: currentUser?.name || '系統', note: '銷售出貨' };
+                    });
+                    setToppingStock(prev => {
+                      const next = { ...prev };
+                      names.forEach(n => { next[n] = Math.max(0, (next[n] || 0) - used[n]); });
+                      return next;
+                    });
+                    setStockMovements(prev => [...entries, ...prev]);
+                  };
+
+                  // ---- 包材/耗材出貨：外帶與外送訂單成立時，依訂單份數自動扣即時庫存並寫入台帳
+                  const consumePackaging = (items) => {
+                    const units = (items || []).reduce((s, it) => s + (it.quantity || 1), 0);
+                    if (units <= 0) return;
+                    // 外帶盒/一次性餐具/吸管：每份各 1；塑料袋：每筆訂單 1
+                    const used = { '外帶盒': units, '一次性餐具': units, '吸管': units, '塑料袋': 1 };
+                    const names = Object.keys(used).filter(n => toppingStock[n] !== undefined);
+                    if (!names.length) return;
+                    const ts = Date.now();
+                    const entries = names.map((n, i) => {
+                      const before = toppingStock[n] || 0;
+                      return { id: 'MOV-' + ts + '-pk' + i, type: 'out', name: n, qty: used[n], before, after: Math.max(0, before - used[n]), timestamp: ts, operator: currentUser?.name || '系統', note: '外帶/外送出貨' };
+                    });
+                    setToppingStock(prev => {
+                      const next = { ...prev };
+                      names.forEach(n => { next[n] = Math.max(0, (next[n] || 0) - used[n]); });
+                      return next;
+                    });
+                    setStockMovements(prev => [...entries, ...prev]);
+                  };
+
+                  // ---- 配料進貨：庫存管理頁手動登記進貨（+庫存並寫入台帳，上限 100）
+                  // key：配料/包材用名稱、蛋糕用品項 id；kind：'cake' 走 itemStock，其餘走 toppingStock
+                  const handleRestock = (key, qtyRaw, kind, label) => {
+                    const qty = parseInt(qtyRaw, 10);
+                    if (!key || !(qty > 0)) return;
+                    const isCake = kind === 'cake';
+                    const nm = label || key;
+                    const cap = isCake ? CAKE_CFG.cap : fullStockOf(key);
+                    const store = isCake ? itemStock : toppingStock;
+                    const setStore = isCake ? setItemStock : setToppingStock;
+                    const before = store[key] || 0;
+                    if (before >= cap) { showToast(nm + ' 已達庫存上限 ' + cap); return; }
+                    const after = Math.min(cap, before + qty);
+                    const added = after - before;
+                    const ts = Date.now();
+                    setStore(prev => ({ ...prev, [key]: Math.min(cap, (prev[key] || 0) + qty) }));
+                    setStockMovements(prev => [{ id: 'MOV-' + ts + '-in', type: 'in', name: nm, qty: added, before, after, timestamp: ts, operator: currentUser?.name || '店長', note: '手動進貨' }, ...prev]);
+                    showToast('已進貨 ' + nm + ' +' + added);
+                  };
+
+                  // ---- 刪除單筆進貨/出貨紀錄（僅移除台帳紀錄，不回沖庫存）
+                  const handleDeleteMovement = (id) => {
+                    if (!confirm('確定刪除此筆進貨/出貨紀錄?此操作無法復原。')) return;
+                    setStockMovements(prev => prev.filter(m => m.id !== id));
+                    showToast('已刪除紀錄');
+                  };
+
+                  // ---- 配料模擬自動補貨：一鍵將該配料補回滿庫存（100）並寫入台帳
+                  const handleAutoRestock = (key, kind, label) => {
+                    const isCake = kind === 'cake';
+                    const nm = label || key;
+                    const cap = isCake ? CAKE_CFG.cap : fullStockOf(key);
+                    const store = isCake ? itemStock : toppingStock;
+                    const setStore = isCake ? setItemStock : setToppingStock;
+                    const before = store[key] || 0;
+                    if (before >= cap) { showToast(nm + ' 庫存已滿'); return; }
+                    const added = cap - before;
+                    const ts = Date.now();
+                    setStore(prev => ({ ...prev, [key]: cap }));
+                    setStockMovements(prev => [{ id: 'MOV-' + ts + '-auto', type: 'in', name: nm, qty: added, before, after: cap, timestamp: ts, operator: currentUser?.name || '系統', note: '模擬自動補貨' }, ...prev]);
+                    showToast('已自動補貨 ' + nm + ' 至 ' + cap);
+                  };
+
                   // ---- Award points/perks/voucher use
                   const applyMemberRewards = (cartTotal, voucher, useMonthlyPerk) => {
                     if (!currentMember) return;
@@ -6894,6 +7330,8 @@
                     };
                     setOrders(prev => [...prev, newOrder]);
                     decrementStock(cart);
+                    consumeToppings(cart);
+                    if (newOrder.dineMode === 'takeout' || (newOrder.source || '').startsWith('delivery_')) consumePackaging(cart);
                     applyMemberRewards(total, voucher, useMonthlyPerk);
                     setCheckoutOpen(false);
 
@@ -6925,6 +7363,16 @@
                   const handleMarkPaid = (orderId) => {
                     setOrders(prev => prev.map(o => o.id === orderId ? { ...o, paid: true, paidAt: Date.now() } : o));
                     showToast('已標記為已結帳');
+                  };
+
+                  // ---- 取餐完成（取餐小窗）：現場未結帳者先收款，再將訂單推進為已送出
+                  const handlePickupComplete = (order) => {
+                    const isDeliveryOrder = (order.source || '').startsWith('delivery_');
+                    if (!isDeliveryOrder && order.paid !== true) {
+                      setOrders(prev => prev.map(o => o.id === order.id ? { ...o, paid: true, paidAt: Date.now() } : o));
+                    }
+                    handleAdvanceStatus(order.id);
+                    showToast('訂單 ' + order.id + ' 已完成取餐');
                   };
 
                   // ---- Simulate incoming platform order
@@ -6967,6 +7415,7 @@
                       invoice: { type: 'paper', label: '紙本發票' },
                     };
                     setOrders(prev => [...prev, order]);
+                    consumePackaging(order.items); // 外送/線上/電話 平台單皆屬外帶性質，扣包材
                     showToast(`平台進單 ${orderId} (${sourceLabel(pick.src)})`);
                   };
 
@@ -7026,6 +7475,7 @@
                       }
                     };
                     setOrders(prev => [...prev, order]);
+                    consumePackaging(cartArg); // 外送與電話/線上預訂自取皆屬外帶性質，扣包材
                     setComposeOpen(false); setCart([]); setCurrentMember(null);
                     setActivePromos([]); setUseMonthlyPerk(false); setSelectedVoucher(null); setIsStaffDiscount(false);
                     showToast(`${isDelivery ? '外送單' : '預訂單'} ${id} 已送至廚房`);
@@ -7043,9 +7493,15 @@
                   };
 
                   const handleVoidOrder = (order) => {
-                    if (!confirm('確定作廢訂單 ' + order.id + ' ?')) return;
-                    setOrders(prev => prev.map(o => o.id === order.id ? { ...o, status: 'cancelled', voidedAt: Date.now(), voidedBy: currentUser.id } : o));
-                    showToast('訂單已作廢');
+                    if (!confirm('確定作廢訂單 ' + order.id + ' ?\n此操作將永久刪除該筆訂單資料,無法復原。')) return;
+                    setOrders(prev => prev.filter(o => o.id !== order.id));
+                    showToast('訂單已作廢並刪除');
+                  };
+
+                  const handleDeleteOrder = (order) => {
+                    if (!confirm('確定刪除訂單 ' + order.id + ' ?\n此操作將永久刪除該筆訂單資料,無法復原。')) return;
+                    setOrders(prev => prev.filter(o => o.id !== order.id));
+                    showToast('訂單已刪除');
                   };
 
                   const handleKdsCancelOrder = (orderId, reason, label) => {
@@ -7101,7 +7557,8 @@
                     { id: 'drawer', icon: 'banknote', label: '收銀' },
                     { id: 'attendance', icon: 'clock', label: '出勤' },
                     { id: 'stats', icon: 'bar-chart-3', label: '報表' },
-                    { id: 'loss', icon: 'package-x', label: '存貨損失' }
+                    { id: 'inventory', icon: 'package-open', label: '庫存管理' },
+                    { id: 'loss', icon: 'trash-2', label: '存貨損失' }
                   ];
                   // 依角色權限過濾選單
                   const allowedAccess = currentUser?.role?.access || [];
@@ -7111,6 +7568,18 @@
                   const effectivePage = canAccess(page) ? page : (visibleNav[0]?.id || page);
 
                   const activeOrdersCount = orders.filter(o => o.status === 'pending' || o.status === 'preparing').length;
+                  // 配料低庫存／缺貨數量（供左側選單紅色警示標）
+                  const lowStockList = [
+                    ...Object.keys(toppingStock)
+                      .filter(n => toppingStock[n] <= LOW_STOCK_THRESHOLD)
+                      .map(n => ({ name: n, qty: toppingStock[n], out: toppingStock[n] <= OUT_STOCK_THRESHOLD })),
+                    ...cakeItems
+                      .filter(c => (itemStock[c.id] || 0) <= CAKE_CFG.low)
+                      .map(c => ({ name: c.name, qty: itemStock[c.id] || 0, out: (itemStock[c.id] || 0) <= CAKE_CFG.out })),
+                  ].sort((a, b) => a.qty - b.qty);
+                  const lowStockCount = lowStockList.length;
+                  // 待取餐·未結帳 + 外送平台（KDS 待取/待外送員取走）→ 點餐頁取餐提醒
+                  const pickupOrders = orders.filter(o => o.status === 'ready' && ((o.source || '').startsWith('delivery_') || o.paid !== true));
 
                   return (
                     <div className="min-h-screen flex flex-col" style={{ background: 'linear-gradient(180deg, #fff7ed 0%, #faf5ef 100%)' }}>
@@ -7125,7 +7594,7 @@
                           </div>
                           <div className="hidden sm:block">
                             <div className="font-extrabold text-warm-900 leading-tight tracking-tight">冰的啦</div>
-                            <div className="text-[10px] text-warm-900/60">POS 系統 · {fmtDate(Date.now())}</div>
+                            <div className="text-[10px] text-warm-900/60">POS 系統 · <LiveClock /></div>
                           </div>
                         </div>
                         <div className="ml-auto flex items-center gap-2">
@@ -7187,12 +7656,13 @@
                               const active = effectivePage === n.id;
                               return (
                                 <li key={n.id}>
-                                  <button onClick={() => { setPage(n.id); setMobileMenuOpen(false); }}
+                                  <button onClick={() => { setPage(n.id); setMobileMenuOpen(false); if (n.id === 'inventory') setAiPredictOpen(true); if (n.id === 'order') { setLowAlertDismissed(false); setPickupAlertDismissed(false); } }}
                                     className={`relative w-full flex items-center gap-3 px-3 py-2.5 rounded-xl font-semibold text-sm transition-all ${active ? 'text-white' : 'text-warm-900 hover:bg-warm-100'}`}
                                     style={active ? { background: 'linear-gradient(135deg, #f39b6d 0%, #d97048 100%)', boxShadow: '0 4px 12px rgba(217,112,72,0.3)' } : {}}>
                                     {active && <span className="absolute left-0 top-2 bottom-2 w-1 rounded-r bg-white/40" />}
                                     <Icon name={n.icon} size={18} /> {n.label}
                                     {n.id === 'kds' && activeOrdersCount > 0 && <span className="ml-auto bg-red-500 text-white text-[10px] rounded-full px-1.5 font-bold">{activeOrdersCount}</span>}
+                                    {n.id === 'inventory' && lowStockCount > 0 && <span className="ml-auto bg-red-500 text-white text-[10px] rounded-full px-1.5 font-bold">{lowStockCount}</span>}
                                     {n.id === 'preorder' && preOrders.length > 0 && <span className="ml-auto bg-blue-500 text-white text-[10px] rounded-full px-1.5 font-bold">{preOrders.length}</span>}
                                   </button>
                                 </li>
@@ -7222,11 +7692,12 @@
                             )}
                             {effectivePage === 'kds' && canAccess('kds') && <KDSModule orders={orders} onAdvanceStatus={handleAdvanceStatus} onRecallOrder={handleRecallOrder} onMarkPaid={handleMarkPaid} onSimulatePlatform={handleSimulatePlatformOrder} onCancelOrder={handleKdsCancelOrder} />}
                             {effectivePage === 'preorder' && canAccess('preorder') && <PreOrdersModule preOrders={preOrders} setPreOrders={setPreOrders} onActivate={handleActivatePreOrder} />}
-                            {effectivePage === 'history' && canAccess('history') && <HistoryModule orders={orders} onVoid={handleVoidOrder} onReprint={handleReprint} currentUser={currentUser} menu={menu} />}
+                            {effectivePage === 'history' && canAccess('history') && <HistoryModule orders={orders} onVoid={handleVoidOrder} onDelete={handleDeleteOrder} onReprint={handleReprint} currentUser={currentUser} menu={menu} />}
                             {effectivePage === 'members' && canAccess('members') && <MembersModule members={members} setMembers={setMembers} orders={orders} currentUser={currentUser} menu={menu} />}
                             {effectivePage === 'drawer' && canAccess('drawer') && <DrawerModule drawer={drawer} setDrawer={setDrawer} currentUser={currentUser} orders={orders} />}
                             {effectivePage === 'attendance' && canAccess('attendance') && <AttendanceModule attendance={attendance} setAttendance={setAttendance} currentUser={currentUser} employees={employees} />}
                             {effectivePage === 'stats' && canAccess('stats') && <StatsModule orders={orders} members={members} attendance={attendance} menu={menu} />}
+                            {effectivePage === 'inventory' && canAccess('inventory') && <InventoryModule toppingStock={toppingStock} stockMovements={stockMovements} onRestock={handleRestock} onAutoRestock={handleAutoRestock} onDeleteMovement={handleDeleteMovement} fullStockOf={fullStockOf} consumables={CONSUMABLES} lowThreshold={LOW_STOCK_THRESHOLD} itemStock={itemStock} cakeItems={cakeItems} cakeCfg={CAKE_CFG} menu={menu} />}
                             {effectivePage === 'loss' && canAccess('loss') && <LossModule orders={orders} onUndoScrap={handleUndoScrap} />}
                           </div>
                         </main>
@@ -7319,6 +7790,170 @@
                       {toast && (
                         <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] bg-warm-900 text-white px-4 py-2.5 rounded-xl shadow-lg text-sm font-medium anim-slide-up">{toast.msg}</div>
                       )}
+
+                      {effectivePage === 'order' && ((!pickupAlertDismissed && pickupOrders.length > 0) || (!lowAlertDismissed && lowStockList.length > 0)) && (
+                        <div className="fixed bottom-4 left-4 z-50 flex flex-col gap-3 w-72 max-w-[calc(100vw-2rem)]">
+                          {!pickupAlertDismissed && pickupOrders.length > 0 && (
+                            <div onClick={() => setExpandedPopup('pickup')} title="點擊放大查看"
+                              className="rounded-2xl border border-amber-200 bg-white overflow-hidden anim-slide-up cursor-pointer hover:shadow-2xl transition-shadow"
+                              style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.18)' }}>
+                              <div className="px-4 py-2.5 flex items-center gap-2 text-white"
+                                style={{ background: 'linear-gradient(135deg, #f59e0b 0%, #ea580c 100%)' }}>
+                                <Icon name="receipt" size={16} />
+                                <span className="font-extrabold text-sm flex-1">取餐</span>
+                                <Icon name="search" size={14} className="opacity-80" />
+                                <button onClick={(e) => { e.stopPropagation(); setPickupAlertDismissed(true); }} className="p-0.5 rounded-full hover:bg-white/20" title="關閉">
+                                  <Icon name="x" size={16} />
+                                </button>
+                              </div>
+                              <div className="p-3 max-h-60 overflow-y-auto scroll-thin">
+                                <div className="text-[11px] text-warm-900/60 mb-2">{pickupOrders.length} 筆待取餐 / 待外送（點擊放大）</div>
+                                <ul className="space-y-1.5">
+                                  {pickupOrders.map(o => (
+                                    <li key={o.id} className="flex items-center gap-2 text-xs">
+                                      <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                                      <span className="font-bold text-warm-900">{o.id}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          )}
+                          {!lowAlertDismissed && lowStockList.length > 0 && (
+                            <div onClick={() => setExpandedPopup('low')} title="點擊放大查看"
+                              className="rounded-2xl border border-red-200 bg-white overflow-hidden anim-slide-up cursor-pointer hover:shadow-2xl transition-shadow"
+                              style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.18)' }}>
+                              <div className="px-4 py-2.5 flex items-center gap-2 text-white"
+                                style={{ background: 'linear-gradient(135deg, #f87171 0%, #dc2626 100%)' }}>
+                                <Icon name="x-circle" size={16} />
+                                <span className="font-extrabold text-sm flex-1">低 / 缺庫存提醒</span>
+                                <Icon name="search" size={14} className="opacity-80" />
+                                <button onClick={(e) => { e.stopPropagation(); setLowAlertDismissed(true); }} className="p-0.5 rounded-full hover:bg-white/20" title="關閉">
+                                  <Icon name="x" size={16} />
+                                </button>
+                              </div>
+                              <div className="p-3 max-h-60 overflow-y-auto scroll-thin">
+                                <div className="text-[11px] text-warm-900/60 mb-2">共 {lowStockList.length} 項庫存偏低，請盡快補貨（點擊放大）</div>
+                                <ul className="space-y-1.5">
+                                  {lowStockList.slice(0, 12).map(it => (
+                                    <li key={it.name} className="flex items-center gap-2 text-xs">
+                                      <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                      <span className="font-bold text-warm-900 flex-1 truncate">{it.name}</span>
+                                      <Pill color="red">{it.out ? '缺貨' : '低庫存'} · 剩 {it.qty}</Pill>
+                                    </li>
+                                  ))}
+                                </ul>
+                                {lowStockList.length > 12 && <div className="text-[11px] text-warm-900/40 mt-2 text-center">還有 {lowStockList.length - 12} 項…</div>}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {aiPredictOpen && effectivePage === 'inventory' && (
+                        <div onClick={() => setExpandedPopup('ai')} title="點擊放大查看"
+                          className="fixed bottom-4 left-4 z-50 w-72 max-w-[calc(100vw-2rem)] rounded-2xl border border-warm-200 bg-white overflow-hidden anim-slide-up cursor-pointer hover:shadow-2xl transition-shadow"
+                          style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.18)' }}>
+                          <div className="px-4 py-2.5 flex items-center gap-2 text-white"
+                            style={{ background: 'linear-gradient(135deg, #f39b6d 0%, #9333ea 130%)' }}>
+                            <Icon name="bar-chart-3" size={16} />
+                            <span className="font-extrabold text-sm flex-1">AI 預測</span>
+                            <Icon name="search" size={14} className="opacity-80" />
+                            <button onClick={(e) => { e.stopPropagation(); setAiPredictOpen(false); }} className="p-0.5 rounded-full hover:bg-white/20" title="關閉">
+                              <Icon name="x" size={16} />
+                            </button>
+                          </div>
+                          <div className="p-3 space-y-3 text-xs">
+                            <div className="flex items-start gap-2">
+                              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#fff3e8', color: '#d97048' }}><Icon name="users" size={15} /></div>
+                              <div className="min-w-0">
+                                <div className="text-warm-900/60">預測明日來客數{aiPredict.isWeekend ? '（週末加成）' : ''}</div>
+                                <div className="font-extrabold text-warm-900 text-base leading-tight">約 {aiPredict.predictedCustomers} 位</div>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#dbeafe', color: '#2563eb' }}><Icon name="ice-cream-bowl" size={15} /></div>
+                              <div className="min-w-0">
+                                <div className="text-warm-900/60">建議備料量</div>
+                                <div className="font-bold text-warm-900">冰塊約 {aiPredict.iceKg} kg</div>
+                                <div className="text-warm-900/70">{aiPredict.lowToppings.length ? `配料提醒:${aiPredict.lowToppings.slice(0, 4).join('、')}${aiPredict.lowToppings.length > 4 ? ' 等需補貨' : ' 需補貨'}` : '配料庫存充足，無須補貨'}</div>
+                              </div>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: '#f3e8ff', color: '#9333ea' }}><Icon name="ticket" size={15} /></div>
+                              <div className="min-w-0">
+                                <div className="text-warm-900/60">推薦最佳促銷時段</div>
+                                <div className="font-bold text-warm-900">{aiPredict.promoSlot || '資料不足'}</div>
+                                <div className="text-warm-900/50 text-[11px]">離峰時段推限時優惠最能提升來客</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 放大檢視：取餐 */}
+                      <Modal open={expandedPopup === 'pickup'} onClose={() => setExpandedPopup(null)} title="取餐" maxW="max-w-md" icon={<Icon name="receipt" size={20} />}>
+                        <div className="text-sm text-warm-900/60 mb-3">{pickupOrders.length} 筆待取餐 / 待外送</div>
+                        <ul className="space-y-2 max-h-[55vh] overflow-y-auto scroll-thin">
+                          {pickupOrders.map(o => (
+                            <li key={o.id} className="flex items-center gap-2 text-sm border-b border-warm-100 pb-2">
+                              <span className="shrink-0 w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                              <span className="font-bold text-warm-900 flex-1 min-w-0 truncate">{o.id}</span>
+                              <Pill color={(o.source || '').startsWith('delivery_') ? 'purple' : 'orange'}>{(o.source || '').startsWith('delivery_') ? '外送平台' : '待取餐 · 未結帳'}</Pill>
+                              <button onClick={() => handlePickupComplete(o)}
+                                className="shrink-0 text-xs font-bold px-2.5 py-1 rounded-lg text-white inline-flex items-center gap-1 whitespace-nowrap"
+                                style={{ background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)' }}>
+                                <Icon name="check" size={12} /> 取餐完成
+                              </button>
+                            </li>
+                          ))}
+                          {pickupOrders.length === 0 && <li className="text-sm text-warm-900/50 py-4 text-center">目前無待取餐訂單</li>}
+                        </ul>
+                      </Modal>
+
+                      {/* 放大檢視：低 / 缺庫存提醒 */}
+                      <Modal open={expandedPopup === 'low'} onClose={() => setExpandedPopup(null)} title="低 / 缺庫存提醒" maxW="max-w-md" icon={<Icon name="x-circle" size={20} />}>
+                        <div className="text-sm text-warm-900/60 mb-3">共 {lowStockList.length} 項庫存偏低，請盡快補貨</div>
+                        <ul className="space-y-2 max-h-[55vh] overflow-y-auto scroll-thin">
+                          {lowStockList.map(it => (
+                            <li key={it.name} className="flex items-center gap-3 text-sm border-b border-warm-100 pb-2">
+                              <span className="shrink-0 w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                              <span className="font-bold text-warm-900 flex-1">{it.name}</span>
+                              <Pill color="red">{it.out ? '缺貨' : '低庫存'} · 剩 {it.qty}</Pill>
+                            </li>
+                          ))}
+                          {lowStockList.length === 0 && <li className="text-sm text-warm-900/50 py-4 text-center">目前庫存充足</li>}
+                        </ul>
+                      </Modal>
+
+                      {/* 放大檢視：AI 預測 */}
+                      <Modal open={expandedPopup === 'ai'} onClose={() => setExpandedPopup(null)} title="AI 預測" maxW="max-w-md" icon={<Icon name="bar-chart-3" size={20} />}>
+                        <div className="space-y-3">
+                          <div className="rounded-xl border border-warm-100 p-4 flex items-center gap-3">
+                            <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: '#fff3e8', color: '#d97048' }}><Icon name="users" size={22} /></div>
+                            <div className="min-w-0">
+                              <div className="text-sm text-warm-900/60">預測明日來客數{aiPredict.isWeekend ? '（週末加成）' : ''}</div>
+                              <div className="text-2xl font-extrabold text-warm-900">約 {aiPredict.predictedCustomers} 位</div>
+                            </div>
+                          </div>
+                          <div className="rounded-xl border border-warm-100 p-4 flex items-start gap-3">
+                            <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: '#dbeafe', color: '#2563eb' }}><Icon name="ice-cream-bowl" size={22} /></div>
+                            <div className="min-w-0">
+                              <div className="text-sm text-warm-900/60">建議備料量</div>
+                              <div className="font-bold text-warm-900 text-base">冰塊約 {aiPredict.iceKg} kg</div>
+                              <div className="text-warm-900/70 text-sm mt-0.5">{aiPredict.lowToppings.length ? `配料提醒:${aiPredict.lowToppings.join('、')}` : '配料庫存充足，無須補貨'}</div>
+                            </div>
+                          </div>
+                          <div className="rounded-xl border border-warm-100 p-4 flex items-center gap-3">
+                            <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: '#f3e8ff', color: '#9333ea' }}><Icon name="ticket" size={22} /></div>
+                            <div className="min-w-0">
+                              <div className="text-sm text-warm-900/60">推薦最佳促銷時段</div>
+                              <div className="font-bold text-warm-900 text-lg">{aiPredict.promoSlot || '資料不足'}</div>
+                              <div className="text-warm-900/50 text-xs">離峰時段推限時優惠最能提升來客</div>
+                            </div>
+                          </div>
+                        </div>
+                      </Modal>
                     </div>
                   );
                 };
